@@ -1,48 +1,74 @@
 "use client";
 
 import { useReveal } from "@/hooks/useReveal";
+import Image from "next/image";
+import { urlFor } from "@/lib/sanity";
+import type { SanityTratamiento } from "@/lib/sanity";
 
-const tratamientos = [
+const fallback = [
   {
     titulo: "Rinoplastia",
     descripcion:
       "Remodelación nasal precisa que respeta tus rasgos naturales, logrando armonía facial con técnicas mínimamente invasivas.",
     num: "01",
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&crop=face",
   },
   {
     titulo: "Ácido Hialurónico",
     descripcion:
       "Restauración de volumen y definición facial con rellenos dérmicos de última generación. Resultados sutiles e inmediatos.",
     num: "02",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop",
   },
   {
     titulo: "Toxina Botulínica",
     descripcion:
       "Suavizado de líneas de expresión para un rostro descansado y rejuvenecido, preservando la naturalidad del gesto.",
     num: "03",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
   },
   {
     titulo: "Lifting Facial",
     descripcion:
       "Rejuvenecimiento integral con técnicas quirúrgicas avanzadas. Resultados naturales que devuelven firmeza y definición.",
     num: "04",
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=400&fit=crop&crop=face",
   },
   {
     titulo: "Blefaroplastia",
     descripcion:
       "Cirugía de párpados que abre la mirada y elimina signos de fatiga. Recuperación rápida, transformación duradera.",
     num: "05",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop&crop=face",
   },
   {
     titulo: "Liposucción",
     descripcion:
       "Escultura corporal de precisión para eliminar depósitos de grasa resistentes y definir tu silueta natural.",
     num: "06",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
   },
 ];
 
-export default function Tratamientos() {
+interface Props {
+  data?: SanityTratamiento[];
+}
+
+export default function Tratamientos({ data }: Props) {
   useReveal();
+
+  const useSanity = data && data.length > 0;
+
+  const tratamientos = useSanity
+    ? data.map((t) => ({
+        titulo: t.titulo,
+        descripcion: t.descripcion,
+        num: t.num,
+        image: t.imagen
+          ? urlFor(t.imagen).width(600).height(400).url()
+          : `https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&h=400&fit=crop&crop=face`,
+      }))
+    : fallback;
 
   return (
     <section id="tratamientos" className="py-28 md:py-40 bg-ivory">
@@ -66,39 +92,50 @@ export default function Tratamientos() {
           </div>
         </div>
 
-        {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-divider stagger">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
           {tratamientos.map((t) => (
             <div
               key={t.num}
-              className="reveal group bg-ivory p-8 md:p-10 cursor-pointer transition-colors duration-500 hover:bg-parchment relative overflow-hidden"
+              className="reveal group cursor-pointer bg-ivory overflow-hidden border border-divider hover:border-brass/30 transition-all duration-500"
             >
-              {/* Number */}
-              <span className="text-[11px] text-brass/40 tracking-[0.3em] font-semibold block mb-8 transition-colors duration-500 group-hover:text-brass">
-                {t.num}
-              </span>
-
-              {/* Title */}
-              <h3 className="font-display text-[28px] md:text-[32px] text-noir mb-4 leading-tight transition-colors duration-300 group-hover:text-brass-dark">
-                {t.titulo}
-              </h3>
-
-              {/* Line */}
-              <span className="block w-8 h-px bg-divider mb-5 transition-all duration-500 group-hover:w-12 group-hover:bg-brass" />
-
-              {/* Description */}
-              <p className="text-warm-gray text-[14px] leading-relaxed">
-                {t.descripcion}
-              </p>
-
-              {/* Hover arrow */}
-              <div className="mt-8 flex items-center gap-2 text-brass opacity-0 translate-x-[-10px] transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
-                <span className="text-[12px] font-semibold tracking-[0.15em] uppercase">
-                  Más info
+              {/* Image */}
+              <div className="relative aspect-[3/2] overflow-hidden">
+                <Image
+                  src={t.image}
+                  alt={t.titulo}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-noir/10 group-hover:bg-noir/0 transition-colors duration-500" />
+                {/* Number overlay */}
+                <span className="absolute top-4 left-4 text-[11px] text-white/70 tracking-[0.3em] font-semibold bg-noir/30 backdrop-blur-sm px-3 py-1">
+                  {t.num}
                 </span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+              </div>
+
+              {/* Content */}
+              <div className="p-7 md:p-8">
+                <h3 className="font-display text-[24px] md:text-[28px] text-noir mb-3 leading-tight transition-colors duration-300 group-hover:text-brass-dark">
+                  {t.titulo}
+                </h3>
+
+                <span className="block w-8 h-px bg-divider mb-4 transition-all duration-500 group-hover:w-12 group-hover:bg-brass" />
+
+                <p className="text-warm-gray text-[14px] leading-relaxed">
+                  {t.descripcion}
+                </p>
+
+                {/* Hover arrow */}
+                <div className="mt-6 flex items-center gap-2 text-brass opacity-0 translate-x-[-10px] transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+                  <span className="text-[12px] font-semibold tracking-[0.15em] uppercase">
+                    Más info
+                  </span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}

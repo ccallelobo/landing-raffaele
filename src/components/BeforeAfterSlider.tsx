@@ -1,12 +1,23 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 
 interface BeforeAfterSliderProps {
   className?: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeAlt?: string;
+  afterAlt?: string;
 }
 
-export default function BeforeAfterSlider({ className = "" }: BeforeAfterSliderProps) {
+export default function BeforeAfterSlider({
+  className = "",
+  beforeImage,
+  afterImage,
+  beforeAlt = "Antes",
+  afterAlt = "Después",
+}: BeforeAfterSliderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -42,7 +53,6 @@ export default function BeforeAfterSlider({ className = "" }: BeforeAfterSliderP
     setIsDragging(false);
   }, []);
 
-  // Prevent text selection while dragging
   useEffect(() => {
     if (isDragging) {
       document.body.style.userSelect = "none";
@@ -64,44 +74,49 @@ export default function BeforeAfterSlider({ className = "" }: BeforeAfterSliderP
       onPointerUp={handlePointerUp}
     >
       {/* AFTER layer (full, sits behind) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brass/20 via-parchment to-ivory flex items-center justify-center">
-        <div className="text-center">
-          <span className="text-noir/20 text-[11px] tracking-[0.4em] uppercase font-semibold block mb-2">
-            Después
-          </span>
-          <span className="text-noir/10 font-display text-5xl">D</span>
-        </div>
-      </div>
+      <Image
+        src={afterImage}
+        alt={afterAlt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
 
       {/* BEFORE layer (clipped) */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-noir/10 via-warm-gray/30 to-divider flex items-center justify-center"
+        className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <div className="text-center">
-          <span className="text-noir/20 text-[11px] tracking-[0.4em] uppercase font-semibold block mb-2">
-            Antes
-          </span>
-          <span className="text-noir/10 font-display text-5xl">A</span>
-        </div>
+        <Image
+          src={beforeImage}
+          alt={beforeAlt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
+
+      {/* Labels */}
+      <span className="absolute top-4 left-4 text-[10px] tracking-[0.3em] uppercase font-semibold bg-noir/40 backdrop-blur-sm text-white/80 px-3 py-1.5 pointer-events-none">
+        Antes
+      </span>
+      <span className="absolute top-4 right-4 text-[10px] tracking-[0.3em] uppercase font-semibold bg-brass/70 backdrop-blur-sm text-white px-3 py-1.5 pointer-events-none">
+        Después
+      </span>
 
       {/* Divider line + handle */}
       <div
         className="absolute top-0 bottom-0 z-10 pointer-events-none"
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
       >
-        {/* Vertical line */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-white shadow-[0_0_8px_rgba(0,0,0,0.3)]" />
 
-        {/* Handle */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-ew-resize">
           <div
             className={`w-11 h-11 rounded-full bg-white shadow-[0_2px_12px_rgba(0,0,0,0.25)] flex items-center justify-center transition-transform duration-150 ${
               isDragging ? "scale-110" : "hover:scale-105"
             }`}
           >
-            {/* Arrows */}
             <svg
               className="w-5 h-5 text-noir/70"
               fill="none"

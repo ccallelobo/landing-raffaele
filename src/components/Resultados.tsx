@@ -2,16 +2,58 @@
 
 import { useReveal } from "@/hooks/useReveal";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { urlFor } from "@/lib/sanity";
+import type { SanityResultado } from "@/lib/sanity";
 
-const resultados = [
-  { id: 1, tratamiento: "Rinoplastia", descripcion: "Remodelación nasal con enfoque natural" },
-  { id: 2, tratamiento: "Ácido Hialurónico", descripcion: "Restauración de volumen facial" },
-  { id: 3, tratamiento: "Lifting Facial", descripcion: "Rejuvenecimiento integral del rostro" },
-  { id: 4, tratamiento: "Blefaroplastia", descripcion: "Rejuvenecimiento de la mirada" },
+const fallback = [
+  {
+    id: 1,
+    tratamiento: "Rinoplastia",
+    descripcion: "Remodelación nasal con enfoque natural",
+    before: "https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=800&h=1000&fit=crop&crop=face",
+    after: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop&crop=face",
+  },
+  {
+    id: 2,
+    tratamiento: "Ácido Hialurónico",
+    descripcion: "Restauración de volumen facial",
+    before: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=800&h=600&fit=crop&crop=face",
+    after: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800&h=600&fit=crop&crop=face",
+  },
+  {
+    id: 3,
+    tratamiento: "Lifting Facial",
+    descripcion: "Rejuvenecimiento integral del rostro",
+    before: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=face",
+    after: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=600&fit=crop&crop=face",
+  },
+  {
+    id: 4,
+    tratamiento: "Blefaroplastia",
+    descripcion: "Rejuvenecimiento de la mirada",
+    before: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop&crop=face",
+    after: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=600&fit=crop&crop=face",
+  },
 ];
 
-export default function Resultados() {
+interface Props {
+  data?: SanityResultado[];
+}
+
+export default function Resultados({ data }: Props) {
   useReveal();
+
+  const useSanity = data && data.length > 0;
+
+  const resultados = useSanity
+    ? data.map((r, i) => ({
+        id: i + 1,
+        tratamiento: r.tratamiento,
+        descripcion: r.descripcion,
+        before: urlFor(r.imagenAntes).width(800).height(i === 0 ? 1000 : 600).url(),
+        after: urlFor(r.imagenDespues).width(800).height(i === 0 ? 1000 : 600).url(),
+      }))
+    : fallback;
 
   return (
     <section id="resultados" className="py-28 md:py-40 bg-noir text-white overflow-hidden">
@@ -44,6 +86,10 @@ export default function Resultados() {
             >
               <BeforeAfterSlider
                 className={i === 0 ? "aspect-[3/4]" : "aspect-[4/3]"}
+                beforeImage={r.before}
+                afterImage={r.after}
+                beforeAlt={`${r.tratamiento} - Antes`}
+                afterAlt={`${r.tratamiento} - Después`}
               />
               <div className="mt-4 flex items-center justify-between">
                 <div>
