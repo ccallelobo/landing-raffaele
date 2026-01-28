@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-ivory/95 backdrop-blur-xl shadow-[0_1px_0_0_var(--color-divider)]"
+          ? "bg-stone/95 backdrop-blur-xl shadow-[0_1px_0_0_var(--color-moss)]"
           : "bg-transparent"
       }`}
     >
@@ -49,9 +49,9 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={`relative text-[13px] font-medium tracking-[0.15em] uppercase transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-brass after:transition-all after:duration-300 hover:after:w-full ${
+              className={`relative text-[13px] font-medium tracking-[0.15em] uppercase transition-colors duration-300 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${
                 scrolled
-                  ? "text-noir/50 hover:text-brass"
+                  ? "text-noir/50 hover:text-gold"
                   : "text-white/60 hover:text-white"
               }`}
             >
@@ -62,7 +62,7 @@ export default function Navbar() {
             href="#contacto"
             className={`ml-4 px-7 py-3 text-[12px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 ${
               scrolled
-                ? "bg-noir text-white hover:bg-brass"
+                ? "bg-noir text-white hover:bg-gold"
                 : "bg-white/10 text-white border border-white/20 hover:bg-white hover:text-noir"
             }`}
           >
@@ -111,7 +111,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="font-display text-3xl text-white/80 hover:text-brass transition-colors duration-300"
+              className="font-display text-3xl text-white/80 hover:text-gold transition-colors duration-300"
               style={{
                 transitionDelay: open ? `${i * 80}ms` : "0ms",
                 opacity: open ? 1 : 0,
@@ -125,7 +125,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="mt-4 px-10 py-4 bg-brass text-white text-[13px] font-semibold tracking-[0.2em] uppercase hover:bg-brass-dark transition-colors"
+            className="mt-4 px-10 py-4 bg-gold text-white text-[13px] font-semibold tracking-[0.2em] uppercase hover:bg-gold-dark transition-colors"
             style={{
               transitionDelay: open ? `${links.length * 80}ms` : "0ms",
               opacity: open ? 1 : 0,

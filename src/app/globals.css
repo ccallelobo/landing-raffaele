@@ -1,18 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Color palette — Italian luxury atelier */
-  --color-noir: #181818;
-  --color-parchment: #DDDCBD;
-  --color-ivory: #EBEAD5;
-  --color-brass: #96825F;
-  --color-brass-dark: #7D6C4A;
-  --color-warm-gray: #B8B0A0;
-  --color-divider: #CCCBB0;
-  --color-cream: #E4E3CC;
+  /* Color palette — Raffaele brand */
+  --color-stone: #DDDCBD;    /* tonos casi blancos */
+  --color-moss: #B8B0A1;     /* tonos beige */
+  --color-gold: #96825F;     /* tonos dorados */
+  --color-gold-dark: #7D6C4A;
+  --color-noir: #181818;     /* tonos negrunos */
 
   /* Semantic */
-  --color-background: var(--color-ivory);
+  --color-background: var(--color-stone);
   --color-foreground: var(--color-noir);
 
   /* Font families */
@@ -35,7 +32,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-brass);
+  background-color: var(--color-gold);
   color: white;
 }
 
@@ -46,10 +43,10 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-parchment);
+  background: var(--color-stone);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brass);
+  background: var(--color-gold);
   border-radius: 3px;
 }
 
@@ -217,7 +214,7 @@ body::before {
   display: block;
   width: 48px;
   height: 1px;
-  background: var(--color-brass);
+  background: var(--color-gold);
   transform-origin: left;
 }
 
@@ -225,6 +222,6 @@ body::before {
   display: block;
   width: 48px;
   height: 1px;
-  background: var(--color-brass);
+  background: var(--color-gold);
   margin-inline: auto;
 }

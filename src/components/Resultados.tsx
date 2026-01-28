@@ -61,12 +61,12 @@ export default function Resultados({ data }: Props) {
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 md:mb-28">
           <div className="reveal">
-            <span className="text-brass text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
+            <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
               Antes & Después
             </span>
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em]">
               Resultados que<br />
-              <em className="italic text-brass">hablan por sí solos</em>
+              <em className="italic text-gold">hablan por sí solos</em>
             </h2>
           </div>
           <div className="reveal max-w-sm">
@@ -98,7 +98,7 @@ export default function Resultados({ data }: Props) {
                   </h3>
                   <p className="text-white/40 text-sm">{r.descripcion}</p>
                 </div>
-                <span className="text-brass/30 text-[11px] tracking-[0.2em] uppercase font-semibold hidden sm:block">
+                <span className="text-gold/30 text-[11px] tracking-[0.2em] uppercase font-semibold hidden sm:block">
                   Deslizar
                 </span>
               </div>

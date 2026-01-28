@@ -24,13 +24,13 @@ export default function Contacto() {
 
   const inputClasses = (field: string) =>
     `w-full bg-transparent border-b ${
-      focused === field ? "border-brass" : "border-white/10"
+      focused === field ? "border-gold" : "border-white/10"
     } pb-3 pt-6 text-white text-[15px] placeholder:text-transparent focus:outline-none transition-colors duration-300`;
 
   const labelClasses = (field: string, value: string) =>
     `absolute left-0 transition-all duration-300 pointer-events-none ${
       focused === field || value
-        ? "top-0 text-[11px] tracking-[0.15em] uppercase text-brass"
+        ? "top-0 text-[11px] tracking-[0.15em] uppercase text-gold"
         : "top-6 text-white/30 text-[15px]"
     }`;
 
@@ -40,16 +40,16 @@ export default function Contacto() {
         {/* Left — Info panel */}
         <div className="bg-noir px-8 md:px-16 lg:px-20 py-20 lg:py-28 flex flex-col justify-center relative">
           {/* Decorative bg element */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brass/[0.03] to-transparent pointer-events-none" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/[0.03] to-transparent pointer-events-none" />
 
           <div className="relative z-10">
             <div className="reveal">
-              <span className="text-brass text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
+              <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
                 Contacto
               </span>
               <h2 className="font-display text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-[-0.02em] text-white mb-6">
                 Agenda tu<br />
-                <em className="italic text-brass">consulta privada</em>
+                <em className="italic text-gold">consulta privada</em>
               </h2>
               <p className="text-white/40 text-[15px] leading-relaxed max-w-md mb-16">
                 La primera consulta es informativa y sin compromiso. Evaluaremos
@@ -60,8 +60,8 @@ export default function Contacto() {
             <div className="space-y-10 reveal">
               {/* Location */}
               <div className="flex items-start gap-5 group">
-                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-brass/40 transition-colors duration-300">
-                  <svg className="w-[18px] h-[18px] text-brass" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-gold/40 transition-colors duration-300">
+                  <svg className="w-[18px] h-[18px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -78,8 +78,8 @@ export default function Contacto() {
 
               {/* Phone */}
               <div className="flex items-start gap-5 group">
-                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-brass/40 transition-colors duration-300">
-                  <svg className="w-[18px] h-[18px] text-brass" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-gold/40 transition-colors duration-300">
+                  <svg className="w-[18px] h-[18px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
@@ -93,8 +93,8 @@ export default function Contacto() {
 
               {/* Hours */}
               <div className="flex items-start gap-5 group">
-                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-brass/40 transition-colors duration-300">
-                  <svg className="w-[18px] h-[18px] text-brass" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-gold/40 transition-colors duration-300">
+                  <svg className="w-[18px] h-[18px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -210,7 +210,7 @@ export default function Contacto() {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-brass text-white py-4.5 text-[13px] font-semibold tracking-[0.25em] uppercase hover:bg-brass-dark transition-all duration-500 mt-4"
+              className="w-full bg-gold text-white py-4.5 text-[13px] font-semibold tracking-[0.25em] uppercase hover:bg-gold-dark transition-all duration-500 mt-4"
             >
               Enviar Mensaje
             </button>

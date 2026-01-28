@@ -60,7 +60,7 @@ function Stars({ count }: { count: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
-          className={`w-4 h-4 ${i < count ? "text-brass" : "text-divider"}`}
+          className={`w-4 h-4 ${i < count ? "text-gold" : "text-moss/30"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -81,21 +81,21 @@ export default function Resenas({ data }: Props) {
   const resenas = data && data.length > 0 ? data : fallback;
 
   return (
-    <section id="resenas" className="py-28 md:py-40 bg-parchment">
+    <section id="resenas" className="py-28 md:py-40 bg-stone">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 md:mb-28">
           <div className="reveal">
-            <span className="text-brass text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
+            <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
               Testimonios
             </span>
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-noir">
               Lo que dicen<br />
-              <em className="italic text-brass">nuestros pacientes</em>
+              <em className="italic text-gold">nuestros pacientes</em>
             </h2>
           </div>
           <div className="reveal max-w-sm">
-            <p className="text-warm-gray text-[15px] leading-relaxed">
+            <p className="text-moss text-[15px] leading-relaxed">
               La confianza de quienes nos eligen es nuestro mayor reconocimiento.
               Cada testimonio refleja nuestro compromiso con la excelencia.
             </p>
@@ -107,10 +107,10 @@ export default function Resenas({ data }: Props) {
           {resenas.map((r) => (
             <div
               key={r._id}
-              className="reveal bg-ivory p-8 md:p-10 border border-divider hover:border-brass/30 transition-all duration-500 group"
+              className="reveal bg-stone p-8 md:p-10 border border-moss/30 hover:border-gold/30 transition-all duration-500 group"
             >
               {/* Decorative quote */}
-              <span className="block font-display text-[48px] leading-none text-brass/20 mb-4 select-none">
+              <span className="block font-display text-[48px] leading-none text-gold/20 mb-4 select-none">
                 &ldquo;
               </span>
 
@@ -123,7 +123,7 @@ export default function Resenas({ data }: Props) {
               <Stars count={r.estrellas} />
 
               {/* Divider */}
-              <span className="block w-8 h-px bg-divider my-5 transition-all duration-500 group-hover:w-12 group-hover:bg-brass" />
+              <span className="block w-8 h-px bg-moss/40 my-5 transition-all duration-500 group-hover:w-12 group-hover:bg-gold" />
 
               {/* Author */}
               <div className="flex items-center justify-between">
@@ -131,7 +131,7 @@ export default function Resenas({ data }: Props) {
                   <p className="font-display text-[17px] text-noir leading-tight">
                     {r.nombre}
                   </p>
-                  <p className="text-warm-gray text-[12px] tracking-[0.1em] uppercase mt-1">
+                  <p className="text-moss text-[12px] tracking-[0.1em] uppercase mt-1">
                     {r.tratamiento}
                   </p>
                 </div>

@@ -71,21 +71,21 @@ export default function Tratamientos({ data }: Props) {
     : fallback;
 
   return (
-    <section id="tratamientos" className="py-28 md:py-40 bg-ivory">
+    <section id="tratamientos" className="py-28 md:py-40 bg-stone">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         {/* Section header — editorial style */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 md:mb-28">
           <div className="reveal">
-            <span className="text-brass text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
+            <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
               Servicios
             </span>
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-noir">
               Nuestros<br />
-              <em className="italic text-brass">Tratamientos</em>
+              <em className="italic text-gold">Tratamientos</em>
             </h2>
           </div>
           <div className="reveal max-w-sm">
-            <p className="text-warm-gray text-[15px] leading-relaxed">
+            <p className="text-moss text-[15px] leading-relaxed">
               Cada procedimiento es diseñado a medida, combinando arte y ciencia
               para resultados que realzan tu belleza única.
             </p>
@@ -97,7 +97,7 @@ export default function Tratamientos({ data }: Props) {
           {tratamientos.map((t) => (
             <div
               key={t.num}
-              className="reveal group cursor-pointer bg-ivory overflow-hidden border border-divider hover:border-brass/30 transition-all duration-500"
+              className="reveal group cursor-pointer bg-stone overflow-hidden border border-moss/40 hover:border-gold/30 transition-all duration-500"
             >
               {/* Image */}
               <div className="relative aspect-[3/2] overflow-hidden">
@@ -117,18 +117,18 @@ export default function Tratamientos({ data }: Props) {
 
               {/* Content */}
               <div className="p-7 md:p-8">
-                <h3 className="font-display text-[24px] md:text-[28px] text-noir mb-3 leading-tight transition-colors duration-300 group-hover:text-brass-dark">
+                <h3 className="font-display text-[24px] md:text-[28px] text-noir mb-3 leading-tight transition-colors duration-300 group-hover:text-gold-dark">
                   {t.titulo}
                 </h3>
 
-                <span className="block w-8 h-px bg-divider mb-4 transition-all duration-500 group-hover:w-12 group-hover:bg-brass" />
+                <span className="block w-8 h-px bg-moss/40 mb-4 transition-all duration-500 group-hover:w-12 group-hover:bg-gold" />
 
-                <p className="text-warm-gray text-[14px] leading-relaxed">
+                <p className="text-moss text-[14px] leading-relaxed">
                   {t.descripcion}
                 </p>
 
                 {/* Hover arrow */}
-                <div className="mt-6 flex items-center gap-2 text-brass opacity-0 translate-x-[-10px] transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
+                <div className="mt-6 flex items-center gap-2 text-gold opacity-0 translate-x-[-10px] transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
                   <span className="text-[12px] font-semibold tracking-[0.15em] uppercase">
                     Más info
                   </span>

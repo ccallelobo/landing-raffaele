@@ -39,8 +39,8 @@ export default function Hero() {
               transition: "all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s",
             }}
           >
-            <span className="block w-12 h-px bg-brass" />
-            <span className="text-brass text-[12px] font-semibold tracking-[0.35em] uppercase">
+            <span className="block w-12 h-px bg-gold" />
+            <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase">
               Medicina Estética
             </span>
           </div>
@@ -55,7 +55,7 @@ export default function Hero() {
             }}
           >
             Dr.{" "}
-            <em className="not-italic text-brass">Raffaele</em>
+            <em className="not-italic text-gold">Raffaele</em>
           </h1>
 
           {/* Subtitle */}
@@ -82,7 +82,7 @@ export default function Hero() {
           >
             <a
               href="#contacto"
-              className="group relative inline-flex items-center justify-center px-10 py-4 bg-brass text-white text-[13px] font-semibold tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-brass-dark"
+              className="group relative inline-flex items-center justify-center px-10 py-4 bg-gold text-white text-[13px] font-semibold tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-gold-dark"
             >
               <span className="relative z-10">Reservar Consulta</span>
             </a>

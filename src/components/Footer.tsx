@@ -64,7 +64,7 @@ export default function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-white/30 text-[14px] hover:text-brass transition-colors duration-300 w-fit"
+                  className="text-white/30 text-[14px] hover:text-gold transition-colors duration-300 w-fit"
                 >
                   {link.label}
                 </a>
@@ -83,17 +83,17 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-10 h-10 border border-white/[0.08] flex items-center justify-center text-white/30 hover:text-brass hover:border-brass/40 transition-all duration-300"
+                  className="w-10 h-10 border border-white/[0.08] flex items-center justify-center text-white/30 hover:text-gold hover:border-gold/40 transition-all duration-300"
                 >
                   {s.icon}
                 </a>
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <a href="#" className="text-white/20 text-[13px] hover:text-brass transition-colors">
+              <a href="#" className="text-white/20 text-[13px] hover:text-gold transition-colors">
                 Política de Privacidad
               </a>
-              <a href="#" className="text-white/20 text-[13px] hover:text-brass transition-colors">
+              <a href="#" className="text-white/20 text-[13px] hover:text-gold transition-colors">
                 Aviso Legal
               </a>
             </div>
