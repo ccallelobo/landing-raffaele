@@ -8,6 +8,9 @@ import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import { getTratamientos, getResultados, getResenas } from "@/lib/sanity";
 
+// Revalidar datos de Sanity cada 60 segundos
+export const revalidate = 60;
+
 export default async function Home() {
   const [tratamientos, resultados, resenas] = await Promise.all([
     getTratamientos(),
