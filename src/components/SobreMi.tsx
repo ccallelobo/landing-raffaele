@@ -1,6 +1,7 @@
 "use client";
 
 import { useReveal } from "@/hooks/useReveal";
+import Image from "next/image";
 
 const stats = [
   { value: "15+", label: "Años de experiencia" },
@@ -26,12 +27,14 @@ export default function SobreMi() {
           <div className="lg:col-span-5 reveal-left">
             <div className="relative">
               {/* Main image container */}
-              <div className="aspect-[3/4] bg-noir/5 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-moss via-gold/10 to-moss flex items-end justify-center">
-                  <span className="font-display text-[120px] md:text-[180px] text-noir/[0.04] leading-none mb-[-20px]">
-                    R
-                  </span>
-                </div>
+              <div className="aspect-[3/4] bg-gradient-to-br from-stone via-stone to-moss/30 overflow-hidden relative">
+                <Image
+                  src="/sobre-mi-doctor.png"
+                  alt="Dr. Raffaele Del Prete"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
               </div>
 
               {/* Offset decorative frame */}

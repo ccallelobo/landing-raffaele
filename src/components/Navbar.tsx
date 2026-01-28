@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const links = [
   { href: "#tratamientos", label: "Tratamientos" },
@@ -28,19 +29,22 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex items-center justify-between h-20 md:h-24">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex items-center justify-between h-28 md:h-32">
         {/* Logo */}
         <a
           href="#inicio"
-          className="group flex items-center gap-3"
+          className="group flex items-center"
         >
-          <span
-            className={`font-display text-[22px] md:text-[26px] tracking-[0.02em] transition-colors duration-500 ${
-              scrolled ? "text-noir" : "text-white"
+          <Image
+            src="/firma-logo.png"
+            alt="Dr. Raffaele Del Prete"
+            width={220}
+            height={70}
+            className={`h-20 md:h-24 w-auto transition-all duration-500 ${
+              scrolled ? "" : "brightness-0 invert"
             }`}
-          >
-            Raffaele
-          </span>
+            priority
+          />
         </a>
 
         {/* Desktop links */}
