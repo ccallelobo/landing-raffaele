@@ -29,7 +29,7 @@ export default function SobreMi() {
               {/* Main image container */}
               <div className="aspect-[3/4] bg-gradient-to-br from-stone via-stone to-moss/30 overflow-hidden relative">
                 <Image
-                  src="/sobre-mi-doctor.png"
+                  src="/sobre-mi-doctor.webp"
                   alt="Dr. Raffaele Del Prete"
                   fill
                   className="object-contain object-bottom"

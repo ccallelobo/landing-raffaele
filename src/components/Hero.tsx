@@ -40,7 +40,7 @@ export default function Hero() {
           }}
         >
           <Image
-            src="/hero-doctor.png"
+            src="/hero-doctor.webp"
             alt="Dr. Raffaele Del Prete"
             width={500}
             height={650}
@@ -141,7 +141,7 @@ export default function Hero() {
             {/* Image container */}
             <div className="relative w-full max-w-[500px] lg:max-w-[550px]">
               <Image
-                src="/hero-doctor.png"
+                src="/hero-doctor.webp"
                 alt="Dr. Raffaele Del Prete"
                 width={550}
                 height={700}
