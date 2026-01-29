@@ -149,7 +149,7 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center justify-center h-full gap-8 pt-24">
           {links.map((link, i) => (
             <a
               key={link.href}
