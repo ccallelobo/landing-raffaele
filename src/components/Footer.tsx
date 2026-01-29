@@ -103,12 +103,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="py-6 border-t border-white/[0.06] flex justify-center items-center">
           <p className="text-white/15 text-[12px] tracking-wide">
             &copy; {new Date().getFullYear()} Dr. Raffaele. Todos los derechos reservados.
-          </p>
-          <p className="text-white/10 text-[11px] tracking-wide">
-            Dos Hermanas, Sevilla
           </p>
         </div>
       </div>

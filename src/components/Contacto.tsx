@@ -57,61 +57,6 @@ export default function Contacto() {
               </p>
             </div>
 
-            <div className="space-y-10 reveal">
-              {/* Location */}
-              <div className="flex items-start gap-5 group">
-                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-gold/40 transition-colors duration-300">
-                  <svg className="w-[18px] h-[18px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-white text-[14px] font-medium mb-1 tracking-wide">
-                    Ubicación
-                  </h4>
-                  <p className="text-white/35 text-[14px]">
-                    Calle Cristóbal Chanfreut Escribano 8-9<br />
-                    Dos Hermanas - 41704 (Sevilla)
-                  </p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-start gap-5 group">
-                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-gold/40 transition-colors duration-300">
-                  <svg className="w-[18px] h-[18px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-white text-[14px] font-medium mb-1 tracking-wide">
-                    Teléfono
-                  </h4>
-                  <p className="text-white/35 text-[14px]">+34 604 89 46 97</p>
-                </div>
-              </div>
-
-              {/* Hours */}
-              <div className="flex items-start gap-5 group">
-                <div className="w-11 h-11 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:border-gold/40 transition-colors duration-300">
-                  <svg className="w-[18px] h-[18px] text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-white text-[14px] font-medium mb-1 tracking-wide">
-                    Horario
-                  </h4>
-                  <p className="text-white/35 text-[14px]">
-                    Lun – Vie: 9:00 – 20:00
-                  </p>
-                  <p className="text-white/35 text-[14px]">
-                    Sáb: 10:00 – 14:00
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

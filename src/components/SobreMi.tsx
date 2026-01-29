@@ -4,13 +4,18 @@
 import { useReveal } from "@/hooks/useReveal";
 import Image from "next/image";
 
+interface SobreMiProps {
+  sobreMiImage?: string;
+  imageScale?: string;
+}
+
 const stats = [
   { value: "15+", label: "Años de experiencia" },
   { value: "3.000+", label: "Pacientes satisfechos" },
   { value: "20+", label: "Certificaciones" },
 ];
 
-export default function SobreMi() {
+export default function SobreMi({ sobreMiImage = "/sobre-mi-doctor-v2.webp", imageScale = "scale-75" }: SobreMiProps) {
   useReveal();
 
   return (
@@ -33,10 +38,10 @@ export default function SobreMi() {
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-l from-moss/40 via-transparent to-transparent" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-moss/20 via-transparent to-transparent" />
                 <Image
-                  src="/sobre-mi-doctor-v2.webp"
+                  src={sobreMiImage}
                   alt="Dr. Raffaele Del Prete"
                   fill
-                  className="object-contain object-bottom relative z-10 scale-75 translate-y-[12%]"
+                  className={`object-contain object-bottom relative z-10 ${imageScale} translate-y-[12%]`}
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>

@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function Hero() {
+interface HeroProps {
+  heroImage?: string;
+}
+
+export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -40,7 +44,7 @@ export default function Hero() {
           }}
         >
           <Image
-            src="/hero-doctor.webp"
+            src={heroImage}
             alt="Dr. Raffaele Del Prete"
             width={500}
             height={650}
@@ -131,7 +135,7 @@ export default function Hero() {
             {/* Image container */}
             <div className="relative w-full max-w-[500px] lg:max-w-[550px]">
               <Image
-                src="/hero-doctor.webp"
+                src={heroImage}
                 alt="Dr. Raffaele Del Prete"
                 width={550}
                 height={700}
