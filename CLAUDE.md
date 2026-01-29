@@ -31,15 +31,19 @@ src/
 │   ├── privacidad/       # Política de Privacidad (RGPD)
 │   ├── aviso-legal/      # Aviso Legal (LSSI-CE)
 │   ├── cookies/          # Política de Cookies
-│   └── studio/           # Sanity Studio embebido
+│   ├── studio/           # Sanity Studio embebido
+│   ├── version-1/        # Versión 1 para revisión cliente
+│   ├── version-2/        # Versión 2 para revisión cliente
+│   ├── version-3/        # Versión 3 para revisión cliente
+│   └── version-4/        # Versión 4 para revisión cliente
 ├── components/
 │   ├── Navbar.tsx        # Nav fijo con firma como logo + menú móvil adaptativo
-│   ├── Hero.tsx          # Split-screen desktop, bg mobile (simplificado)
+│   ├── Hero.tsx          # Split-screen desktop, bg mobile (acepta prop heroImage)
 │   ├── Tratamientos.tsx  # Grid de servicios desde Sanity
-│   ├── SobreMi.tsx       # Sección sobre el doctor con imagen integrada
+│   ├── SobreMi.tsx       # Sección sobre el doctor (acepta props sobreMiImage, imageScale)
 │   ├── Resultados.tsx    # Galería antes/después
 │   ├── Resenas.tsx       # Reseñas de pacientes
-│   ├── Contacto.tsx      # Formulario + info de contacto
+│   ├── Contacto.tsx      # Formulario de contacto (sin info de ubicación/teléfono/horario)
 │   ├── Footer.tsx        # Footer con firma, redes sociales y links legales
 │   └── CookieBanner.tsx  # Banner de consentimiento de cookies (RGPD)
 ├── lib/
@@ -49,13 +53,24 @@ src/
 ```
 
 ## Imágenes
-- Formato: WebP (calidad 90%)
+- Formato: WebP (calidad 90%) con fondo transparente
 - Ubicación: `/public/`
 - Logo firma: `firma-logo.png` (39KB)
-- Hero doctor: `hero-doctor.webp` (88KB)
-- Sobre mí: `sobre-mi-doctor-v2.webp` (58KB) - fondo transparente
 - Logo blanco (menú móvil): `logo-blanco.webp` (33KB)
 - Logo negro (menú móvil): `logo-negro.webp` (33KB)
+
+### Imágenes Hero (fondo transparente)
+- `hero-doctor.webp` (160KB) - versión 1 (original)
+- `hero-doctor-v2.webp` (136KB) - versión 2
+- `hero-doctor-v3.webp` (160KB) - versión 3
+- `hero-doctor-v4.webp` (56KB) - versión 4
+
+### Imágenes Sobre Mí (fondo transparente)
+- `sobre-mi-doctor-v2.webp` (64KB) - versión 1 (original)
+- `sobre-mi-doctor-v3.webp` (64KB) - versión 2
+- `sobre-mi-doctor-v4.webp` (60KB) - versión 3 (imagen vertical, usa scale-200)
+- `sobre-mi-doctor-v5.webp` (156KB) - versión 4
+- `sobre-mi-doctor-v6.webp` (372KB) - extra disponible
 
 ## Sanity Schemas
 - `tratamiento`: servicios médicos
@@ -94,6 +109,11 @@ src/
 - Firma del logo (h-24 móvil, h-[7.5rem] desktop) en blanco (brightness-0 invert)
 - Links de Instagram y WhatsApp abren en nueva pestaña (target="_blank")
 - Links a páginas legales: Privacidad, Aviso Legal, Cookies
+- **Nota**: Ubicación eliminada del footer (solo copyright)
+
+### Contacto
+- Solo formulario de contacto (nombre, email, teléfono, tratamiento, mensaje)
+- **Nota**: Teléfono, dirección y horario eliminados de la sección de info
 
 ### Banner de Cookies (RGPD)
 - Aparece 1 segundo después de cargar si no hay consentimiento
@@ -108,6 +128,23 @@ src/
 
 **Nota**: En Aviso Legal hay un placeholder `[Número de colegiación]` pendiente de rellenar.
 
+## Páginas de Versión (para revisión del cliente)
+| Ruta | Hero | Sobre Mí |
+|------|------|----------|
+| `/version-1` | hero-doctor.webp | sobre-mi-doctor-v2.webp |
+| `/version-2` | hero-doctor-v2.webp | sobre-mi-doctor-v3.webp |
+| `/version-3` | hero-doctor-v3.webp | sobre-mi-doctor-v4.webp (scale-200) |
+| `/version-4` | hero-doctor-v4.webp | sobre-mi-doctor-v5.webp |
+
 ## Herramientas de Conversión de Imágenes
 - `cwebp -q 90 input.png -o output.webp` - Convertir a WebP
 - `magick input.png -fuzz 10% -transparent white output.png` - Quitar fondo blanco
+- `pip3 install "rembg[cli]"` - Instalar rembg para quitar fondos de fotos
+- Quitar fondo con rembg (Python):
+```python
+from rembg import remove
+from PIL import Image
+inp = Image.open("input.webp")
+out = remove(inp)
+out.save("output.png")
+```
