@@ -22,6 +22,11 @@
    ======================================== */
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+html, body {
+  overscroll-behavior-y: none;
 }
 
 body {
