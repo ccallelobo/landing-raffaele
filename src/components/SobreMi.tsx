@@ -28,7 +28,7 @@ export default function SobreMi() {
           <div className="lg:col-span-5 reveal-left">
             <div className="relative">
               {/* Main image container */}
-              <div className="aspect-[4/5] lg:aspect-[3/4] bg-gradient-to-b from-stone via-stone to-moss overflow-hidden relative pt-12 lg:pt-0">
+              <div className="aspect-[4/5] lg:aspect-[3/4] bg-gradient-to-b from-stone via-stone to-moss overflow-hidden relative">
                 {/* Side gradients for smooth edge blending */}
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-l from-moss/40 via-transparent to-transparent" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-moss/20 via-transparent to-transparent" />
@@ -36,7 +36,7 @@ export default function SobreMi() {
                   src="/sobre-mi-doctor-v2.webp"
                   alt="Dr. Raffaele Del Prete"
                   fill
-                  className="object-contain object-bottom relative z-10 !top-8"
+                  className="object-contain object-bottom relative z-10 scale-75 translate-y-[12%]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
