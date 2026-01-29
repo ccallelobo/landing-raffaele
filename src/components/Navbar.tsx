@@ -42,7 +42,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-stone/95 backdrop-blur-xl shadow-[0_1px_0_0_var(--color-moss)]"
+            ? "bg-stone backdrop-blur-xl shadow-[0_1px_0_0_var(--color-moss)]"
             : "bg-transparent"
         }`}
       >
@@ -149,7 +149,7 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center h-full gap-8 pt-24">
+        <div className="flex flex-col items-center justify-center h-full gap-8 pt-40">
           {links.map((link, i) => (
             <a
               key={link.href}
