@@ -57,10 +57,10 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center lg:min-h-screen py-12 lg:py-24">
 
           {/* Left: Text content */}
-          <div className="pb-12 lg:pb-0">
-            {/* Decorative accent */}
+          <div className="pb-8 lg:pb-0">
+            {/* Decorative accent - hidden on mobile */}
             <div
-              className="flex items-center gap-4 mb-6 lg:mb-8"
+              className="hidden lg:flex items-center gap-4 mb-8"
               style={{
                 opacity: loaded ? 1 : 0,
                 transform: loaded ? "translateY(0)" : "translateY(20px)",
@@ -73,9 +73,9 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Main heading */}
+            {/* Main heading - smaller on mobile */}
             <h1
-              className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[1] text-white mb-5 lg:mb-6 tracking-[-0.02em]"
+              className="font-display text-[2rem] lg:text-[clamp(2.5rem,6vw,5rem)] leading-[1.1] text-white mb-4 lg:mb-6 tracking-[-0.02em]"
               style={{
                 opacity: loaded ? 1 : 0,
                 transform: loaded ? "translateY(0)" : "translateY(40px)",
@@ -88,7 +88,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p
-              className="text-stone/80 lg:text-moss text-base lg:text-xl leading-relaxed max-w-md mb-8 lg:mb-10 font-light"
+              className="text-stone/70 lg:text-moss text-sm lg:text-xl leading-relaxed max-w-md mb-6 lg:mb-10 font-light"
               style={{
                 opacity: loaded ? 1 : 0,
                 transform: loaded ? "translateY(0)" : "translateY(30px)",
@@ -99,9 +99,8 @@ export default function Hero() {
               artístico personalizado.
             </p>
 
-            {/* CTA buttons */}
+            {/* CTA button */}
             <div
-              className="flex flex-col sm:flex-row gap-4"
               style={{
                 opacity: loaded ? 1 : 0,
                 transform: loaded ? "translateY(0)" : "translateY(30px)",
@@ -110,18 +109,9 @@ export default function Hero() {
             >
               <a
                 href="#contacto"
-                className="group relative inline-flex items-center justify-center px-10 py-4 bg-gold text-white text-[13px] font-semibold tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-gold-dark"
+                className="group relative inline-flex items-center justify-center px-8 py-3 lg:px-10 lg:py-4 bg-gold text-white text-[12px] lg:text-[13px] font-semibold tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-gold-dark"
               >
                 <span className="relative z-10">Reservar Consulta</span>
-              </a>
-              <a
-                href="#tratamientos"
-                className="inline-flex items-center justify-center px-10 py-4 text-stone/70 text-[13px] font-medium tracking-[0.2em] uppercase border border-stone/20 hover:border-gold/50 hover:text-gold transition-all duration-500"
-              >
-                Explorar
-                <svg className="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </a>
             </div>
           </div>

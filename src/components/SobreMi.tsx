@@ -27,12 +27,15 @@ export default function SobreMi() {
           <div className="lg:col-span-5 reveal-left">
             <div className="relative">
               {/* Main image container */}
-              <div className="aspect-[3/4] bg-gradient-to-br from-stone via-stone to-moss/30 overflow-hidden relative">
+              <div className="aspect-[4/5] lg:aspect-[3/4] bg-gradient-to-b from-stone via-stone to-moss overflow-hidden relative pt-12 lg:pt-0">
+                {/* Side gradients for smooth edge blending */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-l from-moss/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-moss/20 via-transparent to-transparent" />
                 <Image
                   src="/sobre-mi-doctor.webp"
                   alt="Dr. Raffaele Del Prete"
                   fill
-                  className="object-contain object-bottom"
+                  className="object-contain object-bottom relative z-10 !top-12 lg:!top-0"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
@@ -40,8 +43,8 @@ export default function SobreMi() {
               {/* Offset decorative frame */}
               <div className="absolute -bottom-6 -right-6 w-full h-full border border-gold/20 -z-10" />
 
-              {/* Floating stat card */}
-              <div className="absolute -right-4 md:-right-8 bottom-12 bg-noir text-white p-6 md:p-8 shadow-2xl">
+              {/* Floating stat card - hidden on mobile (info shown in stats below) */}
+              <div className="hidden md:block absolute -right-8 bottom-12 bg-noir text-white p-8 shadow-2xl">
                 <span className="font-display text-4xl md:text-5xl text-gold block leading-none">
                   15+
                 </span>
