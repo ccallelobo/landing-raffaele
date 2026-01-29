@@ -36,7 +36,7 @@ export default function SobreMi() {
                   src="/sobre-mi-doctor-v2.webp"
                   alt="Dr. Raffaele Del Prete"
                   fill
-                  className="object-contain object-bottom relative z-10 !top-12 lg:!top-0"
+                  className="object-contain object-bottom relative z-10 !top-8"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
