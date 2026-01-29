@@ -33,7 +33,7 @@ export default function AvisoLegalPage() {
             <p>
               <strong>Titular:</strong> Dr. Raffaele Del Prete<br />
               <strong>Actividad:</strong> Medicina Estética y Cirugía Plástica<br />
-              <strong>Domicilio:</strong> Madrid, España<br />
+              <strong>Domicilio:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br />
               <strong>Teléfono:</strong> +34 604 89 46 97<br />
               <strong>Email:</strong> contacto@drraffaele.com<br />
               <strong>Número de Colegiado:</strong> [Número de colegiación]
@@ -120,7 +120,7 @@ export default function AvisoLegalPage() {
             <h2 className="font-display text-2xl text-noir mb-4">9. Legislación Aplicable y Jurisdicción</h2>
             <p>
               Las presentes condiciones se rigen por la legislación española. Para cualquier controversia que pudiera
-              derivarse del acceso o uso de este sitio web, las partes se someten a los Juzgados y Tribunales de Madrid,
+              derivarse del acceso o uso de este sitio web, las partes se someten a los Juzgados y Tribunales de Sevilla,
               con renuncia expresa a cualquier otro fuero que pudiera corresponderles.
             </p>
           </section>

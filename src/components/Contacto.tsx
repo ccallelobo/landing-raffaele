@@ -71,7 +71,8 @@ export default function Contacto() {
                     Ubicación
                   </h4>
                   <p className="text-white/35 text-[14px]">
-                    Calle Serrano 50, 28001 Madrid
+                    Calle Cristóbal Chanfreut Escribano 8-9<br />
+                    Dos Hermanas - 41704 (Sevilla)
                   </p>
                 </div>
               </div>
@@ -87,7 +88,7 @@ export default function Contacto() {
                   <h4 className="text-white text-[14px] font-medium mb-1 tracking-wide">
                     Teléfono
                   </h4>
-                  <p className="text-white/35 text-[14px]">+34 912 345 678</p>
+                  <p className="text-white/35 text-[14px]">+34 604 89 46 97</p>
                 </div>
               </div>
 

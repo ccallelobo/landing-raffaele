@@ -31,7 +31,7 @@ export default function PrivacidadPage() {
             <h2 className="font-display text-2xl text-noir mb-4">1. Responsable del Tratamiento</h2>
             <p>
               <strong>Identidad:</strong> Dr. Raffaele Del Prete<br />
-              <strong>Dirección:</strong> Madrid, España<br />
+              <strong>Dirección:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br />
               <strong>Teléfono:</strong> +34 604 89 46 97<br />
               <strong>Email:</strong> contacto@drraffaele.com
             </p>

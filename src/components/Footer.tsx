@@ -80,6 +80,8 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 border border-white/[0.08] flex items-center justify-center text-white/30 hover:text-gold hover:border-gold/40 transition-all duration-300"
                 >
                   {s.icon}
@@ -106,7 +108,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Dr. Raffaele. Todos los derechos reservados.
           </p>
           <p className="text-white/10 text-[11px] tracking-wide">
-            Madrid, España
+            Dos Hermanas, Sevilla
           </p>
         </div>
       </div>

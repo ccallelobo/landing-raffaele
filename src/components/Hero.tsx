@@ -159,7 +159,7 @@ export default function Hero() {
           className="text-white/10 text-[11px] tracking-[0.5em] uppercase"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          Cirugía Plástica & Estética — Madrid
+          Cirugía Plástica & Estética — Sevilla
         </span>
       </div>
 
