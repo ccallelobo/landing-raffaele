@@ -43,7 +43,7 @@ export default function Footer() {
               alt="Dr. Raffaele Del Prete"
               width={200}
               height={64}
-              className="h-16 md:h-20 w-auto brightness-0 invert mb-4"
+              className="h-24 md:h-[7.5rem] w-auto brightness-0 invert mb-4"
             />
             <p className="text-white/30 text-[14px] leading-relaxed max-w-xs">
               Medicina estética y cirugía plástica con los más altos estándares
