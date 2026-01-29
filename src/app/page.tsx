@@ -19,15 +19,17 @@ export default async function Home() {
   ]);
 
   return (
-    <main>
+    <>
       <Navbar />
-      <Hero />
-      <Tratamientos data={tratamientos} />
-      <SobreMi />
-      <Resultados data={resultados} />
-      <Resenas data={resenas} />
-      <Contacto />
-      <Footer />
-    </main>
+      <main className="relative" style={{ clipPath: 'inset(0)', contain: 'paint' }}>
+        <Hero />
+        <Tratamientos data={tratamientos} />
+        <SobreMi />
+        <Resultados data={resultados} />
+        <Resenas data={resenas} />
+        <Contacto />
+        <Footer />
+      </main>
+    </>
   );
 }

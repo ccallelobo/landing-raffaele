@@ -39,14 +39,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Shield to cover iOS safe area / status bar during scroll */}
-      <div
-        className={`fixed -top-[100px] left-0 right-0 h-[100px] z-[100] transition-colors duration-500 ${
-          scrolled ? "bg-stone" : "bg-transparent"
-        }`}
-        style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
-      />
-
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
