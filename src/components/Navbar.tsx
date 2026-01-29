@@ -42,7 +42,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-stone backdrop-blur-xl shadow-[0_1px_0_0_var(--color-moss)]"
+            ? "bg-stone backdrop-blur-xl shadow-[0_1px_0_0_var(--color-moss)] before:absolute before:bottom-full before:left-0 before:right-0 before:h-24 before:bg-stone"
             : "bg-transparent"
         }`}
       >
