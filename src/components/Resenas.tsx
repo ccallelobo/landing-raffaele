@@ -2,57 +2,7 @@
 
 import { useReveal } from "@/hooks/useReveal";
 import type { SanityResena } from "@/lib/sanity";
-
-const fallback: SanityResena[] = [
-  {
-    _id: "1",
-    nombre: "María G.",
-    tratamiento: "Rinoplastia",
-    texto:
-      "El Dr. Raffaele entendió exactamente lo que buscaba. El resultado es completamente natural, nadie nota que me operé. Su atención al detalle es excepcional.",
-    estrellas: 5,
-  },
-  {
-    _id: "2",
-    nombre: "Laura P.",
-    tratamiento: "Ácido Hialurónico",
-    texto:
-      "Llevaba años buscando un profesional que lograra resultados sutiles. Después del tratamiento me veo rejuvenecida pero siendo yo misma. Totalmente recomendado.",
-    estrellas: 5,
-  },
-  {
-    _id: "3",
-    nombre: "Carmen R.",
-    tratamiento: "Lifting Facial",
-    texto:
-      "Una experiencia impecable de principio a fin. El equipo me hizo sentir segura en todo momento. Los resultados superaron mis expectativas.",
-    estrellas: 5,
-  },
-  {
-    _id: "4",
-    nombre: "Ana S.",
-    tratamiento: "Blefaroplastia",
-    texto:
-      "Mi mirada se ve completamente renovada. La recuperación fue más rápida de lo esperado y el seguimiento postoperatorio fue excelente.",
-    estrellas: 5,
-  },
-  {
-    _id: "5",
-    nombre: "Isabel M.",
-    tratamiento: "Toxina Botulínica",
-    texto:
-      "Muy profesional y con un ojo artístico único. Los resultados son naturales y armoniosos. Sin duda el mejor especialista que he visitado.",
-    estrellas: 5,
-  },
-  {
-    _id: "6",
-    nombre: "Patricia L.",
-    tratamiento: "Liposucción",
-    texto:
-      "Después de mucho investigar, elegí al Dr. Raffaele y fue la mejor decisión. Resultados naturales, recuperación excelente y un trato humano extraordinario.",
-    estrellas: 5,
-  },
-];
+import { useTranslations } from "next-intl";
 
 function Stars({ count }: { count: number }) {
   return (
@@ -77,6 +27,52 @@ interface Props {
 
 export default function Resenas({ data }: Props) {
   useReveal();
+  const t = useTranslations("reviews");
+
+  const fallback: SanityResena[] = [
+    {
+      _id: "1",
+      nombre: t("fallback.review1.name"),
+      tratamiento: t("fallback.review1.treatment"),
+      texto: t("fallback.review1.text"),
+      estrellas: 5,
+    },
+    {
+      _id: "2",
+      nombre: t("fallback.review2.name"),
+      tratamiento: t("fallback.review2.treatment"),
+      texto: t("fallback.review2.text"),
+      estrellas: 5,
+    },
+    {
+      _id: "3",
+      nombre: t("fallback.review3.name"),
+      tratamiento: t("fallback.review3.treatment"),
+      texto: t("fallback.review3.text"),
+      estrellas: 5,
+    },
+    {
+      _id: "4",
+      nombre: t("fallback.review4.name"),
+      tratamiento: t("fallback.review4.treatment"),
+      texto: t("fallback.review4.text"),
+      estrellas: 5,
+    },
+    {
+      _id: "5",
+      nombre: t("fallback.review5.name"),
+      tratamiento: t("fallback.review5.treatment"),
+      texto: t("fallback.review5.text"),
+      estrellas: 5,
+    },
+    {
+      _id: "6",
+      nombre: t("fallback.review6.name"),
+      tratamiento: t("fallback.review6.treatment"),
+      texto: t("fallback.review6.text"),
+      estrellas: 5,
+    },
+  ];
 
   const resenas = data && data.length > 0 ? data : fallback;
 
@@ -87,17 +83,17 @@ export default function Resenas({ data }: Props) {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 md:mb-28">
           <div className="reveal">
             <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
-              Testimonios
+              {t("label")}
             </span>
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-noir">
-              Lo que dicen<br />
-              <em className="italic text-gold">nuestros pacientes</em>
+              {t("title")}
+              <br />
+              <em className="italic text-gold">{t("titleHighlight")}</em>
             </h2>
           </div>
           <div className="reveal max-w-sm">
             <p className="text-moss text-[15px] leading-relaxed">
-              La confianza de quienes nos eligen es nuestro mayor reconocimiento.
-              Cada testimonio refleja nuestro compromiso con la excelencia.
+              {t("description")}
             </p>
           </div>
         </div>

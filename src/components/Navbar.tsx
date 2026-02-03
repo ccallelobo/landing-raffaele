@@ -2,20 +2,23 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
-const links = [
-  { href: "#tratamientos", label: "Tratamientos" },
-  { href: "#sobre-mi", label: "Sobre Mí" },
-  { href: "#resultados", label: "Resultados" },
-  { href: "#resenas", label: "Reseñas" },
-  { href: "#contacto", label: "Contacto" },
-];
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // Capture the scrolled state when menu opens
   const [menuTheme, setMenuTheme] = useState<"dark" | "light">("dark");
+
+  const links = [
+    { href: "#tratamientos", label: t("treatments") },
+    { href: "#sobre-mi", label: t("aboutMe") },
+    { href: "#resultados", label: t("results") },
+    { href: "#resenas", label: t("reviews") },
+    { href: "#contacto", label: t("contact") },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -48,10 +51,7 @@ export default function Navbar() {
       >
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 flex items-center justify-between h-28 md:h-32">
           {/* Logo */}
-          <a
-            href="#inicio"
-            className="group flex items-center"
-          >
+          <a href="#inicio" className="group flex items-center">
             <Image
               src="/firma-logo.png"
               alt="Dr. Raffaele Del Prete"
@@ -79,15 +79,16 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <LanguageSwitcher variant={scrolled ? "light" : "dark"} />
             <a
               href="#contacto"
-              className={`ml-4 px-7 py-3 text-[12px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 ${
+              className={`ml-2 px-7 py-3 text-[12px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 ${
                 scrolled
                   ? "bg-noir text-white hover:bg-gold"
                   : "bg-white/10 text-white border border-white/20 hover:bg-white hover:text-noir"
               }`}
             >
-              Reservar
+              {t("book")}
             </a>
           </div>
 
@@ -95,28 +96,40 @@ export default function Navbar() {
           <button
             onClick={handleToggleMenu}
             className="lg:hidden relative w-8 h-8 flex items-center justify-center z-[70]"
-            aria-label="Menú"
+            aria-label={t("menu")}
           >
             <div className="relative w-6 h-4">
               <span
                 className={`absolute left-0 w-full h-[1.5px] transition-all duration-300 ${
                   open
-                    ? isDarkMenu ? "bg-white" : "bg-noir"
-                    : scrolled ? "bg-noir" : "bg-white"
+                    ? isDarkMenu
+                      ? "bg-white"
+                      : "bg-noir"
+                    : scrolled
+                    ? "bg-noir"
+                    : "bg-white"
                 } ${open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"}`}
               />
               <span
                 className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1.5px] transition-all duration-300 ${
                   open
-                    ? isDarkMenu ? "bg-white" : "bg-noir"
-                    : scrolled ? "bg-noir" : "bg-white"
+                    ? isDarkMenu
+                      ? "bg-white"
+                      : "bg-noir"
+                    : scrolled
+                    ? "bg-noir"
+                    : "bg-white"
                 } ${open ? "opacity-0 scale-x-0" : "opacity-100"}`}
               />
               <span
                 className={`absolute left-0 w-full h-[1.5px] transition-all duration-300 ${
                   open
-                    ? isDarkMenu ? "bg-white" : "bg-noir"
-                    : scrolled ? "bg-noir" : "bg-white"
+                    ? isDarkMenu
+                      ? "bg-white"
+                      : "bg-noir"
+                    : scrolled
+                    ? "bg-noir"
+                    : "bg-white"
                 } ${open ? "top-1/2 -translate-y-1/2 -rotate-45" : "bottom-0"}`}
               />
             </div>
@@ -169,19 +182,30 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#contacto"
-            onClick={handleCloseMenu}
-            className={`mt-4 px-10 py-4 bg-gold text-white text-[13px] font-semibold tracking-[0.2em] uppercase hover:bg-gold-dark transition-all duration-500 ${
-              open
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-5"
+
+          {/* Language Switcher in mobile menu */}
+          <div
+            className={`transition-all duration-500 ${
+              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
             style={{
               transitionDelay: open ? `${links.length * 80}ms` : "0ms",
             }}
           >
-            Reservar Cita
+            <LanguageSwitcher variant={isDarkMenu ? "dark" : "light"} />
+          </div>
+
+          <a
+            href="#contacto"
+            onClick={handleCloseMenu}
+            className={`mt-4 px-10 py-4 bg-gold text-white text-[13px] font-semibold tracking-[0.2em] uppercase hover:bg-gold-dark transition-all duration-500 ${
+              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
+            style={{
+              transitionDelay: open ? `${(links.length + 1) * 80}ms` : "0ms",
+            }}
+          >
+            {t("bookAppointment")}
           </a>
         </div>
 
@@ -189,15 +213,22 @@ export default function Navbar() {
         <button
           onClick={handleCloseMenu}
           className="absolute top-7 right-8 w-8 h-8 flex items-center justify-center"
-          aria-label="Cerrar"
+          aria-label={t("close")}
         >
           <svg
-            className={`w-6 h-6 ${isDarkMenu ? "text-white/60" : "text-noir/60"}`}
+            className={`w-6 h-6 ${
+              isDarkMenu ? "text-white/60" : "text-noir/60"
+            }`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>

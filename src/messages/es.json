@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "title": "Dr. Raffaele | Medicina Estética y Cirugía Plástica",
+    "description": "Clínica de medicina estética y cirugía plástica del Dr. Raffaele. Tratamientos faciales, corporales y procedimientos quirúrgicos con los más altos estándares de calidad."
+  },
+  "nav": {
+    "treatments": "Tratamientos",
+    "aboutMe": "Sobre Mí",
+    "results": "Resultados",
+    "reviews": "Reseñas",
+    "contact": "Contacto",
+    "book": "Reservar",
+    "bookAppointment": "Reservar Cita",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "hero": {
+    "label": "Medicina Estética",
+    "title": "Dr. Raffaele",
+    "titleHighlight": "Del Prete",
+    "subtitle": "Realzamos tu belleza natural con técnicas de vanguardia y un enfoque artístico personalizado.",
+    "cta": "Reservar Consulta",
+    "sideText": "Cirugía Plástica & Estética — Sevilla",
+    "scroll": "Scroll"
+  },
+  "treatments": {
+    "label": "Servicios",
+    "title": "Nuestros",
+    "titleHighlight": "Tratamientos",
+    "description": "Cada procedimiento es diseñado a medida, combinando arte y ciencia para resultados que realzan tu belleza única.",
+    "moreInfo": "Más info",
+    "fallback": {
+      "rinoplastia": {
+        "title": "Rinoplastia",
+        "description": "Remodelación nasal precisa que respeta tus rasgos naturales, logrando armonía facial con técnicas mínimamente invasivas."
+      },
+      "acidoHialuronico": {
+        "title": "Ácido Hialurónico",
+        "description": "Restauración de volumen y definición facial con rellenos dérmicos de última generación. Resultados sutiles e inmediatos."
+      },
+      "toxinaBotulinca": {
+        "title": "Toxina Botulínica",
+        "description": "Suavizado de líneas de expresión para un rostro descansado y rejuvenecido, preservando la naturalidad del gesto."
+      },
+      "liftingFacial": {
+        "title": "Lifting Facial",
+        "description": "Rejuvenecimiento integral con técnicas quirúrgicas avanzadas. Resultados naturales que devuelven firmeza y definición."
+      },
+      "blefaroplastia": {
+        "title": "Blefaroplastia",
+        "description": "Cirugía de párpados que abre la mirada y elimina signos de fatiga. Recuperación rápida, transformación duradera."
+      },
+      "liposuccion": {
+        "title": "Liposucción",
+        "description": "Escultura corporal de precisión para eliminar depósitos de grasa resistentes y definir tu silueta natural."
+      }
+    }
+  },
+  "aboutMe": {
+    "label": "Sobre el Doctor",
+    "title": "Una filosofía de",
+    "titleHighlight": "belleza natural",
+    "quote": "Mi objetivo es que cada paciente se vea y se sienta como la mejor versión de sí mismo.",
+    "paragraph1": "Con más de 15 años dedicados a la medicina estética y la cirugía plástica, el Dr. Raffaele combina técnicas quirúrgicas de vanguardia con un profundo sentido artístico de la armonía facial y corporal.",
+    "paragraph2": "Formado en las instituciones médicas más prestigiosas de Europa, su enfoque se centra en resultados que realzan la belleza única de cada persona — naturales, equilibrados y armoniosos.",
+    "paragraph3": "Miembro de la Sociedad Internacional de Cirugía Plástica Estética (ISAPS) y la Sociedad Española de Cirugía Plástica, Reparadora y Estética (SECPRE).",
+    "stats": {
+      "years": "15+",
+      "yearsLabel": "Años de experiencia",
+      "yearsLabelShort": "Años de\nexperiencia",
+      "patients": "3.000+",
+      "patientsLabel": "Pacientes satisfechos",
+      "certifications": "20+",
+      "certificationsLabel": "Certificaciones"
+    }
+  },
+  "results": {
+    "label": "Antes & Después",
+    "title": "Resultados que",
+    "titleHighlight": "hablan por sí solos",
+    "description": "Desliza la barra para comparar el antes y el después de cada procedimiento.",
+    "slide": "Deslizar",
+    "before": "Antes",
+    "after": "Después",
+    "fallback": {
+      "rinoplastia": {
+        "treatment": "Rinoplastia",
+        "description": "Remodelación nasal con enfoque natural"
+      },
+      "acidoHialuronico": {
+        "treatment": "Ácido Hialurónico",
+        "description": "Restauración de volumen facial"
+      },
+      "liftingFacial": {
+        "treatment": "Lifting Facial",
+        "description": "Rejuvenecimiento integral del rostro"
+      },
+      "blefaroplastia": {
+        "treatment": "Blefaroplastia",
+        "description": "Rejuvenecimiento de la mirada"
+      }
+    }
+  },
+  "reviews": {
+    "label": "Testimonios",
+    "title": "Lo que dicen",
+    "titleHighlight": "nuestros pacientes",
+    "description": "La confianza de quienes nos eligen es nuestro mayor reconocimiento. Cada testimonio refleja nuestro compromiso con la excelencia.",
+    "fallback": {
+      "review1": {
+        "name": "María G.",
+        "treatment": "Rinoplastia",
+        "text": "El Dr. Raffaele entendió exactamente lo que buscaba. El resultado es completamente natural, nadie nota que me operé. Su atención al detalle es excepcional."
+      },
+      "review2": {
+        "name": "Laura P.",
+        "treatment": "Ácido Hialurónico",
+        "text": "Llevaba años buscando un profesional que lograra resultados sutiles. Después del tratamiento me veo rejuvenecida pero siendo yo misma. Totalmente recomendado."
+      },
+      "review3": {
+        "name": "Carmen R.",
+        "treatment": "Lifting Facial",
+        "text": "Una experiencia impecable de principio a fin. El equipo me hizo sentir segura en todo momento. Los resultados superaron mis expectativas."
+      },
+      "review4": {
+        "name": "Ana S.",
+        "treatment": "Blefaroplastia",
+        "text": "Mi mirada se ve completamente renovada. La recuperación fue más rápida de lo esperado y el seguimiento postoperatorio fue excelente."
+      },
+      "review5": {
+        "name": "Isabel M.",
+        "treatment": "Toxina Botulínica",
+        "text": "Muy profesional y con un ojo artístico único. Los resultados son naturales y armoniosos. Sin duda el mejor especialista que he visitado."
+      },
+      "review6": {
+        "name": "Patricia L.",
+        "treatment": "Liposucción",
+        "text": "Después de mucho investigar, elegí al Dr. Raffaele y fue la mejor decisión. Resultados naturales, recuperación excelente y un trato humano extraordinario."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Agenda tu",
+    "titleHighlight": "consulta privada",
+    "description": "La primera consulta es informativa y sin compromiso. Evaluaremos tus necesidades y diseñaremos un plan personalizado.",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "treatment": "Tratamiento de interés",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "privacy": "Sus datos serán tratados con total confidencialidad.",
+      "success": "Gracias por tu mensaje. Nos pondremos en contacto pronto."
+    },
+    "treatments": {
+      "rinoplastia": "Rinoplastia",
+      "acidoHialuronico": "Ácido Hialurónico",
+      "botox": "Toxina Botulínica",
+      "lifting": "Lifting Facial",
+      "blefaroplastia": "Blefaroplastia",
+      "liposuccion": "Liposucción",
+      "other": "Otro"
+    }
+  },
+  "footer": {
+    "description": "Medicina estética y cirugía plástica con los más altos estándares de excelencia y un enfoque artístico personalizado.",
+    "navigation": "Navegación",
+    "followUs": "Síguenos",
+    "home": "Inicio",
+    "privacy": "Política de Privacidad",
+    "legal": "Aviso Legal",
+    "cookiePolicy": "Política de Cookies",
+    "rights": "Todos los derechos reservados"
+  },
+  "cookies": {
+    "message": "Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación y analizar el uso del sitio. Puedes aceptar todas las cookies, rechazarlas o configurar tus preferencias.",
+    "moreInfo": "Más información",
+    "reject": "Rechazar",
+    "accept": "Aceptar"
+  },
+  "legal": {
+    "backToHome": "Volver al inicio",
+    "lastUpdated": "Última actualización: Enero 2025",
+    "privacy": {
+      "title": "Política de Privacidad",
+      "metaTitle": "Política de Privacidad | Dr. Raffaele Del Prete",
+      "metaDescription": "Política de privacidad y protección de datos personales de la clínica del Dr. Raffaele Del Prete.",
+      "section1": {
+        "title": "1. Responsable del Tratamiento",
+        "content": "<strong>Identidad:</strong> Dr. Raffaele Del Prete<br /><strong>Dirección:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br /><strong>Teléfono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> contacto@drraffaele.com"
+      },
+      "section2": {
+        "title": "2. Datos Personales que Recopilamos",
+        "intro": "En cumplimiento del Reglamento General de Protección de Datos (RGPD) 2016/679, le informamos que los datos personales que podemos recopilar incluyen:",
+        "items": [
+          "Datos identificativos: nombre, apellidos, DNI/NIE",
+          "Datos de contacto: dirección postal, email, teléfono",
+          "Datos de salud: historial médico, tratamientos realizados (con su consentimiento expreso)",
+          "Datos de navegación: cookies y datos técnicos de su visita"
+        ]
+      },
+      "section3": {
+        "title": "3. Finalidad del Tratamiento",
+        "intro": "Sus datos personales serán tratados con las siguientes finalidades:",
+        "items": [
+          "Gestión de citas y consultas médicas",
+          "Prestación de servicios médicos y estéticos",
+          "Comunicaciones relacionadas con su tratamiento",
+          "Envío de información comercial (solo con su consentimiento)",
+          "Cumplimiento de obligaciones legales"
+        ]
+      },
+      "section4": {
+        "title": "4. Legitimación",
+        "intro": "La base legal para el tratamiento de sus datos es:",
+        "items": [
+          "Su consentimiento expreso",
+          "La ejecución de un contrato de servicios médicos",
+          "El cumplimiento de obligaciones legales (especialmente en materia sanitaria)",
+          "El interés legítimo del responsable"
+        ]
+      },
+      "section5": {
+        "title": "5. Conservación de los Datos",
+        "content": "Los datos personales se conservarán durante el tiempo necesario para cumplir con la finalidad para la que se recabaron. Los datos de salud se conservarán según la legislación sanitaria vigente (mínimo 5 años desde la última asistencia). Los datos de facturación se conservarán durante el plazo legal establecido."
+      },
+      "section6": {
+        "title": "6. Destinatarios",
+        "content": "Sus datos no serán cedidos a terceros salvo obligación legal. Podrán tener acceso a sus datos los encargados del tratamiento necesarios para la prestación del servicio (laboratorios, centros médicos colaboradores) siempre bajo las debidas garantías de confidencialidad."
+      },
+      "section7": {
+        "title": "7. Derechos del Interesado",
+        "intro": "Usted tiene derecho a:",
+        "items": [
+          "<strong>Acceso:</strong> conocer qué datos personales tenemos sobre usted",
+          "<strong>Rectificación:</strong> modificar datos inexactos o incompletos",
+          "<strong>Supresión:</strong> solicitar la eliminación de sus datos",
+          "<strong>Limitación:</strong> solicitar la limitación del tratamiento",
+          "<strong>Portabilidad:</strong> recibir sus datos en formato estructurado",
+          "<strong>Oposición:</strong> oponerse al tratamiento de sus datos"
+        ],
+        "outro": "Para ejercer estos derechos, puede contactarnos en contacto@drraffaele.com adjuntando copia de su DNI. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+      },
+      "section8": {
+        "title": "8. Seguridad",
+        "content": "Hemos adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de sus datos y evitar su alteración, pérdida, tratamiento o acceso no autorizado, según el estado de la tecnología, la naturaleza de los datos y los riesgos a los que están expuestos."
+      },
+      "section9": {
+        "title": "9. Modificaciones",
+        "content": "Nos reservamos el derecho de modificar esta política de privacidad para adaptarla a novedades legislativas o jurisprudenciales. En caso de cambios significativos, se lo notificaremos a través de nuestra web."
+      }
+    },
+    "legalNotice": {
+      "title": "Aviso Legal",
+      "metaTitle": "Aviso Legal | Dr. Raffaele Del Prete",
+      "metaDescription": "Aviso legal e información sobre el titular del sitio web del Dr. Raffaele Del Prete.",
+      "section1": {
+        "title": "1. Datos Identificativos",
+        "intro": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa:",
+        "content": "<strong>Titular:</strong> Dr. Raffaele Del Prete<br /><strong>Actividad:</strong> Medicina Estética y Cirugía Plástica<br /><strong>Domicilio:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br /><strong>Teléfono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> contacto@drraffaele.com<br /><strong>Número de Colegiado:</strong> [Número de colegiación]"
+      },
+      "section2": {
+        "title": "2. Objeto",
+        "paragraph1": "El presente sitio web tiene como finalidad informar sobre los servicios de medicina estética y cirugía plástica ofrecidos por el Dr. Raffaele Del Prete, así como facilitar el contacto con potenciales pacientes.",
+        "paragraph2": "La información contenida en este sitio web tiene carácter meramente informativo y en ningún caso sustituye el consejo médico profesional. Para cualquier consulta médica, debe concertar una cita con el profesional."
+      },
+      "section3": {
+        "title": "3. Condiciones de Uso",
+        "intro": "El acceso a este sitio web es gratuito y no requiere registro previo. El usuario se compromete a:",
+        "items": [
+          "Hacer un uso adecuado de los contenidos y servicios ofrecidos",
+          "No realizar actividades ilícitas o contrarias a la buena fe",
+          "No difundir contenidos de carácter racista, xenófobo, pornográfico, o que atenten contra los derechos humanos",
+          "No introducir virus informáticos o realizar actuaciones que puedan dañar los sistemas",
+          "No intentar acceder a cuentas de otros usuarios o áreas restringidas"
+        ]
+      },
+      "section4": {
+        "title": "4. Propiedad Intelectual e Industrial",
+        "paragraph1": "Todos los contenidos del sitio web (textos, fotografías, gráficos, imágenes, iconos, tecnología, software, diseño gráfico, código fuente, etc.) son propiedad intelectual del Dr. Raffaele Del Prete o de terceros que han autorizado su uso, quedando prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa.",
+        "paragraph2": "Las marcas, nombres comerciales o signos distintivos son propiedad del Dr. Raffaele Del Prete o de terceros, sin que el acceso al sitio web atribuya derecho alguno sobre los mismos."
+      },
+      "section5": {
+        "title": "5. Exclusión de Garantías y Responsabilidad",
+        "intro": "El titular del sitio web no se hace responsable de:",
+        "items": [
+          "La falta de disponibilidad, continuidad o calidad del sitio web",
+          "Los daños que puedan causarse por el uso indebido del sitio",
+          "La presencia de virus o elementos lesivos en los contenidos",
+          "El contenido de las páginas web a las que se pueda acceder mediante enlaces",
+          "Los errores u omisiones en los contenidos"
+        ]
+      },
+      "section6": {
+        "title": "6. Enlaces a Terceros",
+        "content": "Este sitio web puede contener enlaces a páginas de terceros. El Dr. Raffaele Del Prete no asume ninguna responsabilidad por el contenido, informaciones o servicios que pudieran aparecer en dichos sitios, que tendrán exclusivamente carácter informativo y que en ningún caso implican relación alguna entre el Dr. Raffaele Del Prete y las personas o entidades titulares de tales contenidos."
+      },
+      "section7": {
+        "title": "7. Protección de Datos",
+        "content": "El tratamiento de datos personales se rige por nuestra Política de Privacidad, donde se informa de manera detallada sobre el tratamiento de datos personales."
+      },
+      "section8": {
+        "title": "8. Cookies",
+        "content": "Este sitio web utiliza cookies. Para más información, consulte nuestra Política de Cookies."
+      },
+      "section9": {
+        "title": "9. Legislación Aplicable y Jurisdicción",
+        "content": "Las presentes condiciones se rigen por la legislación española. Para cualquier controversia que pudiera derivarse del acceso o uso de este sitio web, las partes se someten a los Juzgados y Tribunales de Sevilla, con renuncia expresa a cualquier otro fuero que pudiera corresponderles."
+      },
+      "section10": {
+        "title": "10. Modificaciones",
+        "content": "El titular se reserva el derecho de modificar en cualquier momento las presentes condiciones, siendo publicadas en el sitio web. La versión vigente será la publicada en cada momento."
+      }
+    },
+    "cookiePolicy": {
+      "title": "Política de Cookies",
+      "metaTitle": "Política de Cookies | Dr. Raffaele Del Prete",
+      "metaDescription": "Información sobre el uso de cookies en el sitio web del Dr. Raffaele Del Prete.",
+      "section1": {
+        "title": "1. ¿Qué son las Cookies?",
+        "content": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet o móvil) cuando visita un sitio web. Permiten que el sitio recuerde sus acciones y preferencias durante un período de tiempo, para que no tenga que volver a introducirlos cada vez que visite el sitio o navegue de una página a otra."
+      },
+      "section2": {
+        "title": "2. Tipos de Cookies que Utilizamos",
+        "technical": {
+          "title": "Cookies Técnicas (Necesarias)",
+          "content": "Son imprescindibles para el funcionamiento del sitio web. Permiten la navegación y el uso de las diferentes opciones o servicios. Sin ellas, el sitio web no funcionaría correctamente."
+        },
+        "analytics": {
+          "title": "Cookies de Análisis",
+          "content": "Nos permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización del sitio web. Para ello se analiza su navegación con el fin de mejorar la oferta de productos o servicios."
+        },
+        "preferences": {
+          "title": "Cookies de Preferencias",
+          "content": "Permiten recordar información para que el usuario acceda al servicio con determinadas características que pueden diferenciar su experiencia de la de otros usuarios (idioma, aspecto, etc.)."
+        }
+      },
+      "section3": {
+        "title": "3. Cookies de Terceros",
+        "intro": "Este sitio web puede utilizar servicios de terceros que recopilan información con fines estadísticos y de uso del sitio:",
+        "table": {
+          "service": "Servicio",
+          "purpose": "Finalidad",
+          "moreInfo": "Más información",
+          "vercel": "Vercel Analytics",
+          "vercelPurpose": "Análisis de rendimiento",
+          "vercelLink": "Política de Vercel"
+        }
+      },
+      "section4": {
+        "title": "4. Gestión de Cookies",
+        "intro": "Puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador.",
+        "outro": "Si desactiva las cookies, es posible que algunas funcionalidades del sitio web no estén disponibles o no funcionen correctamente."
+      },
+      "section5": {
+        "title": "5. Actualización de la Política",
+        "content": "Esta política de cookies puede actualizarse en cualquier momento para adaptarse a novedades normativas o cambios en nuestro sitio web. Le recomendamos revisar esta página periódicamente para estar informado de cómo y para qué usamos las cookies."
+      },
+      "section6": {
+        "title": "6. Contacto",
+        "intro": "Si tiene cualquier duda sobre esta Política de Cookies, puede contactar con nosotros a través de:",
+        "content": "<strong>Email:</strong> contacto@drraffaele.com<br /><strong>Teléfono:</strong> +34 604 89 46 97"
+      }
+    }
+  }
+}

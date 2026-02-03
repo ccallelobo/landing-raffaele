@@ -5,6 +5,7 @@
 - **Styling**: Tailwind CSS v4 con CSS variables
 - **CMS**: Sanity (proyecto: ykf6zrj4, dataset: production)
 - **Deploy**: Vercel (auto-deploy desde main)
+- **i18n**: next-intl (ES/IT con detección geográfica)
 
 ## Información de Contacto
 - **Ubicación**: Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)
@@ -21,35 +22,87 @@
 --color-noir: #181818    /* textos oscuros, fondos negros */
 ```
 
+## Internacionalización (i18n)
+
+### Idiomas Soportados
+- **Español (ES)**: Idioma por defecto
+- **Italiano (IT)**: Segundo idioma
+
+### Detección Automática
+El middleware detecta el país del visitante usando el header `x-vercel-ip-country`:
+- Visitantes desde Italia → Redirige a `/it/`
+- Resto del mundo → Redirige a `/es/`
+- La preferencia manual (cookie `NEXT_LOCALE`) tiene prioridad
+
+### Estructura de Rutas
+```
+/                    → Redirige según geolocalización
+/es/                 → Landing en español
+/es/privacidad       → Política de Privacidad
+/es/aviso-legal      → Aviso Legal
+/es/cookies          → Política de Cookies
+/it/                 → Landing en italiano
+/it/privacy          → Privacy Policy
+/it/note-legali      → Note Legali
+/it/cookie           → Cookie Policy
+/studio              → Sanity Studio (sin i18n)
+/version-1 a /version-4 → Versiones de revisión (sin i18n)
+```
+
+### Archivos de Traducción
+- `src/messages/es.json` - Traducciones en español
+- `src/messages/it.json` - Traducciones en italiano
+
+### Configuración i18n
+- `src/i18n/routing.ts` - Definición de rutas localizadas
+- `src/i18n/request.ts` - Carga de mensajes por idioma
+- `src/middleware.ts` - Detección geográfica y redirecciones
+
+### Selector de Idioma
+El componente `LanguageSwitcher` está integrado en:
+- Navbar desktop: entre los links de navegación y el botón "Reservar"
+- Menú móvil: antes del botón "Reservar Cita"
+
 ## Estructura
 ```
 src/
 ├── app/
-│   ├── page.tsx          # Landing principal (ISR 60s)
-│   ├── layout.tsx        # Layout con CookieBanner
-│   ├── globals.css       # Estilos globales + paleta
-│   ├── privacidad/       # Política de Privacidad (RGPD)
-│   ├── aviso-legal/      # Aviso Legal (LSSI-CE)
-│   ├── cookies/          # Política de Cookies
-│   ├── studio/           # Sanity Studio embebido
-│   ├── version-1/        # Versión 1 para revisión cliente
-│   ├── version-2/        # Versión 2 para revisión cliente
-│   ├── version-3/        # Versión 3 para revisión cliente
-│   └── version-4/        # Versión 4 para revisión cliente
+│   ├── layout.tsx             # Layout raíz (delega a hijos)
+│   ├── globals.css            # Estilos globales + paleta
+│   ├── [locale]/              # Rutas internacionalizadas
+│   │   ├── layout.tsx         # Layout con NextIntlClientProvider
+│   │   ├── page.tsx           # Landing principal (ISR 60s)
+│   │   └── (legal)/           # Páginas legales
+│   │       ├── privacidad/    # Política de Privacidad
+│   │       ├── aviso-legal/   # Aviso Legal
+│   │       └── cookies/       # Política de Cookies
+│   ├── studio/                # Sanity Studio embebido
+│   ├── version-1/             # Versión 1 para revisión cliente
+│   ├── version-2/             # Versión 2 para revisión cliente
+│   ├── version-3/             # Versión 3 para revisión cliente
+│   └── version-4/             # Versión 4 para revisión cliente
 ├── components/
-│   ├── Navbar.tsx        # Nav fijo con firma como logo + menú móvil adaptativo
-│   ├── Hero.tsx          # Split-screen desktop, bg mobile (acepta prop heroImage)
-│   ├── Tratamientos.tsx  # Grid de servicios desde Sanity
-│   ├── SobreMi.tsx       # Sección sobre el doctor (acepta props sobreMiImage, imageScale)
-│   ├── Resultados.tsx    # Galería antes/después
-│   ├── Resenas.tsx       # Reseñas de pacientes
-│   ├── Contacto.tsx      # Formulario de contacto (sin info de ubicación/teléfono/horario)
-│   ├── Footer.tsx        # Footer con firma, redes sociales y links legales
-│   └── CookieBanner.tsx  # Banner de consentimiento de cookies (RGPD)
+│   ├── Navbar.tsx             # Nav fijo + LanguageSwitcher integrado
+│   ├── Hero.tsx               # Split-screen desktop, bg mobile
+│   ├── Tratamientos.tsx       # Grid de servicios desde Sanity
+│   ├── SobreMi.tsx            # Sección sobre el doctor
+│   ├── Resultados.tsx         # Galería antes/después
+│   ├── Resenas.tsx            # Reseñas de pacientes
+│   ├── Contacto.tsx           # Formulario de contacto
+│   ├── Footer.tsx             # Footer con links localizados
+│   ├── CookieBanner.tsx       # Banner de cookies (RGPD)
+│   └── LanguageSwitcher.tsx   # Selector de idioma ES/IT
+├── i18n/
+│   ├── routing.ts             # Configuración de rutas
+│   └── request.ts             # Carga de mensajes
+├── messages/
+│   ├── es.json                # Traducciones español
+│   └── it.json                # Traducciones italiano
 ├── lib/
-│   └── sanity.ts         # Cliente y queries Sanity
-└── hooks/
-    └── useReveal.ts      # Animaciones scroll reveal
+│   └── sanity.ts              # Cliente y queries Sanity
+├── hooks/
+│   └── useReveal.ts           # Animaciones scroll reveal
+└── middleware.ts              # Detección geográfica + i18n
 ```
 
 ## Imágenes
@@ -79,6 +132,7 @@ src/
 
 ## Comandos
 - `npm run dev` - desarrollo local
+- `npm run build` - build de producción
 - `git push origin main` - deploy automático a Vercel
 
 ## Notas de Diseño
@@ -104,11 +158,12 @@ src/
 - Logo RD centrado en la parte superior (h-52, top-16)
 - Padding superior en links (`pt-40`) para evitar solapamiento con logo
 - El tema se captura al abrir el menú (no cambia mientras está abierto)
+- **Selector de idioma** antes del botón "Reservar Cita"
 
 ### Footer
 - Firma del logo (h-24 móvil, h-[7.5rem] desktop) en blanco (brightness-0 invert)
 - Links de Instagram y WhatsApp abren en nueva pestaña (target="_blank")
-- Links a páginas legales: Privacidad, Aviso Legal, Cookies
+- Links a páginas legales localizados (usan `Link` de next-intl)
 - **Nota**: Ubicación eliminada del footer (solo copyright)
 
 ### Contacto
@@ -120,11 +175,13 @@ src/
 - Opciones: "Rechazar" y "Aceptar"
 - Guarda preferencia en localStorage (`cookie-consent`)
 - Posicionado fijo en la parte inferior (z-[9998])
+- Link a política de cookies localizado
 
 ## Páginas Legales
-- `/privacidad` - Política de Privacidad (RGPD 2016/679)
-- `/aviso-legal` - Aviso Legal (LSSI-CE)
-- `/cookies` - Política de Cookies
+Las páginas legales están bajo `[locale]/`:
+- `/es/privacidad` o `/it/privacy` - Política de Privacidad (RGPD 2016/679)
+- `/es/aviso-legal` o `/it/note-legali` - Aviso Legal (LSSI-CE)
+- `/es/cookies` o `/it/cookie` - Política de Cookies
 
 **Nota**: En Aviso Legal hay un placeholder `[Número de colegiación]` pendiente de rellenar.
 
@@ -135,6 +192,8 @@ src/
 | `/version-2` | hero-doctor-v2.webp | sobre-mi-doctor-v3.webp |
 | `/version-3` | hero-doctor-v3.webp | sobre-mi-doctor-v4.webp (scale-200) |
 | `/version-4` | hero-doctor-v4.webp | sobre-mi-doctor-v5.webp |
+
+**Nota**: Las páginas de versión usan español fijo (sin i18n).
 
 ## Herramientas de Conversión de Imágenes
 - `cwebp -q 90 input.png -o output.webp` - Convertir a WebP

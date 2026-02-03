@@ -1,22 +1,26 @@
 "use client";
-// Force rebuild v2
 
 import { useReveal } from "@/hooks/useReveal";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface SobreMiProps {
   sobreMiImage?: string;
   imageScale?: string;
 }
 
-const stats = [
-  { value: "15+", label: "Años de experiencia" },
-  { value: "3.000+", label: "Pacientes satisfechos" },
-  { value: "20+", label: "Certificaciones" },
-];
-
-export default function SobreMi({ sobreMiImage = "/sobre-mi-doctor-v2.webp", imageScale = "scale-75" }: SobreMiProps) {
+export default function SobreMi({
+  sobreMiImage = "/sobre-mi-doctor-v2.webp",
+  imageScale = "scale-75",
+}: SobreMiProps) {
   useReveal();
+  const t = useTranslations("aboutMe");
+
+  const stats = [
+    { value: t("stats.years"), label: t("stats.yearsLabel") },
+    { value: t("stats.patients"), label: t("stats.patientsLabel") },
+    { value: t("stats.certifications"), label: t("stats.certificationsLabel") },
+  ];
 
   return (
     <section id="sobre-mi" className="relative bg-moss overflow-hidden">
@@ -52,10 +56,12 @@ export default function SobreMi({ sobreMiImage = "/sobre-mi-doctor-v2.webp", ima
               {/* Floating stat card - hidden on mobile (info shown in stats below) */}
               <div className="hidden md:block absolute -right-8 bottom-12 bg-noir text-white p-8 shadow-2xl">
                 <span className="font-display text-4xl md:text-5xl text-gold block leading-none">
-                  15+
+                  {t("stats.years")}
                 </span>
-                <span className="text-white/40 text-[11px] tracking-[0.2em] uppercase mt-2 block">
-                  Años de<br />experiencia
+                <span
+                  className="text-white/40 text-[11px] tracking-[0.2em] uppercase mt-2 block whitespace-pre-line"
+                >
+                  {t("stats.yearsLabelShort")}
                 </span>
               </div>
             </div>
@@ -65,39 +71,26 @@ export default function SobreMi({ sobreMiImage = "/sobre-mi-doctor-v2.webp", ima
           <div className="lg:col-span-6 lg:col-start-7 lg:pt-12">
             <div className="reveal">
               <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
-                Sobre el Doctor
+                {t("label")}
               </span>
               <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-noir mb-8">
-                Una filosofía de<br />
-                <em className="italic text-gold">belleza natural</em>
+                {t("title")}
+                <br />
+                <em className="italic text-gold">{t("titleHighlight")}</em>
               </h2>
             </div>
 
             {/* Pull quote */}
             <div className="reveal relative pl-6 border-l-2 border-gold/30 mb-10">
               <p className="font-display text-xl md:text-2xl italic text-noir/70 leading-relaxed">
-                &ldquo;Mi objetivo es que cada paciente se vea y se sienta como
-                la mejor versión de sí mismo.&rdquo;
+                &ldquo;{t("quote")}&rdquo;
               </p>
             </div>
 
             <div className="reveal space-y-5 text-noir/60 text-[15px] leading-[1.8] mb-12">
-              <p>
-                Con más de 15 años dedicados a la medicina estética y la cirugía
-                plástica, el Dr. Raffaele combina técnicas quirúrgicas de
-                vanguardia con un profundo sentido artístico de la armonía facial
-                y corporal.
-              </p>
-              <p>
-                Formado en las instituciones médicas más prestigiosas de Europa,
-                su enfoque se centra en resultados que realzan la belleza única
-                de cada persona — naturales, equilibrados y armoniosos.
-              </p>
-              <p>
-                Miembro de la Sociedad Internacional de Cirugía Plástica
-                Estética (ISAPS) y la Sociedad Española de Cirugía Plástica,
-                Reparadora y Estética (SECPRE).
-              </p>
+              <p>{t("paragraph1")}</p>
+              <p>{t("paragraph2")}</p>
+              <p>{t("paragraph3")}</p>
             </div>
 
             {/* Stats row */}

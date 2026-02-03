@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const t = useTranslations("cookies");
 
   useEffect(() => {
     // Check if user has already accepted cookies
@@ -38,10 +40,9 @@ export default function CookieBanner() {
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex-1">
             <p className="text-white/70 text-sm leading-relaxed">
-              Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación y analizar el uso del sitio.
-              Puedes aceptar todas las cookies, rechazarlas o configurar tus preferencias.{" "}
+              {t("message")}{" "}
               <Link href="/cookies" className="text-gold hover:underline">
-                Más información
+                {t("moreInfo")}
               </Link>
             </p>
           </div>
@@ -50,13 +51,13 @@ export default function CookieBanner() {
               onClick={rejectCookies}
               className="px-5 py-2.5 text-white/50 text-[12px] font-semibold tracking-[0.15em] uppercase hover:text-white transition-colors"
             >
-              Rechazar
+              {t("reject")}
             </button>
             <button
               onClick={acceptCookies}
               className="px-6 py-2.5 bg-gold text-white text-[12px] font-semibold tracking-[0.15em] uppercase hover:bg-gold-dark transition-colors"
             >
-              Aceptar
+              {t("accept")}
             </button>
           </div>
         </div>

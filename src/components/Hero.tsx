@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface HeroProps {
   heroImage?: string;
 }
 
 export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
+  const t = useTranslations("hero");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, var(--color-gold) 1px, transparent 0)`,
-          backgroundSize: '40px 40px',
+          backgroundSize: "40px 40px",
         }}
       />
 
@@ -59,7 +61,6 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
       {/* Content container */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center lg:min-h-screen py-12 lg:py-24">
-
           {/* Left: Text content */}
           <div className="pb-8 lg:pb-0">
             {/* Decorative accent - hidden on mobile */}
@@ -73,7 +74,7 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
             >
               <span className="block w-12 h-px bg-gold" />
               <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase">
-                Medicina Estética
+                {t("label")}
               </span>
             </div>
 
@@ -86,8 +87,9 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
                 transition: "all 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s",
               }}
             >
-              Dr. Raffaele<br />
-              <span className="text-gold">Del Prete</span>
+              {t("title")}
+              <br />
+              <span className="text-gold">{t("titleHighlight")}</span>
             </h1>
 
             {/* Subtitle */}
@@ -99,8 +101,7 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
                 transition: "all 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s",
               }}
             >
-              Realzamos tu belleza natural con técnicas de vanguardia y un enfoque
-              artístico personalizado.
+              {t("subtitle")}
             </p>
 
             {/* CTA button */}
@@ -115,7 +116,7 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
                 href="#contacto"
                 className="group relative inline-flex items-center justify-center px-8 py-3 lg:px-10 lg:py-4 bg-gold text-white text-[12px] lg:text-[13px] font-semibold tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-gold-dark"
               >
-                <span className="relative z-10">Reservar Consulta</span>
+                <span className="relative z-10">{t("cta")}</span>
               </a>
             </div>
           </div>
@@ -163,7 +164,7 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
           className="text-white/10 text-[11px] tracking-[0.5em] uppercase"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          Cirugía Plástica & Estética — Sevilla
+          {t("sideText")}
         </span>
       </div>
 
@@ -176,7 +177,7 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
         }}
       >
         <span className="text-moss/50 text-[10px] tracking-[0.3em] uppercase">
-          Scroll
+          {t("scroll")}
         </span>
         <div className="w-px h-10 bg-gradient-to-b from-gold/40 to-transparent" />
       </div>

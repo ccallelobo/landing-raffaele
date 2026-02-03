@@ -1,13 +1,8 @@
-import Image from "next/image";
+"use client";
 
-const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#tratamientos", label: "Tratamientos" },
-  { href: "#sobre-mi", label: "Sobre Mí" },
-  { href: "#resultados", label: "Resultados" },
-  { href: "#resenas", label: "Reseñas" },
-  { href: "#contacto", label: "Contacto" },
-];
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const socials = [
   {
@@ -31,6 +26,18 @@ const socials = [
 ];
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
+
+  const navLinks = [
+    { href: "#inicio", label: t("home") },
+    { href: "#tratamientos", label: tNav("treatments") },
+    { href: "#sobre-mi", label: tNav("aboutMe") },
+    { href: "#resultados", label: tNav("results") },
+    { href: "#resenas", label: tNav("reviews") },
+    { href: "#contacto", label: tNav("contact") },
+  ];
+
   return (
     <footer className="bg-noir border-t border-white/[0.06]">
       <div className="max-w-[1400px] mx-auto px-8 md:px-12">
@@ -46,15 +53,14 @@ export default function Footer() {
               className="h-24 md:h-[7.5rem] w-auto brightness-0 invert mb-4"
             />
             <p className="text-white/30 text-[14px] leading-relaxed max-w-xs">
-              Medicina estética y cirugía plástica con los más altos estándares
-              de excelencia y un enfoque artístico personalizado.
+              {t("description")}
             </p>
           </div>
 
           {/* Nav */}
           <div className="md:col-span-3">
             <h4 className="text-white/50 text-[11px] font-semibold tracking-[0.2em] uppercase mb-6">
-              Navegación
+              {t("navigation")}
             </h4>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
@@ -72,7 +78,7 @@ export default function Footer() {
           {/* Social + legal */}
           <div className="md:col-span-4">
             <h4 className="text-white/50 text-[11px] font-semibold tracking-[0.2em] uppercase mb-6">
-              Síguenos
+              {t("followUs")}
             </h4>
             <div className="flex gap-3 mb-10">
               {socials.map((s) => (
@@ -89,15 +95,24 @@ export default function Footer() {
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <a href="/privacidad" className="text-white/20 text-[13px] hover:text-gold transition-colors">
-                Política de Privacidad
-              </a>
-              <a href="/aviso-legal" className="text-white/20 text-[13px] hover:text-gold transition-colors">
-                Aviso Legal
-              </a>
-              <a href="/cookies" className="text-white/20 text-[13px] hover:text-gold transition-colors">
-                Política de Cookies
-              </a>
+              <Link
+                href="/privacidad"
+                className="text-white/20 text-[13px] hover:text-gold transition-colors"
+              >
+                {t("privacy")}
+              </Link>
+              <Link
+                href="/aviso-legal"
+                className="text-white/20 text-[13px] hover:text-gold transition-colors"
+              >
+                {t("legal")}
+              </Link>
+              <Link
+                href="/cookies"
+                className="text-white/20 text-[13px] hover:text-gold transition-colors"
+              >
+                {t("cookiePolicy")}
+              </Link>
             </div>
           </div>
         </div>
@@ -105,7 +120,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/[0.06] flex justify-center items-center">
           <p className="text-white/15 text-[12px] tracking-wide">
-            &copy; {new Date().getFullYear()} Dr. Raffaele. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Dr. Raffaele. {t("rights")}.
           </p>
         </div>
       </div>

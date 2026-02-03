@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
+import { useTranslations } from "next-intl";
 
 export default function Contacto() {
   useReveal();
+  const t = useTranslations("contact");
 
   const [formData, setFormData] = useState({
     nombre: "",
@@ -18,8 +20,14 @@ export default function Contacto() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Gracias por tu mensaje. Nos pondremos en contacto pronto.");
-    setFormData({ nombre: "", email: "", telefono: "", tratamiento: "", mensaje: "" });
+    alert(t("form.success"));
+    setFormData({
+      nombre: "",
+      email: "",
+      telefono: "",
+      tratamiento: "",
+      mensaje: "",
+    });
   };
 
   const inputClasses = (field: string) =>
@@ -45,28 +53,30 @@ export default function Contacto() {
           <div className="relative z-10">
             <div className="reveal">
               <span className="text-gold text-[12px] font-semibold tracking-[0.35em] uppercase block mb-4">
-                Contacto
+                {t("label")}
               </span>
               <h2 className="font-display text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-[-0.02em] text-white mb-6">
-                Agenda tu<br />
-                <em className="italic text-gold">consulta privada</em>
+                {t("title")}
+                <br />
+                <em className="italic text-gold">{t("titleHighlight")}</em>
               </h2>
               <p className="text-white/40 text-[15px] leading-relaxed max-w-md mb-16">
-                La primera consulta es informativa y sin compromiso. Evaluaremos
-                tus necesidades y diseñaremos un plan personalizado.
+                {t("description")}
               </p>
             </div>
-
           </div>
         </div>
 
         {/* Right — Form panel */}
         <div className="bg-noir/95 px-8 md:px-16 lg:px-20 py-20 lg:py-28 flex items-center border-l border-white/[0.05]">
-          <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto space-y-8 reveal">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-lg mx-auto space-y-8 reveal"
+          >
             {/* Name */}
             <div className="relative">
               <label className={labelClasses("nombre", formData.nombre)}>
-                Nombre completo
+                {t("form.name")}
               </label>
               <input
                 type="text"
@@ -74,7 +84,9 @@ export default function Contacto() {
                 value={formData.nombre}
                 onFocus={() => setFocused("nombre")}
                 onBlur={() => setFocused(null)}
-                onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, nombre: e.target.value })
+                }
                 className={inputClasses("nombre")}
               />
             </div>
@@ -83,7 +95,7 @@ export default function Contacto() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="relative">
                 <label className={labelClasses("email", formData.email)}>
-                  Email
+                  {t("form.email")}
                 </label>
                 <input
                   type="email"
@@ -91,20 +103,24 @@ export default function Contacto() {
                   value={formData.email}
                   onFocus={() => setFocused("email")}
                   onBlur={() => setFocused(null)}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className={inputClasses("email")}
                 />
               </div>
               <div className="relative">
                 <label className={labelClasses("telefono", formData.telefono)}>
-                  Teléfono
+                  {t("form.phone")}
                 </label>
                 <input
                   type="tel"
                   value={formData.telefono}
                   onFocus={() => setFocused("telefono")}
                   onBlur={() => setFocused(null)}
-                  onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, telefono: e.target.value })
+                  }
                   className={inputClasses("telefono")}
                 />
               </div>
@@ -112,35 +128,65 @@ export default function Contacto() {
 
             {/* Treatment select */}
             <div className="relative">
-              <label className={labelClasses("tratamiento", formData.tratamiento)}>
-                Tratamiento de interés
+              <label
+                className={labelClasses("tratamiento", formData.tratamiento)}
+              >
+                {t("form.treatment")}
               </label>
               <select
                 value={formData.tratamiento}
                 onFocus={() => setFocused("tratamiento")}
                 onBlur={() => setFocused(null)}
-                onChange={(e) => setFormData({ ...formData, tratamiento: e.target.value })}
-                className={`${inputClasses("tratamiento")} appearance-none cursor-pointer bg-transparent`}
+                onChange={(e) =>
+                  setFormData({ ...formData, tratamiento: e.target.value })
+                }
+                className={`${inputClasses(
+                  "tratamiento"
+                )} appearance-none cursor-pointer bg-transparent`}
               >
                 <option value="" className="bg-noir" />
-                <option value="rinoplastia" className="bg-noir">Rinoplastia</option>
-                <option value="acido-hialuronico" className="bg-noir">Ácido Hialurónico</option>
-                <option value="botox" className="bg-noir">Toxina Botulínica</option>
-                <option value="lifting" className="bg-noir">Lifting Facial</option>
-                <option value="blefaroplastia" className="bg-noir">Blefaroplastia</option>
-                <option value="liposuccion" className="bg-noir">Liposucción</option>
-                <option value="otro" className="bg-noir">Otro</option>
+                <option value="rinoplastia" className="bg-noir">
+                  {t("treatments.rinoplastia")}
+                </option>
+                <option value="acido-hialuronico" className="bg-noir">
+                  {t("treatments.acidoHialuronico")}
+                </option>
+                <option value="botox" className="bg-noir">
+                  {t("treatments.botox")}
+                </option>
+                <option value="lifting" className="bg-noir">
+                  {t("treatments.lifting")}
+                </option>
+                <option value="blefaroplastia" className="bg-noir">
+                  {t("treatments.blefaroplastia")}
+                </option>
+                <option value="liposuccion" className="bg-noir">
+                  {t("treatments.liposuccion")}
+                </option>
+                <option value="otro" className="bg-noir">
+                  {t("treatments.other")}
+                </option>
               </select>
               {/* Custom arrow */}
-              <svg className="absolute right-0 top-7 w-4 h-4 text-white/20 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              <svg
+                className="absolute right-0 top-7 w-4 h-4 text-white/20 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </div>
 
             {/* Message */}
             <div className="relative">
               <label className={labelClasses("mensaje", formData.mensaje)}>
-                Mensaje
+                {t("form.message")}
               </label>
               <textarea
                 rows={4}
@@ -148,7 +194,9 @@ export default function Contacto() {
                 value={formData.mensaje}
                 onFocus={() => setFocused("mensaje")}
                 onBlur={() => setFocused(null)}
-                onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, mensaje: e.target.value })
+                }
                 className={`${inputClasses("mensaje")} resize-none`}
               />
             </div>
@@ -158,11 +206,11 @@ export default function Contacto() {
               type="submit"
               className="w-full bg-gold text-white py-4.5 text-[13px] font-semibold tracking-[0.25em] uppercase hover:bg-gold-dark transition-all duration-500 mt-4"
             >
-              Enviar Mensaje
+              {t("form.submit")}
             </button>
 
             <p className="text-white/20 text-[12px] text-center mt-4">
-              Sus datos serán tratados con total confidencialidad.
+              {t("form.privacy")}
             </p>
           </form>
         </div>

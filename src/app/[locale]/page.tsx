@@ -8,7 +8,7 @@ import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import { getTratamientos, getResultados, getResenas } from "@/lib/sanity";
 
-// Revalidar datos de Sanity cada 60 segundos
+// Revalidate Sanity data every 60 seconds
 export const revalidate = 60;
 
 export default async function Home() {
@@ -21,7 +21,10 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative" style={{ clipPath: 'inset(0)', contain: 'paint' }}>
+      <main
+        className="relative"
+        style={{ clipPath: "inset(0)", contain: "paint" }}
+      >
         <Hero />
         <Tratamientos data={tratamientos} />
         <SobreMi />
