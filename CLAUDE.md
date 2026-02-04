@@ -64,6 +64,10 @@ El componente `LanguageSwitcher` está integrado en:
 - Navbar desktop: entre los links de navegación y el botón "Reservar"
 - Menú móvil: antes del botón "Reservar Cita"
 
+**Diseño**: Usa banderas emoji (🇪🇸 / 🇮🇹) con indicador de opacidad:
+- Idioma activo: opacidad 100%
+- Idioma inactivo: opacidad 40% (70% en hover)
+
 ## Estructura
 ```
 src/
