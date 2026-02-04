@@ -5,8 +5,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
 
 const locales = [
-  { code: "es", label: "ES" },
-  { code: "it", label: "IT" },
+  { code: "es", label: "🇪🇸" },
+  { code: "it", label: "🇮🇹" },
 ] as const;
 
 interface LanguageSwitcherProps {
@@ -37,8 +37,6 @@ export default function LanguageSwitcher({
     });
   };
 
-  const isDark = variant === "dark";
-
   return (
     <div className={`flex items-center gap-1 ${className}`}>
       {locales.map((loc) => (
@@ -46,13 +44,11 @@ export default function LanguageSwitcher({
           key={loc.code}
           onClick={() => handleChange(loc.code)}
           disabled={isPending || locale === loc.code}
-          className={`px-3 py-1.5 text-[11px] tracking-[0.15em] uppercase transition-all duration-300 ${
+          className={`p-1 text-xl transition-opacity duration-300 ${
             locale === loc.code
-              ? "bg-gold text-white"
-              : isDark
-              ? "text-white/40 hover:text-white border border-white/10 hover:border-white/30"
-              : "text-noir/40 hover:text-noir border border-noir/10 hover:border-noir/30"
-          } ${isPending ? "opacity-50 cursor-not-allowed" : ""}`}
+              ? "opacity-100"
+              : "opacity-40 hover:opacity-70"
+          } ${isPending ? "opacity-30 cursor-not-allowed" : ""}`}
         >
           {loc.label}
         </button>
