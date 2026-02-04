@@ -53,18 +53,20 @@ export default function Resultados({ data }: Props) {
     },
   ];
 
-  const useSanity = data && data.length > 0;
+  // Filter to only include results with legacy single-image fields
+  const sanityResults = data?.filter((r) => r.imagenAntes && r.imagenDespues) ?? [];
+  const useSanity = sanityResults.length > 0;
 
   const resultados = useSanity
-    ? data.map((r, i) => ({
+    ? sanityResults.map((r, i) => ({
         id: i + 1,
         tratamiento: r.tratamiento,
         descripcion: r.descripcion,
-        before: urlFor(r.imagenAntes)
+        before: urlFor(r.imagenAntes!)
           .width(800)
           .height(i === 0 ? 1000 : 600)
           .url(),
-        after: urlFor(r.imagenDespues)
+        after: urlFor(r.imagenDespues!)
           .width(800)
           .height(i === 0 ? 1000 : 600)
           .url(),
