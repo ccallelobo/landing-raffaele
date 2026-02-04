@@ -58,20 +58,18 @@
   },
   "aboutMe": {
     "label": "Sobre el Doctor",
-    "title": "Una filosofía de",
-    "titleHighlight": "belleza natural",
-    "quote": "Mi objetivo es que cada paciente se vea y se sienta como la mejor versión de sí mismo.",
-    "paragraph1": "Con más de 15 años dedicados a la medicina estética y la cirugía plástica, el Dr. Raffaele combina técnicas quirúrgicas de vanguardia con un profundo sentido artístico de la armonía facial y corporal.",
-    "paragraph2": "Formado en las instituciones médicas más prestigiosas de Europa, su enfoque se centra en resultados que realzan la belleza única de cada persona — naturales, equilibrados y armoniosos.",
-    "paragraph3": "Miembro de la Sociedad Internacional de Cirugía Plástica Estética (ISAPS) y la Sociedad Española de Cirugía Plástica, Reparadora y Estética (SECPRE).",
+    "title": "Dr. Raffaele",
+    "titleHighlight": "Del Prete",
+    "quote": "Me considero un profesional muy afortunado por poder trabajar en lo que más me apasiona, aportando salud, autoestima y felicidad a mis pacientes.",
+    "paragraph1": "Soy Raffaele Del Prete, médico-cirujano italiano, nacido en Nápoles el 29 de junio de 1992. Mi formación universitaria ha sido enteramente en Italia: Grado en Medicina y Cirugía (2017, Universidad \"Luigi Vanvitelli\" de Nápoles, con matrícula de honor), Especialidad en Medicina Preventiva y Salud Pública (2022, Universidad \"Federico II\" de Nápoles), y Máster en Medicina Estética (2023, Escuela de Cirugía Plástica de la Universidad \"Federico II\").",
+    "paragraph2": "Desde que obtuve la habilitación profesional en 2017, he seguido formándome con los mejores médicos cirujanos estéticos. La medicina estética engloba lo que siempre me ha fascinado: la salud entendida como bienestar integral físico, psíquico y social; las proporciones presentes en la anatomía, el arte y la naturaleza; la ética de la prevención y la constancia; y la belleza como respetuosa armonía, elegancia y equilibrio.",
+    "paragraph3": "Me considero muy afortunado de vivir y desarrollar mi profesión en dos lugares llenos de belleza, cultura y ciencia: Nápoles en Italia y Sevilla en España, donde estaré encantado de atenderte y acompañarte hacia la mejor versión de ti.",
     "stats": {
-      "years": "15+",
-      "yearsLabel": "Años de experiencia",
-      "yearsLabelShort": "Años de\nexperiencia",
-      "patients": "3.000+",
-      "patientsLabel": "Pacientes satisfechos",
-      "certifications": "20+",
-      "certificationsLabel": "Certificaciones"
+      "years": "2017",
+      "yearsLabel": "Licenciado desde",
+      "yearsLabelShort": "Licenciado\ndesde",
+      "patients": "1.000+",
+      "patientsLabel": "Pacientes satisfechos"
     }
   },
   "results": {
@@ -100,6 +98,16 @@
         "description": "Rejuvenecimiento de la mirada"
       }
     }
+  },
+  "casosExito": {
+    "label": "Casos de Éxito",
+    "title": "Transformaciones",
+    "titleHighlight": "completas",
+    "description": "Explora casos completos con múltiples ángulos para apreciar la transformación desde todas las perspectivas.",
+    "before": "Antes",
+    "after": "Después",
+    "angle": "ángulo",
+    "angles": "ángulos"
   },
   "reviews": {
     "label": "Testimonios",

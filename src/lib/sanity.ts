@@ -24,12 +24,22 @@ export interface SanityTratamiento {
   imagen?: SanityImageSource;
 }
 
+export interface SanityAngulo {
+  _key: string;
+  nombre: string;
+  antes: SanityImageSource;
+  despues: SanityImageSource;
+}
+
 export interface SanityResultado {
   _id: string;
   tratamiento: string;
   descripcion: string;
-  imagenAntes: SanityImageSource;
-  imagenDespues: SanityImageSource;
+  // Legacy fields (single image)
+  imagenAntes?: SanityImageSource;
+  imagenDespues?: SanityImageSource;
+  // New field for multiple angles
+  angulos?: SanityAngulo[];
 }
 
 export interface SanityResena {
@@ -48,7 +58,8 @@ const tratamientosQuery = `*[_type == "tratamiento"] | order(num asc) {
 }`;
 
 const resultadosQuery = `*[_type == "resultado"] {
-  _id, tratamiento, descripcion, imagenAntes, imagenDespues
+  _id, tratamiento, descripcion, imagenAntes, imagenDespues,
+  angulos[] { _key, nombre, antes, despues }
 }`;
 
 const resenasQuery = `*[_type == "resena"] | order(_createdAt desc) {

@@ -47,6 +47,7 @@ El middleware detecta el país del visitante usando el header `x-vercel-ip-count
 /it/cookie           → Cookie Policy
 /studio              → Sanity Studio (sin i18n)
 /version-1 a /version-4 → Versiones de revisión (sin i18n)
+/prototipos          → Prototipos de diseño (temporal)
 ```
 
 ### Archivos de Traducción
@@ -80,13 +81,15 @@ src/
 │   ├── version-1/             # Versión 1 para revisión cliente
 │   ├── version-2/             # Versión 2 para revisión cliente
 │   ├── version-3/             # Versión 3 para revisión cliente
-│   └── version-4/             # Versión 4 para revisión cliente
+│   ├── version-4/             # Versión 4 para revisión cliente
+│   └── prototipos/            # Prototipos de diseño (temporal)
 ├── components/
 │   ├── Navbar.tsx             # Nav fijo + LanguageSwitcher integrado
 │   ├── Hero.tsx               # Split-screen desktop, bg mobile
 │   ├── Tratamientos.tsx       # Grid de servicios desde Sanity
 │   ├── SobreMi.tsx            # Sección sobre el doctor
-│   ├── Resultados.tsx         # Galería antes/después
+│   ├── Resultados.tsx         # Galería antes/después (slider simple)
+│   ├── CasosExito.tsx         # Carrusel doble sincronizado (antes/después)
 │   ├── Resenas.tsx            # Reseñas de pacientes
 │   ├── Contacto.tsx           # Formulario de contacto
 │   ├── Footer.tsx             # Footer con links localizados
@@ -127,8 +130,26 @@ src/
 
 ## Sanity Schemas
 - `tratamiento`: servicios médicos
-- `resultado`: fotos antes/después
+- `resultado`: fotos antes/después (soporta múltiples ángulos)
 - `resena`: testimonios de pacientes
+
+### Schema `resultado` (actualizado)
+El schema `resultado` ahora soporta múltiples ángulos por caso:
+```
+resultado {
+  tratamiento: string (requerido)
+  descripcion: string (requerido)
+  imagenAntes: image (legacy, opcional)
+  imagenDespues: image (legacy, opcional)
+  angulos: array de {
+    nombre: string (Frontal, Perfil Izquierdo, Perfil Derecho, etc.)
+    antes: image
+    despues: image
+  }
+}
+```
+- Los campos `imagenAntes/imagenDespues` se ocultan automáticamente si hay ángulos
+- Usa el array `angulos` para casos con múltiples perspectivas
 
 ## Comandos
 - `npm run dev` - desarrollo local
@@ -149,7 +170,22 @@ src/
 - Imagen escalada al 75% (`scale-75`) con ajuste vertical (`translate-y-[12%]`)
 - Gradiente stone→moss para integración visual con la sección
 - Aspect ratio: 4/5 en móvil, 3/4 en desktop
-- Tarjeta "15+ años" oculta en móvil (info ya está en stats de abajo)
+- Tarjeta flotante con año de licencia (oculta en móvil)
+- **Contenido**: Biografía personal del Dr. Raffaele Del Prete
+  - Nacido en Nápoles, 29 junio 1992
+  - Formación: Universidad Luigi Vanvitelli y Federico II (Nápoles)
+  - Licenciado en 2017, Especialidad 2022, Máster 2023
+  - Trabaja entre Nápoles y Sevilla
+- **Stats**: "2017 - Licenciado desde" y "1.000+ - Pacientes satisfechos"
+
+### Sección "Casos de Éxito" (CasosExito.tsx)
+- **Diseño**: Carrusel doble sincronizado (antes/después lado a lado)
+- Selector de caso (botones con nombre del tratamiento)
+- Dos imágenes sincronizadas que cambian juntas al navegar
+- Controles: flechas + botones con nombre de cada ángulo
+- Aspect ratio 3/4 (portrait), max-width 672px centrado
+- Usa datos de Sanity (campo `angulos`) o fallback de demostración
+- Si no hay casos con múltiples ángulos, la sección no se renderiza
 
 ### Menú Móvil (Navbar)
 - Sistema de temas adaptativo:

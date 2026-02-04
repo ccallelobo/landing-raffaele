@@ -13,6 +13,7 @@ export default function middleware(request: NextRequest) {
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/version-') ||
+    pathname.startsWith('/prototipos') ||
     pathname.includes('.')
   ) {
     return NextResponse.next();
@@ -42,5 +43,5 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|studio|version-|.*\\..*).*)']
+  matcher: ['/((?!api|_next|_vercel|studio|version-|prototipos|.*\\..*).*)']
 };

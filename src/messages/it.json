@@ -58,20 +58,18 @@
   },
   "aboutMe": {
     "label": "Sul Dottore",
-    "title": "Una filosofia di",
-    "titleHighlight": "bellezza naturale",
-    "quote": "Il mio obiettivo è che ogni paziente si veda e si senta come la migliore versione di sé stesso.",
-    "paragraph1": "Con oltre 15 anni dedicati alla medicina estetica e alla chirurgia plastica, il Dr. Raffaele combina tecniche chirurgiche all'avanguardia con un profondo senso artistico dell'armonia facciale e corporea.",
-    "paragraph2": "Formatosi nelle più prestigiose istituzioni mediche d'Europa, il suo approccio si concentra su risultati che esaltano la bellezza unica di ogni persona — naturali, equilibrati e armoniosi.",
-    "paragraph3": "Membro della Società Internazionale di Chirurgia Plastica Estetica (ISAPS) e della Società Spagnola di Chirurgia Plastica, Ricostruttiva ed Estetica (SECPRE).",
+    "title": "Dr. Raffaele",
+    "titleHighlight": "Del Prete",
+    "quote": "Mi considero un professionista molto fortunato per poter lavorare in ciò che più mi appassiona, portando salute, autostima e felicità ai miei pazienti.",
+    "paragraph1": "Sono Raffaele Del Prete, medico-chirurgo italiano, nato a Napoli il 29 giugno 1992. La mia formazione universitaria è stata interamente in Italia: Laurea in Medicina e Chirurgia (2017, Università \"Luigi Vanvitelli\" di Napoli, con lode), Specializzazione in Medicina Preventiva e Sanità Pubblica (2022, Università \"Federico II\" di Napoli), e Master in Medicina Estetica (2023, Scuola di Chirurgia Plastica dell'Università \"Federico II\").",
+    "paragraph2": "Da quando ho ottenuto l'abilitazione professionale nel 2017, ho continuato a formarmi con i migliori medici chirurghi estetici. La medicina estetica racchiude ciò che mi ha sempre affascinato: la salute intesa come benessere integrale fisico, psichico e sociale; le proporzioni presenti nell'anatomia, nell'arte e nella natura; l'etica della prevenzione e della costanza; e la bellezza come rispettosa armonia, eleganza ed equilibrio.",
+    "paragraph3": "Mi considero molto fortunato di vivere e sviluppare la mia professione in due luoghi pieni di bellezza, cultura e scienza: Napoli in Italia e Siviglia in Spagna, dove sarò felice di accoglierti e accompagnarti verso la migliore versione di te stesso.",
     "stats": {
-      "years": "15+",
-      "yearsLabel": "Anni di esperienza",
-      "yearsLabelShort": "Anni di\nesperienza",
-      "patients": "3.000+",
-      "patientsLabel": "Pazienti soddisfatti",
-      "certifications": "20+",
-      "certificationsLabel": "Certificazioni"
+      "years": "2017",
+      "yearsLabel": "Abilitato dal",
+      "yearsLabelShort": "Abilitato\ndal",
+      "patients": "1.000+",
+      "patientsLabel": "Pazienti soddisfatti"
     }
   },
   "results": {
@@ -100,6 +98,16 @@
         "description": "Ringiovanimento dello sguardo"
       }
     }
+  },
+  "casosExito": {
+    "label": "Casi di Successo",
+    "title": "Trasformazioni",
+    "titleHighlight": "complete",
+    "description": "Esplora casi completi con più angolazioni per apprezzare la trasformazione da tutte le prospettive.",
+    "before": "Prima",
+    "after": "Dopo",
+    "angle": "angolo",
+    "angles": "angoli"
   },
   "reviews": {
     "label": "Testimonianze",

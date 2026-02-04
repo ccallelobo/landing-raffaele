@@ -19,7 +19,6 @@ export default function SobreMi({
   const stats = [
     { value: t("stats.years"), label: t("stats.yearsLabel") },
     { value: t("stats.patients"), label: t("stats.patientsLabel") },
-    { value: t("stats.certifications"), label: t("stats.certificationsLabel") },
   ];
 
   return (
