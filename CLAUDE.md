@@ -42,14 +42,22 @@ El middleware detecta el país del visitante usando el header `x-vercel-ip-count
 /es/tratamientos/facial/[slug] → Detalle de tratamiento facial
 /es/tratamientos/corporal   → Tratamientos corporales
 /es/tratamientos/corporal/[slug] → Detalle de tratamiento corporal
+/es/tratamientos/skin-quality → Tratamientos Skin Quality
+/es/tratamientos/skin-quality/[slug] → Detalle de tratamiento skin quality
+/es/tratamientos/capilar    → Tratamientos capilares
+/es/tratamientos/capilar/[slug] → Detalle de tratamiento capilar
 /es/privacidad              → Política de Privacidad
 /es/aviso-legal             → Aviso Legal
 /es/cookies                 → Política de Cookies
 /it/                        → Landing en italiano
-/it/trattamenti/facciale    → Trattamenti facciali
-/it/trattamenti/facciale/[slug] → Dettaglio trattamento facciale
-/it/trattamenti/corporale   → Trattamenti corporei
-/it/trattamenti/corporale/[slug] → Dettaglio trattamento corporeo
+/it/trattamenti/viso        → Trattamenti facciali
+/it/trattamenti/viso/[slug] → Dettaglio trattamento facciale
+/it/trattamenti/corpo       → Trattamenti corporei
+/it/trattamenti/corpo/[slug] → Dettaglio trattamento corporeo
+/it/trattamenti/skin-quality → Trattamenti Skin Quality
+/it/trattamenti/skin-quality/[slug] → Dettaglio trattamento skin quality
+/it/trattamenti/capelli     → Trattamenti capillari
+/it/trattamenti/capelli/[slug] → Dettaglio trattamento capillare
 /it/privacy                 → Privacy Policy
 /it/note-legali             → Note Legali
 /it/cookie                  → Cookie Policy
@@ -95,13 +103,13 @@ src/
 │   ├── version-3/             # Versión 3 para revisión cliente
 │   ├── version-4/             # Versión 4 para revisión cliente
 │   └── prototipos/            # Prototipos de diseño (temporal)
-│   │       ├── tratamientos/   # Páginas internas por zona
-│   │       │   └── [zona]/    # Zona dinámica (facial/corporal)
-│   │       │       └── [tratamiento]/ # Detalle individual de tratamiento
+│   │   ├── tratamientos/       # Páginas internas por zona
+│   │   │   └── [zona]/        # Zona dinámica (facial/corporal/skin-quality/capilar)
+│   │   │       └── [tratamiento]/ # Detalle individual de tratamiento
 ├── components/
 │   ├── Navbar.tsx             # Nav fijo + LanguageSwitcher integrado
 │   ├── Hero.tsx               # Split-screen desktop, bg mobile
-│   ├── Tratamientos.tsx       # 2 tarjetas de zona (Facial / Corporal) con links
+│   ├── Tratamientos.tsx       # 4 tarjetas de zona (Facial/Corporal/Skin Quality/Capilar) con links
 │   ├── ZonaTratamientos.tsx   # Grid de tratamientos con links a detalle (client)
 │   ├── TratamientoDetalle.tsx # Contenido de página individual de tratamiento (client)
 │   ├── MarcasTecnologias.tsx  # Carrusel de marcas/tecnología (placeholder)
@@ -150,8 +158,8 @@ src/
 - `sobre-mi-doctor-v6.webp` (372KB) - extra disponible
 
 ## Sanity Schemas
-- `tratamiento`: servicios médicos (nombre, slug, zona, imagen, resumenCorto, descripcion rich text, orden)
-- `resultado`: fotos antes/después (soporta múltiples ángulos + tratamientosAsociados)
+- `tratamiento`: servicios médicos (nombre, slug, zona, imagen, resumenCorto, descripcion rich text, resultados embebidos, orden)
+- `resultado`: fotos antes/después legacy (soporta múltiples ángulos + tratamientosAsociados) — usado solo por CasosExito
 - `resena`: testimonios de pacientes
 - `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada)
 
@@ -160,10 +168,15 @@ src/
 tratamiento {
   nombre: string (requerido)
   slug: slug (source: nombre, requerido)
-  zona: string (facial | corporal, requerido)
+  zona: string (facial | corporal | skin-quality | capilar, requerido)
   imagen: image (hotspot)
   resumenCorto: string (máx. 100 chars)
   descripcion: array de block + image (rich text)
+  resultados: array de {
+    descripcion: string (opcional)
+    imagenAntes: image (requerido)
+    imagenDespues: image (requerido)
+  }
   orden: number
 }
 ```
@@ -191,7 +204,7 @@ resultado {
 ### Schema `zonaConfig`
 ```
 zonaConfig {
-  zona: string (facial | corporal, requerido)
+  zona: string (facial | corporal | skin-quality | capilar, requerido)
   tituloES: string
   tituloIT: string
   descripcionES: string
@@ -256,7 +269,7 @@ zonaConfig {
 - **Nota**: Teléfono, dirección y horario eliminados de la sección de info
 
 ### Sección "Tratamientos" (landing)
-- 2 tarjetas de zona (Facial / Corporal) en grid 2 columnas (stacked en móvil)
+- 4 tarjetas de zona (Facial / Corporal / Skin Quality / Capilar) en grid 2 columnas (2x2 desktop, stacked en móvil)
 - Cada tarjeta tiene imagen de fondo, título, descripción y link a página de zona
 - Usa `Link` de next-intl para rutas localizadas
 - Ya no necesita data prop de Sanity
@@ -265,14 +278,15 @@ zonaConfig {
 - Server component con ISR (60s)
 - Hero con imagen, título y descripción (desde zonaConfig o traducciones fallback)
 - Grid de tratamientos como Links a páginas individuales (1 col móvil, 2 tablet, 3 desktop)
-- Resultados asociados con BeforeAfterSlider al final
-- Mapeo de slugs localizados: facial/facciale, corporal/corporale
+- 4 zonas: facial, corporal, skin-quality, capilar
+- Mapeo de slugs localizados: facial/viso, corporal/corpo, skin-quality/skin-quality, capilar/capelli
+- Backward compat: facciale → facial, corporale → corporal
 
 ### Páginas de Tratamiento Individual (`/tratamientos/[zona]/[tratamiento]`)
 - Server component con ISR (60s)
 - Hero con imagen del tratamiento, nombre y resumenCorto
 - Descripción rich text (PortableText) con imagen lateral
-- Resultados asociados (BeforeAfterSlider) filtrados por tratamiento
+- Resultados antes/después embebidos en el tratamiento (BeforeAfterSlider)
 - Botones CTA: "Volver a zona" y "Reservar consulta" (WhatsApp)
 - generateStaticParams genera todas las combinaciones zona+tratamiento
 - Datos 100% editables desde Sanity CMS
