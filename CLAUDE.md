@@ -37,14 +37,22 @@ El middleware detecta el país del visitante usando el header `x-vercel-ip-count
 ### Estructura de Rutas
 ```
 /                    → Redirige según geolocalización
-/es/                 → Landing en español
-/es/privacidad       → Política de Privacidad
-/es/aviso-legal      → Aviso Legal
-/es/cookies          → Política de Cookies
-/it/                 → Landing en italiano
-/it/privacy          → Privacy Policy
-/it/note-legali      → Note Legali
-/it/cookie           → Cookie Policy
+/es/                        → Landing en español
+/es/tratamientos/facial     → Tratamientos faciales
+/es/tratamientos/facial/[slug] → Detalle de tratamiento facial
+/es/tratamientos/corporal   → Tratamientos corporales
+/es/tratamientos/corporal/[slug] → Detalle de tratamiento corporal
+/es/privacidad              → Política de Privacidad
+/es/aviso-legal             → Aviso Legal
+/es/cookies                 → Política de Cookies
+/it/                        → Landing en italiano
+/it/trattamenti/facciale    → Trattamenti facciali
+/it/trattamenti/facciale/[slug] → Dettaglio trattamento facciale
+/it/trattamenti/corporale   → Trattamenti corporei
+/it/trattamenti/corporale/[slug] → Dettaglio trattamento corporeo
+/it/privacy                 → Privacy Policy
+/it/note-legali             → Note Legali
+/it/cookie                  → Cookie Policy
 /studio              → Sanity Studio (sin i18n)
 /version-1 a /version-4 → Versiones de revisión (sin i18n)
 /prototipos          → Prototipos de diseño (temporal)
@@ -87,15 +95,23 @@ src/
 │   ├── version-3/             # Versión 3 para revisión cliente
 │   ├── version-4/             # Versión 4 para revisión cliente
 │   └── prototipos/            # Prototipos de diseño (temporal)
+│   │       ├── tratamientos/   # Páginas internas por zona
+│   │       │   └── [zona]/    # Zona dinámica (facial/corporal)
+│   │       │       └── [tratamiento]/ # Detalle individual de tratamiento
 ├── components/
 │   ├── Navbar.tsx             # Nav fijo + LanguageSwitcher integrado
 │   ├── Hero.tsx               # Split-screen desktop, bg mobile
-│   ├── Tratamientos.tsx       # Grid de servicios desde Sanity
+│   ├── Tratamientos.tsx       # 2 tarjetas de zona (Facial / Corporal) con links
+│   ├── ZonaTratamientos.tsx   # Grid de tratamientos con links a detalle (client)
+│   ├── TratamientoDetalle.tsx # Contenido de página individual de tratamiento (client)
+│   ├── MarcasTecnologias.tsx  # Carrusel de marcas/tecnología (placeholder)
 │   ├── SobreMi.tsx            # Sección sobre el doctor
 │   ├── Resultados.tsx         # Galería antes/después (slider simple)
+│   ├── BeforeAfterSlider.tsx  # Slider interactivo antes/después (usado por Resultados)
 │   ├── CasosExito.tsx         # Carrusel doble sincronizado (antes/después)
 │   ├── Resenas.tsx            # Reseñas de pacientes
-│   ├── Contacto.tsx           # Formulario de contacto
+│   ├── Contacto.tsx           # Formulario de contacto (pacientes)
+│   ├── FormularioMedicos.tsx  # Formulario de colaboración (médicos)
 │   ├── Footer.tsx             # Footer con links localizados
 │   ├── CookieBanner.tsx       # Banner de cookies (RGPD)
 │   └── LanguageSwitcher.tsx   # Selector de idioma ES/IT
@@ -106,7 +122,8 @@ src/
 │   ├── es.json                # Traducciones español
 │   └── it.json                # Traducciones italiano
 ├── lib/
-│   └── sanity.ts              # Cliente y queries Sanity
+│   ├── sanity.ts              # Cliente y queries Sanity
+│   └── zonas.ts               # Mapeo de slugs de zona (URL ↔ Sanity)
 ├── hooks/
 │   └── useReveal.ts           # Animaciones scroll reveal
 └── middleware.ts              # Detección geográfica + i18n
@@ -133,9 +150,23 @@ src/
 - `sobre-mi-doctor-v6.webp` (372KB) - extra disponible
 
 ## Sanity Schemas
-- `tratamiento`: servicios médicos
-- `resultado`: fotos antes/después (soporta múltiples ángulos)
+- `tratamiento`: servicios médicos (nombre, slug, zona, imagen, resumenCorto, descripcion rich text, orden)
+- `resultado`: fotos antes/después (soporta múltiples ángulos + tratamientosAsociados)
 - `resena`: testimonios de pacientes
+- `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada)
+
+### Schema `tratamiento` (actualizado)
+```
+tratamiento {
+  nombre: string (requerido)
+  slug: slug (source: nombre, requerido)
+  zona: string (facial | corporal, requerido)
+  imagen: image (hotspot)
+  resumenCorto: string (máx. 100 chars)
+  descripcion: array de block + image (rich text)
+  orden: number
+}
+```
 
 ### Schema `resultado` (actualizado)
 El schema `resultado` ahora soporta múltiples ángulos por caso:
@@ -150,10 +181,24 @@ resultado {
     antes: image
     despues: image
   }
+  tratamientosAsociados: array de reference a tratamiento
 }
 ```
 - Los campos `imagenAntes/imagenDespues` se ocultan automáticamente si hay ángulos
 - Usa el array `angulos` para casos con múltiples perspectivas
+- `tratamientosAsociados` vincula resultados a tratamientos para filtrarlos por zona
+
+### Schema `zonaConfig`
+```
+zonaConfig {
+  zona: string (facial | corporal, requerido)
+  tituloES: string
+  tituloIT: string
+  descripcionES: string
+  descripcionIT: string
+  imagen: image (hotspot)
+}
+```
 
 ## Comandos
 - `npm run dev` - desarrollo local
@@ -209,6 +254,41 @@ resultado {
 ### Contacto
 - Solo formulario de contacto (nombre, email, teléfono, tratamiento, mensaje)
 - **Nota**: Teléfono, dirección y horario eliminados de la sección de info
+
+### Sección "Tratamientos" (landing)
+- 2 tarjetas de zona (Facial / Corporal) en grid 2 columnas (stacked en móvil)
+- Cada tarjeta tiene imagen de fondo, título, descripción y link a página de zona
+- Usa `Link` de next-intl para rutas localizadas
+- Ya no necesita data prop de Sanity
+
+### Páginas de Zona (`/tratamientos/[zona]`)
+- Server component con ISR (60s)
+- Hero con imagen, título y descripción (desde zonaConfig o traducciones fallback)
+- Grid de tratamientos como Links a páginas individuales (1 col móvil, 2 tablet, 3 desktop)
+- Resultados asociados con BeforeAfterSlider al final
+- Mapeo de slugs localizados: facial/facciale, corporal/corporale
+
+### Páginas de Tratamiento Individual (`/tratamientos/[zona]/[tratamiento]`)
+- Server component con ISR (60s)
+- Hero con imagen del tratamiento, nombre y resumenCorto
+- Descripción rich text (PortableText) con imagen lateral
+- Resultados asociados (BeforeAfterSlider) filtrados por tratamiento
+- Botones CTA: "Volver a zona" y "Reservar consulta" (WhatsApp)
+- generateStaticParams genera todas las combinaciones zona+tratamiento
+- Datos 100% editables desde Sanity CMS
+
+### Carrusel de Marcas (MarcasTecnologias)
+- Sección placeholder con logos de marcas/tecnología
+- Auto-scroll horizontal (CSS marquee)
+- 8 slots placeholder (gray boxes)
+- Posicionado entre Tratamientos y SobreMi en la landing
+
+### Formulario para Médicos (FormularioMedicos)
+- Formulario de colaboración para médicos profesionales
+- Campos: nombre, email, teléfono, especialidad, mensaje
+- Estilo floating-label (mismo patrón que Contacto)
+- Fondo stone con texto oscuro (diferenciado del form de pacientes)
+- Posicionado entre Contacto y Footer en la landing
 
 ### Banner de Cookies (RGPD)
 - Aparece 1 segundo después de cargar si no hay consentimiento

@@ -6,13 +6,12 @@ import Resultados from "@/components/Resultados";
 import Resenas from "@/components/Resenas";
 import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
-import { getTratamientos, getResultados, getResenas } from "@/lib/sanity";
+import { getResultados, getResenas } from "@/lib/sanity";
 
 export const revalidate = 60;
 
 export default async function Version4() {
-  const [tratamientos, resultados, resenas] = await Promise.all([
-    getTratamientos(),
+  const [resultados, resenas] = await Promise.all([
     getResultados(),
     getResenas(),
   ]);
@@ -22,7 +21,7 @@ export default async function Version4() {
       <Navbar />
       <main className="relative" style={{ clipPath: 'inset(0)', contain: 'paint' }}>
         <Hero heroImage="/hero-doctor-v4.webp" />
-        <Tratamientos data={tratamientos} />
+        <Tratamientos />
         <SobreMi sobreMiImage="/sobre-mi-doctor-v5.webp" />
         <Resultados data={resultados} />
         <Resenas data={resenas} />

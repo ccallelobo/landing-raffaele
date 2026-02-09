@@ -84,6 +84,14 @@ export default defineType({
         },
       ],
     }),
+    // Tratamientos asociados para vincular a páginas de zona
+    defineField({
+      name: "tratamientosAsociados",
+      title: "Tratamientos asociados",
+      type: "array",
+      description: "Vincula este resultado con tratamientos específicos para que aparezca en sus páginas de zona.",
+      of: [{ type: "reference", to: [{ type: "tratamiento" }] }],
+    }),
   ],
   preview: {
     select: {

@@ -188,6 +188,75 @@
     "reject": "Rifiuta",
     "accept": "Accetta"
   },
+  "zonas": {
+    "sectionLabel": "Trattamenti",
+    "sectionTitle": "Le Nostre",
+    "sectionTitleHighlight": "Specialità",
+    "sectionDescription": "Scopri i nostri trattamenti organizzati per zona per trovare la procedura ideale per te.",
+    "facial": {
+      "title": "Trattamenti Facciali",
+      "description": "Procedure specializzate per esaltare la bellezza naturale del viso con tecniche all'avanguardia.",
+      "heroTitle": "Trattamenti",
+      "heroTitleHighlight": "Facciali",
+      "heroDescription": "Procedure specializzate per esaltare l'armonia e la bellezza naturale del tuo viso."
+    },
+    "corporal": {
+      "title": "Trattamenti Corporei",
+      "description": "Tecniche avanzate di scultura e ringiovanimento corporeo per definire la tua silhouette.",
+      "heroTitle": "Trattamenti",
+      "heroTitleHighlight": "Corporei",
+      "heroDescription": "Tecniche avanzate di scultura e ringiovanimento per definire la tua silhouette naturale."
+    },
+    "skin-quality": {
+      "title": "Skin Quality",
+      "description": "Trattamenti avanzati per migliorare la texture, la luminosità e la qualità globale della tua pelle.",
+      "heroTitle": "Skin",
+      "heroTitleHighlight": "Quality",
+      "heroDescription": "Protocolli specializzati per migliorare la texture, la luminosità e la qualità globale della tua pelle."
+    },
+    "capilar": {
+      "title": "Trattamenti Capillari",
+      "description": "Soluzioni specializzate per la salute e il recupero dei capelli con tecniche di ultima generazione.",
+      "heroTitle": "Trattamenti",
+      "heroTitleHighlight": "Capillari",
+      "heroDescription": "Soluzioni specializzate per la salute e il recupero dei capelli con tecniche di ultima generazione."
+    },
+    "verTratamientos": "Vedi trattamenti",
+    "volverGrid": "Torna ai trattamenti",
+    "reservarConsulta": "Prenota consulenza",
+    "resultadosZona": "Risultati",
+    "resultadosZonaHighlight": "di questa zona",
+    "sinTratamientos": "Prossimamente altri trattamenti in questa zona.",
+    "masInfo": "Più info",
+    "tratamientoLabel": "Trattamento",
+    "volverZonaFacial": "Torna ai trattamenti facciali",
+    "volverZonaCorporal": "Torna ai trattamenti corporei",
+    "volverZonaSkinQuality": "Torna a Skin Quality",
+    "volverZonaCapilar": "Torna ai trattamenti capillari",
+    "resultadosTratamiento": "Risultati di questo",
+    "resultadosTratamientoHighlight": "trattamento"
+  },
+  "marcas": {
+    "label": "Tecnologia",
+    "title": "Marchi di",
+    "titleHighlight": "fiducia"
+  },
+  "doctorForm": {
+    "label": "Collaborazione",
+    "title": "Sei un",
+    "titleHighlight": "medico?",
+    "description": "Se desideri informazioni su corsi privati o proporre collaborazioni professionali, non esitare a contattarci.",
+    "form": {
+      "name": "Nome completo",
+      "email": "Email",
+      "phone": "Telefono",
+      "specialty": "Specialità",
+      "message": "Messaggio",
+      "submit": "Invia Richiesta",
+      "privacy": "I tuoi dati saranno trattati con totale riservatezza.",
+      "success": "Grazie per il tuo interesse. Ti contatteremo presto."
+    }
+  },
   "legal": {
     "backToHome": "Torna alla home",
     "lastUpdated": "Ultimo aggiornamento: Gennaio 2025",
