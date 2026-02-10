@@ -35,7 +35,6 @@ export default function Footer() {
     { href: "#sobre-mi", label: tNav("aboutMe") },
     { href: "#resultados", label: tNav("results") },
     { href: "#resenas", label: tNav("reviews") },
-    { href: "#contacto", label: tNav("contact") },
   ];
 
   return (

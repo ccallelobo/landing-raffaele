@@ -104,21 +104,6 @@ export default function Hero({ heroImage = "/hero-doctor.webp" }: HeroProps) {
               {t("subtitle")}
             </p>
 
-            {/* CTA button */}
-            <div
-              style={{
-                opacity: loaded ? 1 : 0,
-                transform: loaded ? "translateY(0)" : "translateY(30px)",
-                transition: "all 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.9s",
-              }}
-            >
-              <a
-                href="#contacto"
-                className="group relative inline-flex items-center justify-center px-8 py-3 lg:px-10 lg:py-4 bg-gold text-white text-[12px] lg:text-[13px] font-semibold tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-gold-dark"
-              >
-                <span className="relative z-10">{t("cta")}</span>
-              </a>
-            </div>
           </div>
 
           {/* Right: Doctor image - only on desktop */}

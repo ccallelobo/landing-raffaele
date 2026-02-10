@@ -16,9 +16,9 @@
   },
   "hero": {
     "label": "Medicina Estética",
-    "title": "Dr. Raffaele",
-    "titleHighlight": "Del Prete",
-    "subtitle": "Realzamos tu belleza natural con técnicas de vanguardia y un enfoque artístico personalizado.",
+    "title": "Revelar",
+    "titleHighlight": "Belleza",
+    "subtitle": "con técnicas médicas de vanguardia y un enfoque artístico personalizado.",
     "cta": "Reservar Consulta",
     "sideText": "Cirugía Plástica & Estética — Sevilla",
     "scroll": "Scroll"
@@ -27,7 +27,7 @@
     "label": "Servicios",
     "title": "Nuestros",
     "titleHighlight": "Tratamientos",
-    "description": "Cada procedimiento es diseñado a medida, combinando arte y ciencia para resultados que realzan tu belleza única.",
+    "description": "Cada procedimiento es diseñado a medida, combinando arte, ciencia y tecnología médica para resultados que exalten tu belleza y bienestar.",
     "moreInfo": "Más info",
     "fallback": {
       "rinoplastia": {
@@ -58,9 +58,9 @@
   },
   "aboutMe": {
     "label": "Sobre el Doctor",
-    "title": "Dr. Raffaele",
-    "titleHighlight": "Del Prete",
-    "quote": "Me considero un profesional muy afortunado por poder trabajar en lo que más me apasiona, aportando salud, autoestima y felicidad a mis pacientes.",
+    "title": "Una filosofía de belleza",
+    "titleHighlight": "y salud integrales.",
+    "quote": "La belleza está en todo… mi misión es revelarla a través de una medicina estética basada en la salud, la naturalidad y la evidencia científica. Mi objetivo es acompañarte para descubrir la mejor versión de ti, sin dejar de ser tú.",
     "paragraph1": "Soy Raffaele Del Prete, médico-cirujano italiano, nacido en Nápoles el 29 de junio de 1992. Mi formación universitaria ha sido enteramente en Italia: Grado en Medicina y Cirugía (2017, Universidad \"Luigi Vanvitelli\" de Nápoles, con matrícula de honor), Especialidad en Medicina Preventiva y Salud Pública (2022, Universidad \"Federico II\" de Nápoles), y Máster en Medicina Estética (2023, Escuela de Cirugía Plástica de la Universidad \"Federico II\").",
     "paragraph2": "Desde que obtuve la habilitación profesional en 2017, he seguido formándome con los mejores médicos cirujanos estéticos. La medicina estética engloba lo que siempre me ha fascinado: la salud entendida como bienestar integral físico, psíquico y social; las proporciones presentes en la anatomía, el arte y la naturaleza; la ética de la prevención y la constancia; y la belleza como respetuosa armonía, elegancia y equilibrio.",
     "paragraph3": "Me considero muy afortunado de vivir y desarrollar mi profesión en dos lugares llenos de belleza, cultura y ciencia: Nápoles en Italia y Sevilla en España, donde estaré encantado de atenderte y acompañarte hacia la mejor versión de ti.",
@@ -74,9 +74,9 @@
   },
   "results": {
     "label": "Antes & Después",
-    "title": "Resultados que",
-    "titleHighlight": "hablan por sí solos",
-    "description": "Desliza la barra para comparar el antes y el después de cada procedimiento.",
+    "title": "Resultados personalizados, armónicos,",
+    "titleHighlight": "saludables…",
+    "description": "que no persiguen modas o obsesiones, sino criterios médicos, respeto de la anatomía y de la esencia de cada paciente.",
     "slide": "Deslizar",
     "before": "Antes",
     "after": "Después",
@@ -112,8 +112,8 @@
   "reviews": {
     "label": "Testimonios",
     "title": "Lo que dicen",
-    "titleHighlight": "nuestros pacientes",
-    "description": "La confianza de quienes nos eligen es nuestro mayor reconocimiento. Cada testimonio refleja nuestro compromiso con la excelencia.",
+    "titleHighlight": "mis pacientes",
+    "description": "La confianza de quienes me eligen es mi mayor reconocimiento. La sonrisa de mis pacientes cuando se ven al espejo después de mis trabajos es mi mayor satisfacción. Cada testimonio refleja mi compromiso con la excelencia.",
     "fallback": {
       "review1": {
         "name": "María G.",
@@ -190,9 +190,9 @@
   },
   "zonas": {
     "sectionLabel": "Tratamientos",
-    "sectionTitle": "Nuestras",
-    "sectionTitleHighlight": "Especialidades",
-    "sectionDescription": "Descubre nuestros tratamientos organizados por zona para encontrar el procedimiento ideal para ti.",
+    "sectionTitle": "",
+    "sectionTitleHighlight": "Tratamientos",
+    "sectionDescription": "Cada procedimiento es diseñado a medida, combinando arte, ciencia y tecnología médica para resultados que exalten tu belleza y bienestar.",
     "facial": {
       "title": "Tratamientos Faciales",
       "description": "Procedimientos especializados para realzar la belleza natural del rostro con técnicas de vanguardia.",
@@ -234,7 +234,15 @@
     "volverZonaSkinQuality": "Volver a Skin Quality",
     "volverZonaCapilar": "Volver a tratamientos capilares",
     "resultadosTratamiento": "Resultados de este",
-    "resultadosTratamientoHighlight": "tratamiento"
+    "resultadosTratamientoHighlight": "tratamiento",
+    "categoryAll": "Todos",
+    "categoryFiller": "Filler",
+    "categoryBotox": "Botox",
+    "categoryAvanzati": "Avanzados",
+    "categoryFillerDescription": "Ácido hialurónico para restaurar y esculpir volúmenes faciales",
+    "categoryBotoxDescription": "Toxina botulínica para suavizar líneas de expresión",
+    "categoryAvanzatiDescription": "Técnicas de última generación para rejuvenecimiento integral",
+    "treatmentCount": "tratamientos"
   },
   "marcas": {
     "label": "Tecnología",

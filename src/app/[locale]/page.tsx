@@ -6,7 +6,6 @@ import SobreMi from "@/components/SobreMi";
 import Resultados from "@/components/Resultados";
 import CasosExito from "@/components/CasosExito";
 import Resenas from "@/components/Resenas";
-import Contacto from "@/components/Contacto";
 import FormularioMedicos from "@/components/FormularioMedicos";
 import Footer from "@/components/Footer";
 import { getResultados, getResenas } from "@/lib/sanity";
@@ -34,7 +33,6 @@ export default async function Home() {
         <Resultados data={resultados} />
         <CasosExito data={resultados} />
         <Resenas data={resenas} />
-        <Contacto />
         <FormularioMedicos />
         <Footer />
       </main>

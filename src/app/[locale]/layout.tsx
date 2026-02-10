@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 import CookieBanner from "@/components/CookieBanner";
+import WhatsAppBubble from "@/components/WhatsAppBubble";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -64,6 +65,7 @@ export default async function LocaleLayout({
       <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <WhatsAppBubble />
           <CookieBanner />
         </NextIntlClientProvider>
       </body>

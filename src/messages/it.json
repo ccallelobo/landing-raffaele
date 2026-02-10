@@ -16,9 +16,9 @@
   },
   "hero": {
     "label": "Medicina Estetica",
-    "title": "Dr. Raffaele",
-    "titleHighlight": "Del Prete",
-    "subtitle": "Esaltiamo la tua bellezza naturale con tecniche all'avanguardia e un approccio artistico personalizzato.",
+    "title": "Rivelare",
+    "titleHighlight": "Bellezza",
+    "subtitle": "con tecniche mediche all'avanguardia e un approccio artistico personalizzato.",
     "cta": "Prenota Consulenza",
     "sideText": "Chirurgia Plastica & Estetica — Siviglia",
     "scroll": "Scorri"
@@ -27,7 +27,7 @@
     "label": "Servizi",
     "title": "I Nostri",
     "titleHighlight": "Trattamenti",
-    "description": "Ogni procedura è progettata su misura, combinando arte e scienza per risultati che esaltano la tua bellezza unica.",
+    "description": "Ogni procedimento è progettato su misura, combinando arte, scienza e tecnologia medica per risultati che esaltino la tua bellezza e il tuo benessere.",
     "moreInfo": "Più info",
     "fallback": {
       "rinoplastia": {
@@ -58,9 +58,9 @@
   },
   "aboutMe": {
     "label": "Sul Dottore",
-    "title": "Dr. Raffaele",
-    "titleHighlight": "Del Prete",
-    "quote": "Mi considero un professionista molto fortunato per poter lavorare in ciò che più mi appassiona, portando salute, autostima e felicità ai miei pazienti.",
+    "title": "Una filosofia di bellezza",
+    "titleHighlight": "e di salute integrali.",
+    "quote": "La bellezza è ovunque… la mia missione è rivelarla attraverso una medicina estetica basata sulla salute, sulla naturalezza e sulla evidenza scientifica. Il mio obiettivo è accompagnarti alla scoperta della migliore versione di te, senza smettere di essere tu.",
     "paragraph1": "Sono Raffaele Del Prete, medico-chirurgo italiano, nato a Napoli il 29 giugno 1992. La mia formazione universitaria è stata interamente in Italia: Laurea in Medicina e Chirurgia (2017, Università \"Luigi Vanvitelli\" di Napoli, con lode), Specializzazione in Medicina Preventiva e Sanità Pubblica (2022, Università \"Federico II\" di Napoli), e Master in Medicina Estetica (2023, Scuola di Chirurgia Plastica dell'Università \"Federico II\").",
     "paragraph2": "Da quando ho ottenuto l'abilitazione professionale nel 2017, ho continuato a formarmi con i migliori medici chirurghi estetici. La medicina estetica racchiude ciò che mi ha sempre affascinato: la salute intesa come benessere integrale fisico, psichico e sociale; le proporzioni presenti nell'anatomia, nell'arte e nella natura; l'etica della prevenzione e della costanza; e la bellezza come rispettosa armonia, eleganza ed equilibrio.",
     "paragraph3": "Mi considero molto fortunato di vivere e sviluppare la mia professione in due luoghi pieni di bellezza, cultura e scienza: Napoli in Italia e Siviglia in Spagna, dove sarò felice di accoglierti e accompagnarti verso la migliore versione di te stesso.",
@@ -74,9 +74,9 @@
   },
   "results": {
     "label": "Prima & Dopo",
-    "title": "Risultati che",
-    "titleHighlight": "parlano da soli",
-    "description": "Scorri la barra per confrontare il prima e il dopo di ogni procedura.",
+    "title": "Risultati personalizzati, armonici,",
+    "titleHighlight": "salutari…",
+    "description": "che non seguono mode o ossessioni, bensì criterio medico, rispetto dell'anatomia e dell'essenza di ogni paziente.",
     "slide": "Scorri",
     "before": "Prima",
     "after": "Dopo",
@@ -111,9 +111,9 @@
   },
   "reviews": {
     "label": "Testimonianze",
-    "title": "Cosa dicono",
-    "titleHighlight": "i nostri pazienti",
-    "description": "La fiducia di chi ci sceglie è il nostro più grande riconoscimento. Ogni testimonianza riflette il nostro impegno per l'eccellenza.",
+    "title": "Quello che dicono",
+    "titleHighlight": "i miei pazienti",
+    "description": "La fiducia di chi mi sceglie è il mio più grande riconoscimento. Il sorriso di chi si guarda allo specchio dopo i miei lavori è la mia più grande soddisfazione. Ogni testimonianza riflette il mio impegno verso l'eccellenza.",
     "fallback": {
       "review1": {
         "name": "Maria G.",
@@ -190,9 +190,9 @@
   },
   "zonas": {
     "sectionLabel": "Trattamenti",
-    "sectionTitle": "Le Nostre",
-    "sectionTitleHighlight": "Specialità",
-    "sectionDescription": "Scopri i nostri trattamenti organizzati per zona per trovare la procedura ideale per te.",
+    "sectionTitle": "",
+    "sectionTitleHighlight": "Trattamenti",
+    "sectionDescription": "Ogni procedimento è progettato su misura, combinando arte, scienza e tecnologia medica per risultati che esaltino la tua bellezza e il tuo benessere.",
     "facial": {
       "title": "Trattamenti Facciali",
       "description": "Procedure specializzate per esaltare la bellezza naturale del viso con tecniche all'avanguardia.",
@@ -234,7 +234,15 @@
     "volverZonaSkinQuality": "Torna a Skin Quality",
     "volverZonaCapilar": "Torna ai trattamenti capillari",
     "resultadosTratamiento": "Risultati di questo",
-    "resultadosTratamientoHighlight": "trattamento"
+    "resultadosTratamientoHighlight": "trattamento",
+    "categoryAll": "Tutti",
+    "categoryFiller": "Filler",
+    "categoryBotox": "Botox",
+    "categoryAvanzati": "Avanzati",
+    "categoryFillerDescription": "Acido ialuronico per ripristinare e scolpire i volumi del viso",
+    "categoryBotoxDescription": "Tossina botulinica per distendere le linee di espressione",
+    "categoryAvanzatiDescription": "Tecniche di ultima generazione per il ringiovanimento integrale",
+    "treatmentCount": "trattamenti"
   },
   "marcas": {
     "label": "Tecnologia",
