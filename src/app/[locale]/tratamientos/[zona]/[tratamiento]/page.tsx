@@ -9,6 +9,7 @@ import {
   urlFor,
 } from "@/lib/sanity";
 import { slugToZona, allZoneSlugs, zonaToSlug } from "@/lib/zonas";
+import { getLocalizedNombre, getLocalizedResumen } from "@/lib/localize";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -26,9 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tratamiento = await getTratamientoBySlug(tratamientoSlug, zona);
   if (!tratamiento) return {};
 
+  const nombre = getLocalizedNombre(tratamiento, locale);
+  const resumen = getLocalizedResumen(tratamiento, locale);
+
   return {
-    title: `${tratamiento.nombre} | Dr. Raffaele Del Prete`,
-    description: tratamiento.resumenCorto || `${tratamiento.nombre} - Dr. Raffaele Del Prete`,
+    title: `${nombre} | Dr. Raffaele Del Prete`,
+    description: resumen || `${nombre} - Dr. Raffaele Del Prete`,
   };
 }
 
@@ -67,6 +71,9 @@ export default async function TratamientoPage({ params }: Props) {
   // Get the localized zona slug for Link hrefs
   const localizedZonaSlug = zonaToSlug[locale]?.[zona] || zonaSlug;
 
+  const nombre = getLocalizedNombre(tratamiento, locale);
+  const resumen = getLocalizedResumen(tratamiento, locale);
+
   return (
     <>
       <Navbar />
@@ -79,7 +86,7 @@ export default async function TratamientoPage({ params }: Props) {
           {heroImage && (
             <Image
               src={heroImage}
-              alt={tratamiento.nombre}
+              alt={nombre}
               fill
               className="object-cover opacity-30"
               sizes="100vw"
@@ -93,11 +100,11 @@ export default async function TratamientoPage({ params }: Props) {
               {t("tratamientoLabel")}
             </span>
             <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-[-0.02em] text-white mb-4">
-              {tratamiento.nombre}
+              {nombre}
             </h1>
-            {tratamiento.resumenCorto && (
+            {resumen && (
               <p className="text-white/50 text-[16px] md:text-[18px] leading-relaxed max-w-xl">
-                {tratamiento.resumenCorto}
+                {resumen}
               </p>
             )}
           </div>

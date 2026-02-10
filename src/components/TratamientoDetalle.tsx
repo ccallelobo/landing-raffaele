@@ -6,7 +6,8 @@ import type { SanityTratamiento } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { getLocalizedNombre, getLocalizedDescripcion } from "@/lib/localize";
 
 interface Props {
   tratamiento: SanityTratamiento;
@@ -22,6 +23,9 @@ export default function TratamientoDetalle({
   useReveal();
   const t = useTranslations("zonas");
   const tResults = useTranslations("results");
+  const locale = useLocale();
+  const nombre = getLocalizedNombre(tratamiento, locale);
+  const descripcion = getLocalizedDescripcion(tratamiento, locale);
 
   const volverKeys: Record<string, string> = {
     facial: "volverZonaFacial",
@@ -44,7 +48,7 @@ export default function TratamientoDetalle({
               <div className="reveal relative aspect-[4/3] overflow-hidden">
                 <img
                   src={urlFor(tratamiento.imagen).width(800).height(600).url()}
-                  alt={tratamiento.nombre}
+                  alt={nombre}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -54,9 +58,9 @@ export default function TratamientoDetalle({
             <div
               className={`reveal ${!tratamiento.imagen ? "lg:col-span-2 max-w-3xl" : ""}`}
             >
-              {tratamiento.descripcion && tratamiento.descripcion.length > 0 && (
+              {descripcion && descripcion.length > 0 && (
                 <div className="prose prose-lg text-moss max-w-none prose-headings:text-noir prose-headings:font-display prose-a:text-gold prose-strong:text-noir">
-                  <PortableText value={tratamiento.descripcion} />
+                  <PortableText value={descripcion} />
                 </div>
               )}
 
@@ -71,14 +75,6 @@ export default function TratamientoDetalle({
                 >
                   {t(volverKey)}
                 </Link>
-                <a
-                  href="https://wa.me/34604894697"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-7 py-3 text-[12px] font-semibold tracking-[0.2em] uppercase bg-gold text-white hover:bg-gold-dark transition-all duration-300"
-                >
-                  {t("reservarConsulta")}
-                </a>
               </div>
             </div>
           </div>
@@ -119,8 +115,8 @@ export default function TratamientoDetalle({
                       className="aspect-[3/4] w-full"
                       beforeImage={beforeImg}
                       afterImage={afterImg}
-                      beforeAlt={`${tratamiento.nombre} - ${tResults("before")}`}
-                      afterAlt={`${tratamiento.nombre} - ${tResults("after")}`}
+                      beforeAlt={`${nombre} - ${tResults("before")}`}
+                      afterAlt={`${nombre} - ${tResults("after")}`}
                     />
                     {resultado.descripcion && (
                       <div className="mt-4">

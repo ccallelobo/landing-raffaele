@@ -4,13 +4,57 @@ export default defineType({
   name: "tratamiento",
   title: "Tratamiento",
   type: "document",
+  fieldsets: [
+    { name: "italiano", title: "🇮🇹 Italiano" },
+    { name: "espanol", title: "🇪🇸 Español" },
+  ],
   fields: [
+    // ── Italian fields ──
     defineField({
       name: "nombre",
-      title: "Nombre",
+      title: "Nome (Italiano)",
       type: "string",
+      fieldset: "italiano",
       validation: (r) => r.required(),
     }),
+    defineField({
+      name: "resumenCorto",
+      title: "Riassunto breve (Italiano)",
+      type: "string",
+      fieldset: "italiano",
+      description: "Testo breve per la card (max 100 caratteri)",
+      validation: (r) => r.max(100),
+    }),
+    defineField({
+      name: "descripcion",
+      title: "Descrizione (Italiano)",
+      type: "array",
+      fieldset: "italiano",
+      of: [{ type: "block" }, { type: "image", options: { hotspot: true } }],
+    }),
+    // ── Spanish fields ──
+    defineField({
+      name: "nombreES",
+      title: "Nombre (Español)",
+      type: "string",
+      fieldset: "espanol",
+    }),
+    defineField({
+      name: "resumenCortoES",
+      title: "Resumen corto (Español)",
+      type: "string",
+      fieldset: "espanol",
+      description: "Texto breve para la tarjeta (máx. 100 caracteres)",
+      validation: (r) => r.max(100),
+    }),
+    defineField({
+      name: "descripcionES",
+      title: "Descripción (Español)",
+      type: "array",
+      fieldset: "espanol",
+      of: [{ type: "block" }, { type: "image", options: { hotspot: true } }],
+    }),
+    // ── Shared fields ──
     defineField({
       name: "slug",
       title: "Slug",
@@ -37,19 +81,6 @@ export default defineType({
       title: "Imagen",
       type: "image",
       options: { hotspot: true },
-    }),
-    defineField({
-      name: "resumenCorto",
-      title: "Resumen corto",
-      type: "string",
-      description: "Texto breve para la tarjeta (máx. 100 caracteres)",
-      validation: (r) => r.max(100),
-    }),
-    defineField({
-      name: "descripcion",
-      title: "Descripción",
-      type: "array",
-      of: [{ type: "block" }, { type: "image", options: { hotspot: true } }],
     }),
     defineField({
       name: "resultados",

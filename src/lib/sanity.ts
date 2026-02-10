@@ -31,6 +31,9 @@ export interface SanityTratamiento {
   imagen?: SanityImageSource;
   resumenCorto?: string;
   descripcion?: any[]; // PortableText blocks
+  nombreES?: string;
+  resumenCortoES?: string;
+  descripcionES?: any[]; // PortableText blocks
   resultados?: SanityTratamientoResultado[];
   orden?: number;
 }
@@ -77,11 +80,11 @@ export interface SanityZonaConfig {
 /* ── GROQ Queries ──────────────────────────────────────── */
 
 const tratamientosQuery = `*[_type == "tratamiento"] | order(zona asc, orden asc) {
-  _id, nombre, slug, zona, imagen, resumenCorto, descripcion, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
+  _id, nombre, slug, zona, imagen, resumenCorto, descripcion, nombreES, resumenCortoES, descripcionES, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
 }`;
 
 const tratamientosPorZonaQuery = `*[_type == "tratamiento" && zona == $zona] | order(orden asc) {
-  _id, nombre, slug, zona, imagen, resumenCorto, descripcion, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
+  _id, nombre, slug, zona, imagen, resumenCorto, descripcion, nombreES, resumenCortoES, descripcionES, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
 }`;
 
 const resultadosQuery = `*[_type == "resultado"] {
@@ -105,7 +108,7 @@ const zonaConfigQuery = `*[_type == "zonaConfig" && zona == $zona][0] {
 }`;
 
 const tratamientoBySlugQuery = `*[_type == "tratamiento" && slug.current == $slug && zona == $zona][0] {
-  _id, nombre, slug, zona, imagen, resumenCorto, descripcion, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
+  _id, nombre, slug, zona, imagen, resumenCorto, descripcion, nombreES, resumenCortoES, descripcionES, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
 }`;
 
 const resultadosPorTratamientoQuery = `*[_type == "resultado" && references($tratamientoId)] {

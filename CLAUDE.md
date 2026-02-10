@@ -131,6 +131,7 @@ src/
 │   └── it.json                # Traducciones italiano
 ├── lib/
 │   ├── sanity.ts              # Cliente y queries Sanity
+│   ├── localize.ts            # Helpers i18n para campos bilingües de tratamientos
 │   └── zonas.ts               # Mapeo de slugs de zona (URL ↔ Sanity)
 ├── hooks/
 │   └── useReveal.ts           # Animaciones scroll reveal
@@ -158,7 +159,7 @@ src/
 - `sobre-mi-doctor-v6.webp` (372KB) - extra disponible
 
 ## Sanity Schemas
-- `tratamiento`: servicios médicos (nombre, slug, zona, imagen, resumenCorto, descripcion rich text, resultados embebidos, orden)
+- `tratamiento`: servicios médicos (nombre/nombreES, slug, zona, imagen, resumenCorto/resumenCortoES, descripcion/descripcionES rich text, resultados embebidos, orden)
 - `resultado`: fotos antes/después legacy (soporta múltiples ángulos + tratamientosAsociados) — usado solo por CasosExito
 - `resena`: testimonios de pacientes
 - `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada)
@@ -166,12 +167,18 @@ src/
 ### Schema `tratamiento` (actualizado)
 ```
 tratamiento {
+  — fieldset 🇮🇹 Italiano —
   nombre: string (requerido)
+  resumenCorto: string (máx. 100 chars)
+  descripcion: array de block + image (rich text)
+  — fieldset 🇪🇸 Español —
+  nombreES: string (opcional, fallback a nombre)
+  resumenCortoES: string (máx. 100 chars, opcional, fallback a resumenCorto)
+  descripcionES: array de block + image (opcional, fallback a descripcion)
+  — campos compartidos —
   slug: slug (source: nombre, requerido)
   zona: string (facial | corporal | skin-quality | capilar, requerido)
   imagen: image (hotspot)
-  resumenCorto: string (máx. 100 chars)
-  descripcion: array de block + image (rich text)
   resultados: array de {
     descripcion: string (opcional)
     imagenAntes: image (requerido)
