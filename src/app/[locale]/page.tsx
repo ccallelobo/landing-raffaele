@@ -4,7 +4,6 @@ import Tratamientos from "@/components/Tratamientos";
 import MarcasTecnologias from "@/components/MarcasTecnologias";
 import SobreMi from "@/components/SobreMi";
 import Resultados from "@/components/Resultados";
-import CasosExito from "@/components/CasosExito";
 import Resenas from "@/components/Resenas";
 import FormularioMedicos from "@/components/FormularioMedicos";
 import Footer from "@/components/Footer";
@@ -31,7 +30,6 @@ export default async function Home() {
         <MarcasTecnologias />
         <SobreMi />
         <Resultados data={resultados} />
-        <CasosExito data={resultados} />
         <Resenas data={resenas} />
         <FormularioMedicos />
         <Footer />
