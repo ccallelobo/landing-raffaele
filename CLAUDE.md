@@ -2,7 +2,7 @@
 
 ## Tech Stack
 - **Framework**: Next.js 16.1.5 (App Router)
-- **Styling**: Tailwind CSS v4 con CSS variables
+- **Styling**: Tailwind CSS v4 con CSS variables + `@tailwindcss/typography`
 - **CMS**: Sanity (proyecto: ykf6zrj4, dataset: production)
 - **Deploy**: Vercel (auto-deploy desde main)
 - **i18n**: next-intl (ES/IT con detección geográfica)
@@ -114,14 +114,15 @@ src/
 │   ├── TratamientoDetalle.tsx # Contenido de página individual de tratamiento (client)
 │   ├── MarcasTecnologias.tsx  # Carrusel de marcas/tecnología (placeholder)
 │   ├── SobreMi.tsx            # Sección sobre el doctor
-│   ├── Resultados.tsx         # Galería antes/después (slider simple)
+│   ├── Resultados.tsx         # Galería antes/después (datos de tabla resultado en Sanity)
 │   ├── BeforeAfterSlider.tsx  # Slider interactivo antes/después (usado por Resultados)
-│   ├── CasosExito.tsx         # Carrusel doble sincronizado (antes/después)
+│   ├── CasosExito.tsx         # Carrusel doble sincronizado (no usado en home, disponible para futuro)
 │   ├── Resenas.tsx            # Reseñas de pacientes
 │   ├── Contacto.tsx           # Formulario de contacto (pacientes)
 │   ├── FormularioMedicos.tsx  # Formulario de colaboración (médicos)
 │   ├── Footer.tsx             # Footer con links localizados
 │   ├── CookieBanner.tsx       # Banner de cookies (RGPD)
+│   ├── WhatsAppBubble.tsx     # Burbuja flotante de WhatsApp (locale-aware)
 │   └── LanguageSwitcher.tsx   # Selector de idioma ES/IT
 ├── i18n/
 │   ├── routing.ts             # Configuración de rutas
@@ -160,7 +161,7 @@ src/
 
 ## Sanity Schemas
 - `tratamiento`: servicios médicos (nombre/nombreES, slug, zona, imagen, resumenCorto/resumenCortoES, descripcion/descripcionES rich text, resultados embebidos, orden)
-- `resultado`: fotos antes/después legacy (soporta múltiples ángulos + tratamientosAsociados) — usado solo por CasosExito
+- `resultado`: fotos antes/después legacy (soporta múltiples ángulos + tratamientosAsociados) — usado por Resultados en la home
 - `resena`: testimonios de pacientes
 - `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada)
 
@@ -247,15 +248,6 @@ zonaConfig {
   - Trabaja entre Nápoles y Sevilla
 - **Stats**: "2017 - Licenciado desde" y "1.000+ - Pacientes satisfechos"
 
-### Sección "Casos de Éxito" (CasosExito.tsx)
-- **Diseño**: Carrusel doble sincronizado (antes/después lado a lado)
-- Selector de caso (botones con nombre del tratamiento)
-- Dos imágenes sincronizadas que cambian juntas al navegar
-- Controles: flechas + botones con nombre de cada ángulo
-- Aspect ratio 3/4 (portrait), max-width 672px centrado
-- Usa datos de Sanity (campo `angulos`) o fallback de demostración
-- Si no hay casos con múltiples ángulos, la sección no se renderiza
-
 ### Menú Móvil (Navbar)
 - Sistema de temas adaptativo:
   - Desde Hero (navbar oscuro): fondo negro + logo blanco + texto blanco
@@ -292,7 +284,7 @@ zonaConfig {
 ### Páginas de Tratamiento Individual (`/tratamientos/[zona]/[tratamiento]`)
 - Server component con ISR (60s)
 - Hero con imagen del tratamiento, nombre y resumenCorto
-- Descripción rich text (PortableText) con imagen lateral
+- Descripción rich text (PortableText + @tailwindcss/typography prose) con imagen lateral
 - Resultados antes/después embebidos en el tratamiento (BeforeAfterSlider)
 - Botones CTA: "Volver a zona" y "Reservar consulta" (WhatsApp)
 - generateStaticParams genera todas las combinaciones zona+tratamiento
@@ -310,6 +302,24 @@ zonaConfig {
 - Estilo floating-label (mismo patrón que Contacto)
 - Fondo stone con texto oscuro (diferenciado del form de pacientes)
 - Posicionado entre Contacto y Footer en la landing
+
+### Burbuja de WhatsApp (WhatsAppBubble)
+- Burbuja flotante fija en esquina inferior derecha (bottom-6 right-6)
+- Color verde WhatsApp (#25D366), icono SVG blanco
+- z-index 9997 (debajo del CookieBanner z-[9998])
+- Animación hover (scale-110) y active (scale-95)
+- **Locale-aware**: detecta idioma con `useLocale()` de next-intl
+  - `/es`: número español (+34 604 89 46 97) + mensaje preescrito en español
+  - `/it`: número italiano (pendiente, fallback a español) + mensaje preescrito en italiano
+- Config centralizada en `WHATSAPP_CONFIG` dentro del componente
+- Incluido en `[locale]/layout.tsx` (aparece en todas las páginas)
+
+### Navbar — Navegación entre páginas
+- Los links de sección (#sobre-mi, #resultados, #resenas, #tratamientos) funcionan desde cualquier página
+- Usa `usePathname()` de next-intl para detectar si estamos en la home
+- En la home: anchor directo (`#section`) para smooth scroll
+- En subpáginas: navega a `/{locale}/#section` (navegación completa a home + scroll)
+- Helper `sectionHref(hash)` centraliza esta lógica
 
 ### Banner de Cookies (RGPD)
 - Aparece 1 segundo después de cargar si no hay consentimiento
