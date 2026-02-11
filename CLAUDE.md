@@ -49,10 +49,12 @@ El middleware detecta el país del visitante usando el header `x-vercel-ip-count
 /es/tratamientos/skin-quality/[slug] → Detalle de tratamiento skin quality
 /es/tratamientos/capilar    → Tratamientos capilares
 /es/tratamientos/capilar/[slug] → Detalle de tratamiento capilar
+/es/sobre-mi                → Página Sobre Mí
 /es/privacidad              → Política de Privacidad
 /es/aviso-legal             → Aviso Legal
 /es/cookies                 → Política de Cookies
 /it/                        → Landing en italiano
+/it/chi-sono                → Pagina Chi Sono
 /it/trattamenti/viso        → Trattamenti facciali
 /it/trattamenti/viso/[slug] → Dettaglio trattamento facciale
 /it/trattamenti/corpo       → Trattamenti corporei
@@ -96,6 +98,8 @@ src/
 │   ├── [locale]/              # Rutas internacionalizadas
 │   │   ├── layout.tsx         # Layout con NextIntlClientProvider
 │   │   ├── page.tsx           # Landing principal (ISR 60s)
+│   │   ├── sobre-mi/          # Página dedicada Sobre Mí / Chi Sono
+│   │   │   └── page.tsx       # Server component (ISR 60s)
 │   │   └── (legal)/           # Páginas legales
 │   │       ├── privacidad/    # Política de Privacidad
 │   │       ├── aviso-legal/   # Aviso Legal
@@ -116,7 +120,8 @@ src/
 │   ├── ZonaTratamientos.tsx   # Grid de tratamientos con links a detalle (client)
 │   ├── TratamientoDetalle.tsx # Contenido de página individual de tratamiento (client)
 │   ├── MarcasTecnologias.tsx  # Carrusel de marcas/tecnología (placeholder)
-│   ├── SobreMi.tsx            # Sección sobre el doctor
+│   ├── SobreMi.tsx            # Sección resumen sobre el doctor (home)
+│   ├── SobreMiPageContent.tsx # Contenido página dedicada Sobre Mí (client)
 │   ├── Resultados.tsx         # Galería antes/después (datos de tabla resultado en Sanity)
 │   ├── BeforeAfterSlider.tsx  # Slider interactivo antes/después (usado por Resultados)
 │   ├── CasosExito.tsx         # Carrusel doble sincronizado (no usado en home, disponible para futuro)
@@ -167,6 +172,7 @@ src/
 - `resultado`: fotos antes/después legacy (soporta múltiples ángulos + tratamientosAsociados) — usado por Resultados en la home
 - `resena`: testimonios de pacientes
 - `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada)
+- `doctorProfile`: singleton — CV en PDF, sellos/sociedades médicas, imagen de la página Sobre Mí
 
 ### Schema `tratamiento` (actualizado)
 ```
@@ -224,6 +230,23 @@ zonaConfig {
 }
 ```
 
+### Schema `doctorProfile` (singleton)
+Configurado como singleton en Sanity Studio con documentId fijo `"doctorProfile"`.
+```
+doctorProfile {
+  curriculumPDF: file (accept .pdf)
+  sellos: array de {
+    nombre: string (requerido)
+    imagen: image (hotspot, requerido)
+    url: url (opcional)
+  }
+  imagenPagina: image (hotspot)
+}
+```
+- Se gestiona desde Studio como item fijo "Perfil del Doctor"
+- `getDoctorProfile()` en sanity.ts devuelve los datos (o null si no existe)
+- Las secciones CV y sellos en la página Sobre Mí se ocultan si no hay datos
+
 ## Comandos
 - `npm run dev` - desarrollo local
 - `npm run build` - build de producción
@@ -238,18 +261,26 @@ zonaConfig {
 - Solo botón "Reservar Consulta" (eliminado "Explorar")
 - Texto lateral: "Medicina Preventiva, Estética, Regenerativa" (ES) / "Medicina Preventiva, Estetica, Rigenerativa" (IT)
 
-### Sección "Sobre Mí"
+### Sección "Sobre Mí" (home — resumen)
 - Imagen del doctor con fondo transparente
 - Imagen escalada al 75% (`scale-75`) con ajuste vertical (`translate-y-[12%]`)
 - Gradiente stone→moss para integración visual con la sección
 - Aspect ratio: 4/5 en móvil, 3/4 en desktop
 - Tarjeta flotante con año de licencia (oculta en móvil)
-- **Contenido**: Biografía personal del Dr. Raffaele Del Prete
-  - Nacido en Nápoles, 29 junio 1992
-  - Formación: Universidad Luigi Vanvitelli y Federico II (Nápoles)
-  - Licenciado en 2017, Especialidad 2022, Máster 2023
-  - Trabaja entre Nápoles y Sevilla
+- **Contenido**: Cita + stats (sin párrafos de biografía, esos están en la página dedicada)
 - **Stats**: "2017 - Licenciado desde" y "1.000+ - Pacientes satisfechos"
+- **Link "Conocer más"**: enlace gold a `/sobre-mi` tras los stats
+
+### Página "Sobre Mí" (`/sobre-mi` | `/chi-sono`)
+- Server component con ISR (60s), `generateMetadata` con namespace `aboutMePage`
+- Fetch `getDoctorProfile()` de Sanity para CV, sellos e imagen
+- **Hero**: fondo noir con imagen (object-cover si viene de Sanity, fallback con scale-200)
+- **Biografía extendida**: cita + 4 párrafos con imagen lateral (aspect 3:4)
+- **Timeline de formación**: línea vertical con puntos gold, datos desde traducciones (t.raw)
+- **Sociedades médicas**: grid de logos/sellos desde Sanity (condicional: se oculta si no hay sellos)
+- **Descargar CV**: botón de descarga (condicional: se oculta si no hay PDF en Sanity)
+- **CTA**: reservar consulta vía WhatsApp (locale-aware)
+- Traducciones en namespace `aboutMePage` (es.json / it.json)
 
 ### Menú Móvil (Navbar)
 - Sistema de temas adaptativo:
@@ -321,7 +352,8 @@ zonaConfig {
 - Incluido en `[locale]/layout.tsx` (aparece en todas las páginas)
 
 ### Navbar — Navegación entre páginas
-- Los links de sección (#sobre-mi, #resultados, #resenas, #tratamientos) funcionan desde cualquier página
+- "Sobre Mí" es un `<Link href="/sobre-mi">` (navega a la página dedicada)
+- Los links de sección (#resultados, #resenas, #tratamientos) funcionan desde cualquier página
 - Usa `usePathname()` de next-intl para detectar si estamos en la home
 - En la home: anchor directo (`#section`) para smooth scroll
 - En subpáginas: navega a `/{locale}/#section` (navegación completa a home + scroll)
