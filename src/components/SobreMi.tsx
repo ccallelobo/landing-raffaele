@@ -87,12 +87,6 @@ export default function SobreMi({
               </p>
             </div>
 
-            <div className="reveal space-y-5 text-noir/60 text-[15px] leading-[1.8] mb-12">
-              <p>{t("paragraph1")}</p>
-              <p>{t("paragraph2")}</p>
-              <p>{t("paragraph3")}</p>
-            </div>
-
             {/* Stats row */}
             <div className="reveal flex flex-wrap gap-x-12 gap-y-6 pt-8 border-t border-noir/10">
               {stats.map((s) => (
