@@ -9,8 +9,7 @@ const WHATSAPP_CONFIG = {
       "Hola Dr. Raffaele, me gustaría solicitar información sobre sus tratamientos de medicina estética. ¿Podría ayudarme?",
   },
   it: {
-    // Número italiano pendiente — usa el español como fallback temporal
-    phone: "34604894697",
+    phone: "393760976953",
     message:
       "Buongiorno Dr. Raffaele, vorrei richiedere informazioni sui suoi trattamenti di medicina estetica. Potrebbe aiutarmi?",
   },

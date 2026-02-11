@@ -20,7 +20,7 @@
     "titleHighlight": "Belleza",
     "subtitle": "con técnicas médicas de vanguardia y un enfoque artístico personalizado.",
     "cta": "Reservar Consulta",
-    "sideText": "Cirugía Plástica & Estética — Sevilla",
+    "sideText": "Medicina Preventiva, Estética, Regenerativa",
     "scroll": "Scroll"
   },
   "treatments": {
@@ -176,6 +176,15 @@
     "description": "Medicina estética y cirugía plástica con los más altos estándares de excelencia y un enfoque artístico personalizado.",
     "navigation": "Navegación",
     "followUs": "Síguenos",
+    "contactLabel": "Contacto",
+    "spainLabel": "España",
+    "spainAddress1": "C/ Cristóbal Chanfreut Escribano 8-9",
+    "spainAddress2": "41704 Dos Hermanas (Sevilla)",
+    "italyLabel": "Italia",
+    "italyAddress1": "Dirección por confirmar",
+    "italyAddress2": "",
+    "phone": "+34 604 89 46 97",
+    "email": "dr.rafdelprete@gmail.com",
     "home": "Inicio",
     "privacy": "Política de Privacidad",
     "legal": "Aviso Legal",
@@ -274,7 +283,7 @@
       "metaDescription": "Política de privacidad y protección de datos personales de la clínica del Dr. Raffaele Del Prete.",
       "section1": {
         "title": "1. Responsable del Tratamiento",
-        "content": "<strong>Identidad:</strong> Dr. Raffaele Del Prete<br /><strong>Dirección:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br /><strong>Teléfono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> contacto@drraffaele.com"
+        "content": "<strong>Identidad:</strong> Dr. Raffaele Del Prete<br /><strong>Dirección:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br /><strong>Teléfono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> dr.rafdelprete@gmail.com"
       },
       "section2": {
         "title": "2. Datos Personales que Recopilamos",
@@ -326,7 +335,7 @@
           "<strong>Portabilidad:</strong> recibir sus datos en formato estructurado",
           "<strong>Oposición:</strong> oponerse al tratamiento de sus datos"
         ],
-        "outro": "Para ejercer estos derechos, puede contactarnos en contacto@drraffaele.com adjuntando copia de su DNI. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+        "outro": "Para ejercer estos derechos, puede contactarnos en dr.rafdelprete@gmail.com adjuntando copia de su DNI. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
       },
       "section8": {
         "title": "8. Seguridad",
@@ -344,7 +353,7 @@
       "section1": {
         "title": "1. Datos Identificativos",
         "intro": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa:",
-        "content": "<strong>Titular:</strong> Dr. Raffaele Del Prete<br /><strong>Actividad:</strong> Medicina Estética y Cirugía Plástica<br /><strong>Domicilio:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br /><strong>Teléfono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> contacto@drraffaele.com<br /><strong>Número de Colegiado:</strong> [Número de colegiación]"
+        "content": "<strong>Titular:</strong> Dr. Raffaele Del Prete<br /><strong>Actividad:</strong> Medicina Estética y Cirugía Plástica<br /><strong>Domicilio:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)<br /><strong>Teléfono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> dr.rafdelprete@gmail.com<br /><strong>Número de Colegiado:</strong> [Número de colegiación]"
       },
       "section2": {
         "title": "2. Objeto",
@@ -446,7 +455,7 @@
       "section6": {
         "title": "6. Contacto",
         "intro": "Si tiene cualquier duda sobre esta Política de Cookies, puede contactar con nosotros a través de:",
-        "content": "<strong>Email:</strong> contacto@drraffaele.com<br /><strong>Teléfono:</strong> +34 604 89 46 97"
+        "content": "<strong>Email:</strong> dr.rafdelprete@gmail.com<br /><strong>Teléfono:</strong> +34 604 89 46 97"
       }
     }
   }

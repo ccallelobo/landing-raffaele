@@ -20,7 +20,7 @@
     "titleHighlight": "Bellezza",
     "subtitle": "con tecniche mediche all'avanguardia e un approccio artistico personalizzato.",
     "cta": "Prenota Consulenza",
-    "sideText": "Chirurgia Plastica & Estetica — Siviglia",
+    "sideText": "Medicina Preventiva, Estetica, Rigenerativa",
     "scroll": "Scorri"
   },
   "treatments": {
@@ -176,6 +176,15 @@
     "description": "Medicina estetica e chirurgia plastica con i più alti standard di eccellenza e un approccio artistico personalizzato.",
     "navigation": "Navigazione",
     "followUs": "Seguici",
+    "contactLabel": "Contatto",
+    "spainLabel": "Spagna",
+    "spainAddress1": "C/ Cristóbal Chanfreut Escribano 8-9",
+    "spainAddress2": "41704 Dos Hermanas (Siviglia)",
+    "italyLabel": "Italia",
+    "italyAddress1": "Indirizzo da confermare",
+    "italyAddress2": "",
+    "phone": "+34 604 89 46 97",
+    "email": "dr.rafdelprete@gmail.com",
     "home": "Home",
     "privacy": "Privacy Policy",
     "legal": "Note Legali",
@@ -274,7 +283,7 @@
       "metaDescription": "Informativa sulla privacy e protezione dei dati personali della clinica del Dr. Raffaele Del Prete.",
       "section1": {
         "title": "1. Titolare del Trattamento",
-        "content": "<strong>Identità:</strong> Dr. Raffaele Del Prete<br /><strong>Indirizzo:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Siviglia)<br /><strong>Telefono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> contacto@drraffaele.com"
+        "content": "<strong>Identità:</strong> Dr. Raffaele Del Prete<br /><strong>Indirizzo:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Siviglia)<br /><strong>Telefono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> dr.rafdelprete@gmail.com"
       },
       "section2": {
         "title": "2. Dati Personali che Raccogliamo",
@@ -326,7 +335,7 @@
           "<strong>Portabilità:</strong> ricevere i Suoi dati in formato strutturato",
           "<strong>Opposizione:</strong> opporsi al trattamento dei Suoi dati"
         ],
-        "outro": "Per esercitare questi diritti, può contattarci all'indirizzo contacto@drraffaele.com allegando copia del Suo documento d'identità. Ha inoltre il diritto di presentare un reclamo all'Autorità Garante per la Protezione dei Dati Personali."
+        "outro": "Per esercitare questi diritti, può contattarci all'indirizzo dr.rafdelprete@gmail.com allegando copia del Suo documento d'identità. Ha inoltre il diritto di presentare un reclamo all'Autorità Garante per la Protezione dei Dati Personali."
       },
       "section8": {
         "title": "8. Sicurezza",
@@ -344,7 +353,7 @@
       "section1": {
         "title": "1. Dati Identificativi",
         "intro": "In conformità all'articolo 10 della Legge 34/2002, dell'11 luglio, sui Servizi della Società dell'Informazione e Commercio Elettronico (LSSI-CE), si informa:",
-        "content": "<strong>Titolare:</strong> Dr. Raffaele Del Prete<br /><strong>Attività:</strong> Medicina Estetica e Chirurgia Plastica<br /><strong>Sede:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Siviglia)<br /><strong>Telefono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> contacto@drraffaele.com<br /><strong>Numero di Iscrizione all'Ordine:</strong> [Numero di iscrizione]"
+        "content": "<strong>Titolare:</strong> Dr. Raffaele Del Prete<br /><strong>Attività:</strong> Medicina Estetica e Chirurgia Plastica<br /><strong>Sede:</strong> Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Siviglia)<br /><strong>Telefono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> dr.rafdelprete@gmail.com<br /><strong>Numero di Iscrizione all'Ordine:</strong> [Numero di iscrizione]"
       },
       "section2": {
         "title": "2. Oggetto",
@@ -446,7 +455,7 @@
       "section6": {
         "title": "6. Contatto",
         "intro": "Se hai domande su questa Cookie Policy, puoi contattarci tramite:",
-        "content": "<strong>Email:</strong> contacto@drraffaele.com<br /><strong>Telefono:</strong> +34 604 89 46 97"
+        "content": "<strong>Email:</strong> dr.rafdelprete@gmail.com<br /><strong>Telefono:</strong> +34 604 89 46 97"
       }
     }
   }

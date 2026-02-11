@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Main footer */}
         <div className="py-16 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <Image
               src="/firma-logo.png"
               alt="Dr. Raffaele Del Prete"
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           {/* Nav */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="text-white/50 text-[11px] font-semibold tracking-[0.2em] uppercase mb-6">
               {t("navigation")}
             </h4>
@@ -74,8 +74,54 @@ export default function Footer() {
             </nav>
           </div>
 
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <h4 className="text-white/50 text-[11px] font-semibold tracking-[0.2em] uppercase mb-6">
+              {t("contactLabel")}
+            </h4>
+            <div className="flex flex-col gap-4">
+              {/* Spain */}
+              <div>
+                <p className="text-gold text-[13px] font-medium mb-1">{t("spainLabel")}</p>
+                <p className="text-white/30 text-[13px] leading-relaxed">
+                  {t("spainAddress1")}
+                  <br />
+                  {t("spainAddress2")}
+                </p>
+              </div>
+              {/* Italy */}
+              <div>
+                <p className="text-gold text-[13px] font-medium mb-1">{t("italyLabel")}</p>
+                <p className="text-white/30 text-[13px] leading-relaxed">
+                  {t("italyAddress1")}
+                  {t("italyAddress2") && (
+                    <>
+                      <br />
+                      {t("italyAddress2")}
+                    </>
+                  )}
+                </p>
+              </div>
+              {/* Phone & Email */}
+              <div className="flex flex-col gap-1 mt-1">
+                <a
+                  href={`tel:${t("phone").replace(/\s/g, "")}`}
+                  className="text-white/30 text-[13px] hover:text-gold transition-colors w-fit"
+                >
+                  {t("phone")}
+                </a>
+                <a
+                  href={`mailto:${t("email")}`}
+                  className="text-white/30 text-[13px] hover:text-gold transition-colors w-fit"
+                >
+                  {t("email")}
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* Social + legal */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <h4 className="text-white/50 text-[11px] font-semibold tracking-[0.2em] uppercase mb-6">
               {t("followUs")}
             </h4>
