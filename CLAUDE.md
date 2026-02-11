@@ -8,8 +8,8 @@
 - **i18n**: next-intl (ES/IT con detección geográfica)
 
 ## Información de Contacto
-- **Ubicación ES**: Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)
-- **Ubicación IT**: Pendiente de confirmar
+- **Ubicación ES**: Calle Paris n 28, 41704 Dos Hermanas (Sevilla)
+- **Ubicación IT**: Via Riscatto n 5, 80027 Frattamaggiore (Napoli)
 - **Teléfono**: +34 604 89 46 97
 - **Email**: dr.rafdelprete@gmail.com
 - **Instagram**: https://www.instagram.com/dr_raffaele_delprete/
@@ -267,7 +267,7 @@ zonaConfig {
 - Etiquetas de país en color gold
 - Links de Instagram y WhatsApp abren en nueva pestaña (target="_blank")
 - Links a páginas legales localizados (usan `Link` de next-intl)
-- **Nota**: Dirección italiana pendiente de confirmar (placeholder)
+- Dirección Italia: Via Riscatto n 5, 80027 Frattamaggiore (Napoli)
 
 ### Contacto
 - Solo formulario de contacto (nombre, email, teléfono, tratamiento, mensaje)
