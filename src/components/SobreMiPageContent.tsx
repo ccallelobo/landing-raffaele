@@ -78,7 +78,10 @@ export default function SobreMiPageContent({
                     src={imagenPaginaUrl || "/sobre-mi-doctor-v4.webp"}
                     alt="Dr. Raffaele Del Prete"
                     fill
-                    className="object-contain object-bottom scale-200 translate-y-[12%]"
+                    className={imagenPaginaUrl
+                      ? "object-cover object-top"
+                      : "object-contain object-bottom scale-200 translate-y-[12%]"
+                    }
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                 </div>

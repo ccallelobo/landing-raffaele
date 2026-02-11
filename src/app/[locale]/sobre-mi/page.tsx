@@ -36,7 +36,7 @@ export default async function SobreMiPage({ params }: Props) {
   }));
 
   const imagenPaginaUrl = profile?.imagenPagina
-    ? urlFor(profile.imagenPagina).width(800).height(1066).url()
+    ? urlFor(profile.imagenPagina).width(800).auto("format").url()
     : undefined;
 
   return (
