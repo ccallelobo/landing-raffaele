@@ -31,7 +31,6 @@ export default function Navbar() {
     isHome ? hash : `/${locale}/${hash}`;
 
   const otherLinks = [
-    { href: "#sobre-mi", label: t("aboutMe") },
     { href: "#resultados", label: t("results") },
     { href: "#resenas", label: t("reviews") },
   ];
@@ -70,8 +69,8 @@ export default function Navbar() {
     scrolled ? "text-noir/50 hover:text-gold" : "text-white/60 hover:text-white"
   }`;
 
-  // All mobile items for stagger animation (Tratamientos + 4 zones + other links)
-  const mobileItemCount = 1 + (mobileSubOpen ? zonas.length : 0) + otherLinks.length;
+  // All mobile items for stagger animation (Tratamientos + 4 zones + Sobre Mí + other links)
+  const mobileItemCount = 1 + (mobileSubOpen ? zonas.length : 0) + 1 + otherLinks.length;
   let mobileIdx = 0;
 
   return (
@@ -144,6 +143,11 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
+
+            {/* Sobre Mí page link */}
+            <Link href="/sobre-mi" className={linkClass}>
+              {t("aboutMe")}
+            </Link>
 
             {/* Other links */}
             {otherLinks.map((link) => (
@@ -254,6 +258,23 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+          {/* Sobre Mí page link */}
+          {(() => {
+            const idx = mobileIdx++;
+            return (
+              <Link
+                href="/sobre-mi"
+                onClick={handleCloseMenu}
+                className={`font-display text-3xl hover:text-gold transition-all duration-500 ${
+                  isDarkMenu ? "text-white/80" : "text-noir/80"
+                } ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                style={{ transitionDelay: open ? `${idx * 80}ms` : "0ms" }}
+              >
+                {t("aboutMe")}
+              </Link>
+            );
+          })()}
 
           {/* Other links */}
           {otherLinks.map((link) => {

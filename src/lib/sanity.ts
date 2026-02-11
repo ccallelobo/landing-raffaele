@@ -67,6 +67,19 @@ export interface SanityResena {
   avatar?: SanityImageSource;
 }
 
+export interface SanityDoctorProfileSello {
+  _key: string;
+  nombre: string;
+  imagen: SanityImageSource;
+  url?: string;
+}
+
+export interface SanityDoctorProfile {
+  curriculumPDF?: { asset: { url: string } };
+  sellos?: SanityDoctorProfileSello[];
+  imagenPagina?: SanityImageSource;
+}
+
 export interface SanityZonaConfig {
   _id: string;
   zona: string;
@@ -109,6 +122,12 @@ const zonaConfigQuery = `*[_type == "zonaConfig" && zona == $zona][0] {
 
 const tratamientoBySlugQuery = `*[_type == "tratamiento" && slug.current == $slug && zona == $zona][0] {
   _id, nombre, slug, zona, imagen, resumenCorto, descripcion, nombreES, resumenCortoES, descripcionES, resultados[] { _key, descripcion, imagenAntes, imagenDespues }, orden
+}`;
+
+const doctorProfileQuery = `*[_type == "doctorProfile"][0] {
+  "curriculumPDF": curriculumPDF { asset-> { url } },
+  sellos[] { _key, nombre, imagen, url },
+  imagenPagina
 }`;
 
 const resultadosPorTratamientoQuery = `*[_type == "resultado" && references($tratamientoId)] {
@@ -170,4 +189,10 @@ export async function getResultadosPorTratamiento(
   return client
     .fetch<SanityResultado[]>(resultadosPorTratamientoQuery, { tratamientoId })
     .catch(() => []);
+}
+
+export async function getDoctorProfile(): Promise<SanityDoctorProfile | null> {
+  return client
+    .fetch<SanityDoctorProfile | null>(doctorProfileQuery)
+    .catch(() => null);
 }

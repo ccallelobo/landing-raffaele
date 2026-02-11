@@ -70,7 +70,38 @@
       "yearsLabelShort": "Abilitato\ndal",
       "patients": "1.000+",
       "patientsLabel": "Pazienti soddisfatti"
-    }
+    },
+    "readMore": "Scopri di più"
+  },
+  "aboutMePage": {
+    "metaTitle": "Chi Sono | Dr. Raffaele Del Prete",
+    "metaDescription": "Scopri il Dr. Raffaele Del Prete: formazione, filosofia e percorso professionale in medicina estetica tra Italia e Spagna.",
+    "heroLabel": "Sul Dottore",
+    "heroTitle": "Dr. Raffaele",
+    "heroTitleHighlight": "Del Prete",
+    "bioQuote": "La bellezza è ovunque… la mia missione è rivelarla attraverso una medicina estetica basata sulla salute, sulla naturalezza e sulla evidenza scientifica.",
+    "bioParagraph1": "Sono Raffaele Del Prete, medico-chirurgo italiano, nato a Napoli il 29 giugno 1992. La mia formazione universitaria è stata interamente in Italia: Laurea in Medicina e Chirurgia (2017, Università \"Luigi Vanvitelli\" di Napoli, con lode), Specializzazione in Medicina Preventiva e Sanità Pubblica (2022, Università \"Federico II\" di Napoli), e Master in Medicina Estetica (2023, Scuola di Chirurgia Plastica dell'Università \"Federico II\").",
+    "bioParagraph2": "Da quando ho ottenuto l'abilitazione professionale nel 2017, ho continuato a formarmi con i migliori medici chirurghi estetici. La medicina estetica racchiude ciò che mi ha sempre affascinato: la salute intesa come benessere integrale fisico, psichico e sociale; le proporzioni presenti nell'anatomia, nell'arte e nella natura; l'etica della prevenzione e della costanza; e la bellezza come rispettosa armonia, eleganza ed equilibrio.",
+    "bioParagraph3": "Il mio approccio integra una rigorosa formazione medica, sensibilità artistica e le tecnologie più avanzate. Ogni paziente è unico, e il mio impegno è progettare un piano personalizzato che rispetti la sua anatomia, le sue proporzioni e la sua essenza.",
+    "bioParagraph4": "Mi considero molto fortunato di vivere e sviluppare la mia professione in due luoghi pieni di bellezza, cultura e scienza: Napoli in Italia e Siviglia in Spagna, dove sarò felice di accoglierti e accompagnarti verso la migliore versione di te stesso.",
+    "timelineTitle": "Formazione",
+    "timelineTitleHighlight": "e percorso",
+    "timeline": [
+      { "year": "2017", "title": "Laurea in Medicina e Chirurgia", "description": "Università \"Luigi Vanvitelli\" di Napoli — Con lode" },
+      { "year": "2017", "title": "Abilitazione professionale", "description": "Iscrizione all'Ordine dei Medici di Napoli" },
+      { "year": "2022", "title": "Specializzazione in Medicina Preventiva", "description": "Università \"Federico II\" di Napoli — Sanità Pubblica" },
+      { "year": "2023", "title": "Master in Medicina Estetica", "description": "Scuola di Chirurgia Plastica, Università \"Federico II\"" }
+    ],
+    "sellosLabel": "Società",
+    "sellosTitle": "Società",
+    "sellosTitleHighlight": "mediche",
+    "cvLabel": "Curriculum",
+    "cvTitle": "Scarica il mio",
+    "cvTitleHighlight": "Curriculum Vitae",
+    "cvButton": "Scarica CV",
+    "ctaTitle": "Iniziamo?",
+    "ctaDescription": "Prenota una consulenza informativa senza impegno e scopri come posso aiutarti.",
+    "ctaButton": "Prenota consulenza"
   },
   "results": {
     "label": "Prima & Dopo",

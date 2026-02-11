@@ -70,7 +70,38 @@
       "yearsLabelShort": "Licenciado\ndesde",
       "patients": "1.000+",
       "patientsLabel": "Pacientes satisfechos"
-    }
+    },
+    "readMore": "Conocer más"
+  },
+  "aboutMePage": {
+    "metaTitle": "Sobre Mí | Dr. Raffaele Del Prete",
+    "metaDescription": "Conoce al Dr. Raffaele Del Prete: formación, filosofía y trayectoria profesional en medicina estética entre Italia y España.",
+    "heroLabel": "Sobre el Doctor",
+    "heroTitle": "Dr. Raffaele",
+    "heroTitleHighlight": "Del Prete",
+    "bioQuote": "La belleza está en todo… mi misión es revelarla a través de una medicina estética basada en la salud, la naturalidad y la evidencia científica.",
+    "bioParagraph1": "Soy Raffaele Del Prete, médico-cirujano italiano, nacido en Nápoles el 29 de junio de 1992. Mi formación universitaria ha sido enteramente en Italia: Grado en Medicina y Cirugía (2017, Universidad \"Luigi Vanvitelli\" de Nápoles, con matrícula de honor), Especialidad en Medicina Preventiva y Salud Pública (2022, Universidad \"Federico II\" de Nápoles), y Máster en Medicina Estética (2023, Escuela de Cirugía Plástica de la Universidad \"Federico II\").",
+    "bioParagraph2": "Desde que obtuve la habilitación profesional en 2017, he seguido formándome con los mejores médicos cirujanos estéticos. La medicina estética engloba lo que siempre me ha fascinado: la salud entendida como bienestar integral físico, psíquico y social; las proporciones presentes en la anatomía, el arte y la naturaleza; la ética de la prevención y la constancia; y la belleza como respetuosa armonía, elegancia y equilibrio.",
+    "bioParagraph3": "Mi enfoque integra formación médica rigurosa, sensibilidad artística y las tecnologías más avanzadas. Cada paciente es único, y mi compromiso es diseñar un plan personalizado que respete su anatomía, sus proporciones y su esencia.",
+    "bioParagraph4": "Me considero muy afortunado de vivir y desarrollar mi profesión en dos lugares llenos de belleza, cultura y ciencia: Nápoles en Italia y Sevilla en España, donde estaré encantado de atenderte y acompañarte hacia la mejor versión de ti.",
+    "timelineTitle": "Formación",
+    "timelineTitleHighlight": "y trayectoria",
+    "timeline": [
+      { "year": "2017", "title": "Grado en Medicina y Cirugía", "description": "Universidad \"Luigi Vanvitelli\" de Nápoles — Con matrícula de honor" },
+      { "year": "2017", "title": "Habilitación profesional", "description": "Inscripción en el Colegio de Médicos de Nápoles" },
+      { "year": "2022", "title": "Especialidad en Medicina Preventiva", "description": "Universidad \"Federico II\" de Nápoles — Salud Pública" },
+      { "year": "2023", "title": "Máster en Medicina Estética", "description": "Escuela de Cirugía Plástica, Universidad \"Federico II\"" }
+    ],
+    "sellosLabel": "Sociedades",
+    "sellosTitle": "Sociedades",
+    "sellosTitleHighlight": "médicas",
+    "cvLabel": "Curriculum",
+    "cvTitle": "Descarga mi",
+    "cvTitleHighlight": "Curriculum Vitae",
+    "cvButton": "Descargar CV",
+    "ctaTitle": "¿Empezamos?",
+    "ctaDescription": "Reserva una consulta informativa sin compromiso y descubre cómo puedo ayudarte.",
+    "ctaButton": "Reservar consulta"
   },
   "results": {
     "label": "Antes & Después",

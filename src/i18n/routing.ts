@@ -19,6 +19,10 @@ export const routing = defineRouting({
       es: '/cookies',
       it: '/cookie'
     },
+    '/sobre-mi': {
+      es: '/sobre-mi',
+      it: '/chi-sono'
+    },
     '/tratamientos/[zona]': {
       es: '/tratamientos/[zona]',
       it: '/trattamenti/[zona]'

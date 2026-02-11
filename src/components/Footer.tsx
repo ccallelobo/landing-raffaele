@@ -29,10 +29,9 @@ export default function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
 
-  const navLinks = [
+  const anchorLinks = [
     { href: "#inicio", label: t("home") },
     { href: "#tratamientos", label: tNav("treatments") },
-    { href: "#sobre-mi", label: tNav("aboutMe") },
     { href: "#resultados", label: tNav("results") },
     { href: "#resenas", label: tNav("reviews") },
   ];
@@ -62,7 +61,7 @@ export default function Footer() {
               {t("navigation")}
             </h4>
             <nav className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {anchorLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
@@ -71,6 +70,12 @@ export default function Footer() {
                   {link.label}
                 </a>
               ))}
+              <Link
+                href="/sobre-mi"
+                className="text-white/30 text-[14px] hover:text-gold transition-colors duration-300 w-fit"
+              >
+                {tNav("aboutMe")}
+              </Link>
             </nav>
           </div>
 

@@ -3,6 +3,7 @@
 import { useReveal } from "@/hooks/useReveal";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 interface SobreMiProps {
   sobreMiImage?: string;
@@ -104,6 +105,24 @@ export default function SobreMi({
                   </span>
                 </div>
               ))}
+            </div>
+
+            {/* Read more link */}
+            <div className="reveal mt-10">
+              <Link
+                href="/sobre-mi"
+                className="inline-flex items-center gap-2 text-gold text-[13px] font-semibold tracking-[0.15em] uppercase hover:text-gold-dark transition-colors duration-300 group"
+              >
+                {t("readMore")}
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

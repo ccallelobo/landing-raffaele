@@ -8,10 +8,13 @@
 - **i18n**: next-intl (ES/IT con detección geográfica)
 
 ## Información de Contacto
-- **Ubicación**: Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)
+- **Ubicación ES**: Calle Cristóbal Chanfreut Escribano 8-9, 41704 Dos Hermanas (Sevilla)
+- **Ubicación IT**: Pendiente de confirmar
 - **Teléfono**: +34 604 89 46 97
+- **Email**: dr.rafdelprete@gmail.com
 - **Instagram**: https://www.instagram.com/dr_raffaele_delprete/
-- **WhatsApp**: https://wa.me/34604894697
+- **WhatsApp ES**: https://wa.me/34604894697
+- **WhatsApp IT**: https://wa.me/393760976953
 
 ## Paleta de Colores
 ```css
@@ -233,7 +236,7 @@ zonaConfig {
 - Título más pequeño (2rem)
 - Párrafo descriptivo visible pero con texto reducido (text-sm)
 - Solo botón "Reservar Consulta" (eliminado "Explorar")
-- Texto lateral: "Cirugía Plástica & Estética — Sevilla"
+- Texto lateral: "Medicina Preventiva, Estética, Regenerativa" (ES) / "Medicina Preventiva, Estetica, Rigenerativa" (IT)
 
 ### Sección "Sobre Mí"
 - Imagen del doctor con fondo transparente
@@ -258,10 +261,13 @@ zonaConfig {
 - **Selector de idioma** antes del botón "Reservar Cita"
 
 ### Footer
+- 4 columnas en desktop: Brand (4) | Nav (2) | Contacto (3) | Social+Legal (3)
 - Firma del logo (h-24 móvil, h-[7.5rem] desktop) en blanco (brightness-0 invert)
+- Columna Contacto: direcciones España/Italia, teléfono y email (links clickables)
+- Etiquetas de país en color gold
 - Links de Instagram y WhatsApp abren en nueva pestaña (target="_blank")
 - Links a páginas legales localizados (usan `Link` de next-intl)
-- **Nota**: Ubicación eliminada del footer (solo copyright)
+- **Nota**: Dirección italiana pendiente de confirmar (placeholder)
 
 ### Contacto
 - Solo formulario de contacto (nombre, email, teléfono, tratamiento, mensaje)
@@ -310,7 +316,7 @@ zonaConfig {
 - Animación hover (scale-110) y active (scale-95)
 - **Locale-aware**: detecta idioma con `useLocale()` de next-intl
   - `/es`: número español (+34 604 89 46 97) + mensaje preescrito en español
-  - `/it`: número italiano (pendiente, fallback a español) + mensaje preescrito en italiano
+  - `/it`: número italiano (+39 376 097 6953) + mensaje preescrito en italiano
 - Config centralizada en `WHATSAPP_CONFIG` dentro del componente
 - Incluido en `[locale]/layout.tsx` (aparece en todas las páginas)
 
