@@ -1,0 +1,490 @@
+{
+  "metadata": {
+    "title": "Dr. Raffaele | Medicina Estetica e Chirurgia Plastica",
+    "description": "Clinica di medicina estetica e chirurgia plastica del Dr. Raffaele. Trattamenti facciali, corporei e procedure chirurgiche con i più alti standard di qualità."
+  },
+  "nav": {
+    "treatments": "Trattamenti",
+    "aboutMe": "Chi Sono",
+    "results": "Risultati",
+    "reviews": "Recensioni",
+    "contact": "Contatto",
+    "book": "Prenota",
+    "bookAppointment": "Prenota Appuntamento",
+    "menu": "Menu",
+    "close": "Chiudi"
+  },
+  "hero": {
+    "label": "Medicina Estetica",
+    "title": "Rivelare",
+    "titleHighlight": "Bellezza",
+    "subtitle": "con tecniche mediche all'avanguardia e un approccio artistico personalizzato.",
+    "cta": "Prenota Consulenza",
+    "sideText": "Medicina Preventiva, Estetica, Rigenerativa",
+    "scroll": "Scorri"
+  },
+  "treatments": {
+    "label": "Servizi",
+    "title": "I Nostri",
+    "titleHighlight": "Trattamenti",
+    "description": "Ogni procedimento è progettato su misura, combinando arte, scienza e tecnologia medica per risultati che esaltino la tua bellezza e il tuo benessere.",
+    "moreInfo": "Più info",
+    "fallback": {
+      "rinoplastia": {
+        "title": "Rinoplastica",
+        "description": "Rimodellamento nasale preciso che rispetta i tuoi tratti naturali, ottenendo armonia facciale con tecniche minimamente invasive."
+      },
+      "acidoHialuronico": {
+        "title": "Acido Ialuronico",
+        "description": "Ripristino del volume e della definizione facciale con filler dermici di ultima generazione. Risultati sottili e immediati."
+      },
+      "toxinaBotulinca": {
+        "title": "Tossina Botulinica",
+        "description": "Attenuazione delle linee di espressione per un viso riposato e ringiovanito, preservando la naturalezza del gesto."
+      },
+      "liftingFacial": {
+        "title": "Lifting Facciale",
+        "description": "Ringiovanimento integrale con tecniche chirurgiche avanzate. Risultati naturali che restituiscono compattezza e definizione."
+      },
+      "blefaroplastia": {
+        "title": "Blefaroplastica",
+        "description": "Chirurgia delle palpebre che apre lo sguardo ed elimina i segni di stanchezza. Recupero rapido, trasformazione duratura."
+      },
+      "liposuccion": {
+        "title": "Liposuzione",
+        "description": "Scultura corporea di precisione per eliminare depositi di grasso resistenti e definire la tua silhouette naturale."
+      }
+    }
+  },
+  "aboutMe": {
+    "label": "Sul Dottore",
+    "title": "Una filosofia di bellezza",
+    "titleHighlight": "e di salute integrali.",
+    "quote": "La bellezza è ovunque… la mia missione è rivelarla attraverso una medicina estetica basata sulla salute, sulla naturalezza e sulla evidenza scientifica. Il mio obiettivo è accompagnarti alla scoperta della migliore versione di te, senza smettere di essere tu.",
+    "stats": {
+      "years": "2017",
+      "yearsLabel": "Abilitato dal",
+      "yearsLabelShort": "Abilitato\ndal",
+      "patients": "1.000+",
+      "patientsLabel": "Pazienti soddisfatti"
+    },
+    "readMore": "Scopri di più"
+  },
+  "aboutMePage": {
+    "metaTitle": "Chi Sono | Dr. Raffaele Del Prete",
+    "metaDescription": "Scopri il Dr. Raffaele Del Prete: formazione, filosofia e percorso professionale in medicina estetica tra Italia e Spagna.",
+    "heroLabel": "Sul Dottore",
+    "heroTitle": "Dr. Raffaele",
+    "heroTitleHighlight": "Del Prete",
+    "bioQuote": "La bellezza è ovunque… la mia missione è rivelarla attraverso una medicina estetica basata sulla salute, sulla naturalezza e sulla evidenza scientifica.",
+    "bioParagraph1": "Sono Raffaele Del Prete, medico-chirurgo italiano, nato a Napoli il 29 giugno 1992. La mia formazione universitaria è stata interamente in Italia: Laurea in Medicina e Chirurgia (2017, Università \"Luigi Vanvitelli\" di Napoli, con lode), Specializzazione in Medicina Preventiva e Sanità Pubblica (2022, Università \"Federico II\" di Napoli), e Master in Medicina Estetica (2023, Scuola di Chirurgia Plastica dell'Università \"Federico II\").",
+    "bioParagraph2": "Da quando ho ottenuto l'abilitazione professionale nel 2017, ho continuato a formarmi con i migliori medici chirurghi estetici. La medicina estetica racchiude ciò che mi ha sempre affascinato: la salute intesa come benessere integrale fisico, psichico e sociale; le proporzioni presenti nell'anatomia, nell'arte e nella natura; l'etica della prevenzione e della costanza; e la bellezza come rispettosa armonia, eleganza ed equilibrio.",
+    "bioParagraph3": "Il mio approccio integra una rigorosa formazione medica, sensibilità artistica e le tecnologie più avanzate. Ogni paziente è unico, e il mio impegno è progettare un piano personalizzato che rispetti la sua anatomia, le sue proporzioni e la sua essenza.",
+    "bioParagraph4": "Mi considero molto fortunato di vivere e sviluppare la mia professione in due luoghi pieni di bellezza, cultura e scienza: Napoli in Italia e Siviglia in Spagna, dove sarò felice di accoglierti e accompagnarti verso la migliore versione di te stesso.",
+    "timelineTitle": "Formazione",
+    "timelineTitleHighlight": "e percorso",
+    "timeline": [
+      { "year": "2017", "title": "Laurea in Medicina e Chirurgia", "description": "Università \"Luigi Vanvitelli\" di Napoli — Con lode" },
+      { "year": "2017", "title": "Abilitazione professionale", "description": "Iscrizione all'Ordine dei Medici di Napoli" },
+      { "year": "2022", "title": "Specializzazione in Medicina Preventiva", "description": "Università \"Federico II\" di Napoli — Sanità Pubblica" },
+      { "year": "2023", "title": "Master in Medicina Estetica", "description": "Scuola di Chirurgia Plastica, Università \"Federico II\"" }
+    ],
+    "sellosLabel": "Società",
+    "sellosTitle": "Società",
+    "sellosTitleHighlight": "mediche",
+    "cvLabel": "Curriculum",
+    "cvTitle": "Scarica il mio",
+    "cvTitleHighlight": "Curriculum Vitae",
+    "cvButton": "Scarica CV",
+    "ctaTitle": "Iniziamo?",
+    "ctaDescription": "Prenota una consulenza informativa senza impegno e scopri come posso aiutarti.",
+    "ctaButton": "Prenota consulenza"
+  },
+  "results": {
+    "label": "Prima & Dopo",
+    "title": "Risultati personalizzati, armonici,",
+    "titleHighlight": "salutari…",
+    "description": "che non seguono mode o ossessioni, bensì criterio medico, rispetto dell'anatomia e dell'essenza di ogni paziente.",
+    "slide": "Scorri",
+    "before": "Prima",
+    "after": "Dopo",
+    "fallback": {
+      "rinoplastia": {
+        "treatment": "Rinoplastica",
+        "description": "Rimodellamento nasale con approccio naturale"
+      },
+      "acidoHialuronico": {
+        "treatment": "Acido Ialuronico",
+        "description": "Ripristino del volume facciale"
+      },
+      "liftingFacial": {
+        "treatment": "Lifting Facciale",
+        "description": "Ringiovanimento integrale del viso"
+      },
+      "blefaroplastia": {
+        "treatment": "Blefaroplastica",
+        "description": "Ringiovanimento dello sguardo"
+      }
+    }
+  },
+  "casosExito": {
+    "label": "Casi di Successo",
+    "title": "Trasformazioni",
+    "titleHighlight": "complete",
+    "description": "Esplora casi completi con più angolazioni per apprezzare la trasformazione da tutte le prospettive.",
+    "before": "Prima",
+    "after": "Dopo",
+    "angle": "angolo",
+    "angles": "angoli"
+  },
+  "reviews": {
+    "label": "Testimonianze",
+    "title": "Quello che dicono",
+    "titleHighlight": "i miei pazienti",
+    "description": "La fiducia di chi mi sceglie è il mio più grande riconoscimento. Il sorriso di chi si guarda allo specchio dopo i miei lavori è la mia più grande soddisfazione. Ogni testimonianza riflette il mio impegno verso l'eccellenza.",
+    "fallback": {
+      "review1": {
+        "name": "Maria G.",
+        "treatment": "Rinoplastica",
+        "text": "Il Dr. Raffaele ha capito esattamente cosa cercavo. Il risultato è completamente naturale, nessuno nota che mi sono operata. La sua attenzione ai dettagli è eccezionale."
+      },
+      "review2": {
+        "name": "Laura P.",
+        "treatment": "Acido Ialuronico",
+        "text": "Cercavo da anni un professionista che ottenesse risultati sottili. Dopo il trattamento mi vedo ringiovanita ma sempre me stessa. Assolutamente consigliato."
+      },
+      "review3": {
+        "name": "Carmen R.",
+        "treatment": "Lifting Facciale",
+        "text": "Un'esperienza impeccabile dall'inizio alla fine. Il team mi ha fatto sentire sicura in ogni momento. I risultati hanno superato le mie aspettative."
+      },
+      "review4": {
+        "name": "Ana S.",
+        "treatment": "Blefaroplastica",
+        "text": "Il mio sguardo appare completamente rinnovato. Il recupero è stato più rapido del previsto e il follow-up post-operatorio è stato eccellente."
+      },
+      "review5": {
+        "name": "Isabel M.",
+        "treatment": "Tossina Botulinica",
+        "text": "Molto professionale e con un occhio artistico unico. I risultati sono naturali e armoniosi. Senza dubbio il miglior specialista che abbia visitato."
+      },
+      "review6": {
+        "name": "Patricia L.",
+        "treatment": "Liposuzione",
+        "text": "Dopo molte ricerche, ho scelto il Dr. Raffaele ed è stata la decisione migliore. Risultati naturali, recupero eccellente e un trattamento umano straordinario."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contatto",
+    "title": "Prenota la tua",
+    "titleHighlight": "consulenza privata",
+    "description": "La prima consulenza è informativa e senza impegno. Valuteremo le tue esigenze e progetteremo un piano personalizzato.",
+    "form": {
+      "name": "Nome completo",
+      "email": "Email",
+      "phone": "Telefono",
+      "treatment": "Trattamento di interesse",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio",
+      "privacy": "I tuoi dati saranno trattati con totale riservatezza.",
+      "success": "Grazie per il tuo messaggio. Ti contatteremo presto."
+    },
+    "treatments": {
+      "rinoplastia": "Rinoplastica",
+      "acidoHialuronico": "Acido Ialuronico",
+      "botox": "Tossina Botulinica",
+      "lifting": "Lifting Facciale",
+      "blefaroplastia": "Blefaroplastica",
+      "liposuccion": "Liposuzione",
+      "other": "Altro"
+    }
+  },
+  "footer": {
+    "description": "Medicina estetica e chirurgia plastica con i più alti standard di eccellenza e un approccio artistico personalizzato.",
+    "navigation": "Navigazione",
+    "followUs": "Seguici",
+    "contactLabel": "Contatto",
+    "spainLabel": "Spagna",
+    "spainAddress1": "Calle Paris n 28",
+    "spainAddress2": "41089 Dos Hermanas (Siviglia)",
+    "italyLabel": "Italia",
+    "italyAddress1": "Via Riscatto n 5",
+    "italyAddress2": "80027 Frattamaggiore (Napoli)",
+    "phone": "+34 604 89 46 97",
+    "email": "dr.rafdelprete@gmail.com",
+    "home": "Home",
+    "privacy": "Privacy Policy",
+    "legal": "Note Legali",
+    "cookiePolicy": "Cookie Policy",
+    "rights": "Tutti i diritti riservati"
+  },
+  "cookies": {
+    "message": "Utilizziamo cookie propri e di terze parti per migliorare la tua esperienza di navigazione e analizzare l'utilizzo del sito. Puoi accettare tutti i cookie, rifiutarli o configurare le tue preferenze.",
+    "moreInfo": "Maggiori informazioni",
+    "reject": "Rifiuta",
+    "accept": "Accetta"
+  },
+  "zonas": {
+    "sectionLabel": "Trattamenti",
+    "sectionTitle": "",
+    "sectionTitleHighlight": "Trattamenti",
+    "sectionDescription": "Ogni procedimento è progettato su misura, combinando arte, scienza e tecnologia medica per risultati che esaltino la tua bellezza e il tuo benessere.",
+    "facial": {
+      "title": "Trattamenti Facciali",
+      "description": "Procedure specializzate per esaltare la bellezza naturale del viso con tecniche all'avanguardia.",
+      "heroTitle": "Trattamenti",
+      "heroTitleHighlight": "Facciali",
+      "heroDescription": "Procedure specializzate per esaltare l'armonia e la bellezza naturale del tuo viso."
+    },
+    "corporal": {
+      "title": "Trattamenti Corporei",
+      "description": "Tecniche avanzate di scultura e ringiovanimento corporeo per definire la tua silhouette.",
+      "heroTitle": "Trattamenti",
+      "heroTitleHighlight": "Corporei",
+      "heroDescription": "Tecniche avanzate di scultura e ringiovanimento per definire la tua silhouette naturale."
+    },
+    "skin-quality": {
+      "title": "Skin Quality",
+      "description": "Trattamenti avanzati per migliorare la texture, la luminosità e la qualità globale della tua pelle.",
+      "heroTitle": "Skin",
+      "heroTitleHighlight": "Quality",
+      "heroDescription": "Protocolli specializzati per migliorare la texture, la luminosità e la qualità globale della tua pelle."
+    },
+    "capilar": {
+      "title": "Trattamenti Capillari",
+      "description": "Soluzioni specializzate per la salute e il recupero dei capelli con tecniche di ultima generazione.",
+      "heroTitle": "Trattamenti",
+      "heroTitleHighlight": "Capillari",
+      "heroDescription": "Soluzioni specializzate per la salute e il recupero dei capelli con tecniche di ultima generazione."
+    },
+    "verTratamientos": "Vedi trattamenti",
+    "volverGrid": "Torna ai trattamenti",
+    "reservarConsulta": "Prenota consulenza",
+    "resultadosZona": "Risultati",
+    "resultadosZonaHighlight": "di questa zona",
+    "sinTratamientos": "Prossimamente altri trattamenti in questa zona.",
+    "masInfo": "Più info",
+    "tratamientoLabel": "Trattamento",
+    "volverZonaFacial": "Torna ai trattamenti facciali",
+    "volverZonaCorporal": "Torna ai trattamenti corporei",
+    "volverZonaSkinQuality": "Torna a Skin Quality",
+    "volverZonaCapilar": "Torna ai trattamenti capillari",
+    "resultadosTratamiento": "Risultati di questo",
+    "resultadosTratamientoHighlight": "trattamento",
+    "categoryAll": "Tutti",
+    "categoryFiller": "Filler",
+    "categoryBotox": "Botox",
+    "categoryAvanzati": "Avanzati",
+    "categoryFillerDescription": "Acido ialuronico per ripristinare e scolpire i volumi del viso",
+    "categoryBotoxDescription": "Tossina botulinica per distendere le linee di espressione",
+    "categoryAvanzatiDescription": "Tecniche di ultima generazione per il ringiovanimento integrale",
+    "treatmentCount": "trattamenti"
+  },
+  "marcas": {
+    "label": "Tecnologia",
+    "title": "Marchi di",
+    "titleHighlight": "fiducia"
+  },
+  "doctorForm": {
+    "label": "Collaborazione",
+    "title": "Sei un",
+    "titleHighlight": "medico?",
+    "description": "Se desideri informazioni su corsi privati o proporre collaborazioni professionali, non esitare a contattarci.",
+    "form": {
+      "name": "Nome completo",
+      "email": "Email",
+      "phone": "Telefono",
+      "specialty": "Specialità",
+      "message": "Messaggio",
+      "submit": "Invia Richiesta",
+      "privacy": "I tuoi dati saranno trattati con totale riservatezza.",
+      "success": "Grazie per il tuo interesse. Ti contatteremo presto."
+    }
+  },
+  "legal": {
+    "backToHome": "Torna alla home",
+    "lastUpdated": "Ultimo aggiornamento: Gennaio 2025",
+    "privacy": {
+      "title": "Privacy Policy",
+      "metaTitle": "Privacy Policy | Dr. Raffaele Del Prete",
+      "metaDescription": "Informativa sulla privacy e protezione dei dati personali della clinica del Dr. Raffaele Del Prete.",
+      "section1": {
+        "title": "1. Titolare del Trattamento",
+        "content": "<strong>Identità:</strong> Dr. Raffaele Del Prete<br /><strong>Indirizzo:</strong> Calle Paris n 28, 41089 Dos Hermanas (Siviglia)<br /><strong>Telefono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> dr.rafdelprete@gmail.com"
+      },
+      "section2": {
+        "title": "2. Dati Personali che Raccogliamo",
+        "intro": "In conformità al Regolamento Generale sulla Protezione dei Dati (GDPR) 2016/679, La informiamo che i dati personali che possiamo raccogliere includono:",
+        "items": [
+          "Dati identificativi: nome, cognome, documento d'identità",
+          "Dati di contatto: indirizzo postale, email, telefono",
+          "Dati sanitari: storia clinica, trattamenti effettuati (con il Suo consenso esplicito)",
+          "Dati di navigazione: cookie e dati tecnici della Sua visita"
+        ]
+      },
+      "section3": {
+        "title": "3. Finalità del Trattamento",
+        "intro": "I Suoi dati personali saranno trattati per le seguenti finalità:",
+        "items": [
+          "Gestione di appuntamenti e consulenze mediche",
+          "Erogazione di servizi medici ed estetici",
+          "Comunicazioni relative al Suo trattamento",
+          "Invio di informazioni commerciali (solo con il Suo consenso)",
+          "Adempimento di obblighi legali"
+        ]
+      },
+      "section4": {
+        "title": "4. Base Giuridica",
+        "intro": "La base legale per il trattamento dei Suoi dati è:",
+        "items": [
+          "Il Suo consenso esplicito",
+          "L'esecuzione di un contratto di servizi medici",
+          "L'adempimento di obblighi legali (in particolare in materia sanitaria)",
+          "Il legittimo interesse del titolare"
+        ]
+      },
+      "section5": {
+        "title": "5. Conservazione dei Dati",
+        "content": "I dati personali saranno conservati per il tempo necessario a soddisfare la finalità per cui sono stati raccolti. I dati sanitari saranno conservati secondo la legislazione sanitaria vigente (minimo 5 anni dall'ultima assistenza). I dati di fatturazione saranno conservati per il periodo legale stabilito."
+      },
+      "section6": {
+        "title": "6. Destinatari",
+        "content": "I Suoi dati non saranno ceduti a terzi salvo obbligo legale. Potranno avere accesso ai Suoi dati i responsabili del trattamento necessari per l'erogazione del servizio (laboratori, centri medici collaboratori) sempre con le dovute garanzie di riservatezza."
+      },
+      "section7": {
+        "title": "7. Diritti dell'Interessato",
+        "intro": "Lei ha diritto a:",
+        "items": [
+          "<strong>Accesso:</strong> conoscere quali dati personali abbiamo su di Lei",
+          "<strong>Rettifica:</strong> modificare dati inesatti o incompleti",
+          "<strong>Cancellazione:</strong> richiedere l'eliminazione dei Suoi dati",
+          "<strong>Limitazione:</strong> richiedere la limitazione del trattamento",
+          "<strong>Portabilità:</strong> ricevere i Suoi dati in formato strutturato",
+          "<strong>Opposizione:</strong> opporsi al trattamento dei Suoi dati"
+        ],
+        "outro": "Per esercitare questi diritti, può contattarci all'indirizzo dr.rafdelprete@gmail.com allegando copia del Suo documento d'identità. Ha inoltre il diritto di presentare un reclamo all'Autorità Garante per la Protezione dei Dati Personali."
+      },
+      "section8": {
+        "title": "8. Sicurezza",
+        "content": "Abbiamo adottato le misure tecniche e organizzative necessarie per garantire la sicurezza dei Suoi dati e prevenire la loro alterazione, perdita, trattamento o accesso non autorizzato, in base allo stato della tecnologia, alla natura dei dati e ai rischi a cui sono esposti."
+      },
+      "section9": {
+        "title": "9. Modifiche",
+        "content": "Ci riserviamo il diritto di modificare questa informativa sulla privacy per adattarla a novità legislative o giurisprudenziali. In caso di modifiche significative, La informeremo attraverso il nostro sito web."
+      }
+    },
+    "legalNotice": {
+      "title": "Note Legali",
+      "metaTitle": "Note Legali | Dr. Raffaele Del Prete",
+      "metaDescription": "Note legali e informazioni sul titolare del sito web del Dr. Raffaele Del Prete.",
+      "section1": {
+        "title": "1. Dati Identificativi",
+        "intro": "In conformità all'articolo 10 della Legge 34/2002, dell'11 luglio, sui Servizi della Società dell'Informazione e Commercio Elettronico (LSSI-CE), si informa:",
+        "content": "<strong>Titolare:</strong> Dr. Raffaele Del Prete<br /><strong>Attività:</strong> Medicina Estetica e Chirurgia Plastica<br /><strong>Sede:</strong> Calle Paris n 28, 41089 Dos Hermanas (Siviglia)<br /><strong>Telefono:</strong> +34 604 89 46 97<br /><strong>Email:</strong> dr.rafdelprete@gmail.com<br /><strong>Numero di Iscrizione all'Ordine:</strong> [Numero di iscrizione]"
+      },
+      "section2": {
+        "title": "2. Oggetto",
+        "paragraph1": "Il presente sito web ha lo scopo di informare sui servizi di medicina estetica e chirurgia plastica offerti dal Dr. Raffaele Del Prete, nonché di facilitare il contatto con potenziali pazienti.",
+        "paragraph2": "Le informazioni contenute in questo sito web hanno carattere meramente informativo e in nessun caso sostituiscono il parere medico professionale. Per qualsiasi consulenza medica, è necessario fissare un appuntamento con il professionista."
+      },
+      "section3": {
+        "title": "3. Condizioni d'Uso",
+        "intro": "L'accesso a questo sito web è gratuito e non richiede registrazione preventiva. L'utente si impegna a:",
+        "items": [
+          "Fare un uso adeguato dei contenuti e dei servizi offerti",
+          "Non svolgere attività illecite o contrarie alla buona fede",
+          "Non diffondere contenuti di carattere razzista, xenofobo, pornografico o che attentino ai diritti umani",
+          "Non introdurre virus informatici o compiere azioni che possano danneggiare i sistemi",
+          "Non tentare di accedere agli account di altri utenti o ad aree riservate"
+        ]
+      },
+      "section4": {
+        "title": "4. Proprietà Intellettuale e Industriale",
+        "paragraph1": "Tutti i contenuti del sito web (testi, fotografie, grafici, immagini, icone, tecnologia, software, design grafico, codice sorgente, ecc.) sono di proprietà intellettuale del Dr. Raffaele Del Prete o di terzi che ne hanno autorizzato l'uso, essendo vietata la loro riproduzione, distribuzione, comunicazione pubblica o trasformazione senza autorizzazione esplicita.",
+        "paragraph2": "I marchi, i nomi commerciali o i segni distintivi sono di proprietà del Dr. Raffaele Del Prete o di terzi, senza che l'accesso al sito web attribuisca alcun diritto sugli stessi."
+      },
+      "section5": {
+        "title": "5. Esclusione di Garanzie e Responsabilità",
+        "intro": "Il titolare del sito web non si ritiene responsabile di:",
+        "items": [
+          "La mancata disponibilità, continuità o qualità del sito web",
+          "I danni che possono essere causati dall'uso improprio del sito",
+          "La presenza di virus o elementi dannosi nei contenuti",
+          "Il contenuto delle pagine web accessibili tramite link",
+          "Gli errori o le omissioni nei contenuti"
+        ]
+      },
+      "section6": {
+        "title": "6. Link a Terzi",
+        "content": "Questo sito web può contenere link a pagine di terzi. Il Dr. Raffaele Del Prete non assume alcuna responsabilità per il contenuto, le informazioni o i servizi che possano apparire su tali siti, che avranno esclusivamente carattere informativo e che in nessun caso implicano alcun rapporto tra il Dr. Raffaele Del Prete e le persone o entità titolari di tali contenuti."
+      },
+      "section7": {
+        "title": "7. Protezione dei Dati",
+        "content": "Il trattamento dei dati personali è regolato dalla nostra Privacy Policy, dove si informa in modo dettagliato sul trattamento dei dati personali."
+      },
+      "section8": {
+        "title": "8. Cookie",
+        "content": "Questo sito web utilizza cookie. Per maggiori informazioni, consulta la nostra Cookie Policy."
+      },
+      "section9": {
+        "title": "9. Legislazione Applicabile e Giurisdizione",
+        "content": "Le presenti condizioni sono regolate dalla legislazione spagnola. Per qualsiasi controversia che possa derivare dall'accesso o dall'uso di questo sito web, le parti si sottomettono ai Tribunali di Siviglia, con espressa rinuncia a qualsiasi altro foro che possa loro competere."
+      },
+      "section10": {
+        "title": "10. Modifiche",
+        "content": "Il titolare si riserva il diritto di modificare in qualsiasi momento le presenti condizioni, che saranno pubblicate sul sito web. La versione vigente sarà quella pubblicata in ogni momento."
+      }
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy",
+      "metaTitle": "Cookie Policy | Dr. Raffaele Del Prete",
+      "metaDescription": "Informazioni sull'uso dei cookie nel sito web del Dr. Raffaele Del Prete.",
+      "section1": {
+        "title": "1. Cosa Sono i Cookie?",
+        "content": "I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo (computer, tablet o cellulare) quando visiti un sito web. Permettono al sito di ricordare le tue azioni e preferenze per un periodo di tempo, in modo da non doverle reinserire ogni volta che visiti il sito o navighi da una pagina all'altra."
+      },
+      "section2": {
+        "title": "2. Tipi di Cookie che Utilizziamo",
+        "technical": {
+          "title": "Cookie Tecnici (Necessari)",
+          "content": "Sono indispensabili per il funzionamento del sito web. Permettono la navigazione e l'utilizzo delle diverse opzioni o servizi. Senza di essi, il sito web non funzionerebbe correttamente."
+        },
+        "analytics": {
+          "title": "Cookie di Analisi",
+          "content": "Ci permettono di quantificare il numero di utenti e realizzare la misurazione e l'analisi statistica dell'utilizzo del sito web. A tal fine si analizza la tua navigazione per migliorare l'offerta di prodotti o servizi."
+        },
+        "preferences": {
+          "title": "Cookie di Preferenze",
+          "content": "Permettono di ricordare informazioni affinché l'utente acceda al servizio con determinate caratteristiche che possono differenziare la sua esperienza da quella di altri utenti (lingua, aspetto, ecc.)."
+        }
+      },
+      "section3": {
+        "title": "3. Cookie di Terze Parti",
+        "intro": "Questo sito web può utilizzare servizi di terze parti che raccolgono informazioni a fini statistici e di utilizzo del sito:",
+        "table": {
+          "service": "Servizio",
+          "purpose": "Finalità",
+          "moreInfo": "Maggiori informazioni",
+          "vercel": "Vercel Analytics",
+          "vercelPurpose": "Analisi delle prestazioni",
+          "vercelLink": "Privacy Policy di Vercel"
+        }
+      },
+      "section4": {
+        "title": "4. Gestione dei Cookie",
+        "intro": "Puoi consentire, bloccare o eliminare i cookie installati sul tuo dispositivo mediante la configurazione delle opzioni del browser installato sul tuo computer.",
+        "outro": "Se disattivi i cookie, è possibile che alcune funzionalità del sito web non siano disponibili o non funzionino correttamente."
+      },
+      "section5": {
+        "title": "5. Aggiornamento della Policy",
+        "content": "Questa cookie policy può essere aggiornata in qualsiasi momento per adattarsi a novità normative o modifiche al nostro sito web. Ti consigliamo di consultare periodicamente questa pagina per essere informato su come e perché utilizziamo i cookie."
+      },
+      "section6": {
+        "title": "6. Contatto",
+        "intro": "Se hai domande su questa Cookie Policy, puoi contattarci tramite:",
+        "content": "<strong>Email:</strong> dr.rafdelprete@gmail.com<br /><strong>Telefono:</strong> +34 604 89 46 97"
+      }
+    }
+  }
+}
