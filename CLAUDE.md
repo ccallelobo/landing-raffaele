@@ -262,11 +262,11 @@ doctorProfile {
 - Texto lateral: "Medicina Preventiva, Estética, Regenerativa" (ES) / "Medicina Preventiva, Estetica, Rigenerativa" (IT)
 
 ### Sección "Sobre Mí" (home — resumen)
-- Imagen del doctor con fondo transparente
+- Imagen del doctor: `hero-doctor-v3.webp` (fondo transparente)
 - Imagen escalada al 75% (`scale-75`) con ajuste vertical (`translate-y-[12%]`)
 - Gradiente stone→moss para integración visual con la sección
 - Aspect ratio: 4/5 en móvil, 3/4 en desktop
-- Tarjeta flotante con año de licencia (oculta en móvil)
+- Tarjeta flotante con año de licencia (oculta en móvil, `z-20` para quedar sobre la imagen)
 - **Contenido**: Cita + stats (sin párrafos de biografía, esos están en la página dedicada)
 - **Stats**: "2017 - Licenciado desde" y "1.000+ - Pacientes satisfechos"
 - **Link "Conocer más"**: enlace gold a `/sobre-mi` tras los stats
