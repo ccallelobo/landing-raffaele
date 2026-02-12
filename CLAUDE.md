@@ -8,7 +8,7 @@
 - **i18n**: next-intl (ES/IT con detección geográfica)
 
 ## Información de Contacto
-- **Ubicación ES**: Calle Paris n 28, 41704 Dos Hermanas (Sevilla)
+- **Ubicación ES**: Calle Paris n 28, 41089 Dos Hermanas (Sevilla)
 - **Ubicación IT**: Via Riscatto n 5, 80027 Frattamaggiore (Napoli)
 - **Teléfono**: +34 604 89 46 97
 - **Email**: dr.rafdelprete@gmail.com

@@ -11,8 +11,8 @@ interface SobreMiProps {
 }
 
 export default function SobreMi({
-  sobreMiImage = "/sobre-mi-doctor-v4.webp",
-  imageScale = "scale-200",
+  sobreMiImage = "/hero-doctor-v3.webp",
+  imageScale = "scale-75",
 }: SobreMiProps) {
   useReveal();
   const t = useTranslations("aboutMe");
