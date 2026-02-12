@@ -54,7 +54,7 @@ export default function SobreMi({
               <div className="absolute -bottom-6 -right-6 w-full h-full border border-gold/20 -z-10" />
 
               {/* Floating stat card - hidden on mobile (info shown in stats below) */}
-              <div className="hidden md:block absolute -right-8 bottom-12 bg-noir text-white p-8 shadow-2xl">
+              <div className="hidden md:block absolute -right-8 bottom-12 bg-noir text-white p-8 shadow-2xl z-20">
                 <span className="font-display text-4xl md:text-5xl text-gold block leading-none">
                   {t("stats.years")}
                 </span>
