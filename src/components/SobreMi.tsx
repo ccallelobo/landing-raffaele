@@ -11,9 +11,11 @@ interface SobreMiProps {
 }
 
 export default function SobreMi({
-  sobreMiImage = "/hero-doctor-v3.webp",
+  sobreMiImage,
   imageScale = "scale-75",
 }: SobreMiProps) {
+  const isSanityImage = sobreMiImage?.startsWith("http");
+  const imageSrc = sobreMiImage || "/hero-doctor-v3.webp";
   useReveal();
   const t = useTranslations("aboutMe");
 
@@ -42,10 +44,14 @@ export default function SobreMi({
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-l from-moss/40 via-transparent to-transparent" />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-moss/20 via-transparent to-transparent" />
                 <Image
-                  src={sobreMiImage}
+                  src={imageSrc}
                   alt="Dr. Raffaele Del Prete"
                   fill
-                  className={`object-contain object-bottom relative z-10 ${imageScale} translate-y-[12%]`}
+                  className={
+                    isSanityImage
+                      ? "object-cover object-center relative z-10"
+                      : `object-contain object-bottom relative z-10 ${imageScale} translate-y-[12%]`
+                  }
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>

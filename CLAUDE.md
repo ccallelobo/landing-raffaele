@@ -95,9 +95,11 @@ src/
 ├── app/
 │   ├── layout.tsx             # Layout raíz (delega a hijos)
 │   ├── globals.css            # Estilos globales + paleta
+│   ├── robots.ts              # robots.txt dinámico (bloquea studio/versiones)
+│   ├── sitemap.ts             # sitemap.xml dinámico (todas las URLs ES/IT + hreflang)
 │   ├── [locale]/              # Rutas internacionalizadas
-│   │   ├── layout.tsx         # Layout con NextIntlClientProvider
-│   │   ├── page.tsx           # Landing principal (ISR 60s)
+│   │   ├── layout.tsx         # Layout con NextIntlClientProvider + metadataBase + OG defaults
+│   │   ├── page.tsx           # Landing principal (ISR 60s) + JSON-LD MedicalBusiness
 │   │   ├── sobre-mi/          # Página dedicada Sobre Mí / Chi Sono
 │   │   │   └── page.tsx       # Server component (ISR 60s)
 │   │   └── (legal)/           # Páginas legales
@@ -112,7 +114,7 @@ src/
 │   └── prototipos/            # Prototipos de diseño (temporal)
 │   │   ├── tratamientos/       # Páginas internas por zona
 │   │   │   └── [zona]/        # Zona dinámica (facial/corporal/skin-quality/capilar)
-│   │   │       └── [tratamiento]/ # Detalle individual de tratamiento
+│   │   │       └── [tratamiento]/ # Detalle individual + BreadcrumbList JSON-LD
 ├── components/
 │   ├── Navbar.tsx             # Nav fijo + LanguageSwitcher integrado
 │   ├── Hero.tsx               # Split-screen desktop, bg mobile
@@ -234,23 +236,67 @@ zonaConfig {
 Configurado como singleton en Sanity Studio con documentId fijo `"doctorProfile"`.
 ```
 doctorProfile {
-  curriculumPDF: file (accept .pdf)
+  imagenHero: image (hotspot) — foto del hero principal (home), fallback a /public/hero-doctor.webp
+  imagenSobreMi: image (hotspot) — foto sección Sobre Mí (home), fallback a /public/hero-doctor-v3.webp
+  imagenPagina: image (hotspot) — foto página dedicada Sobre Mí
+  imagenTratamientos: image (hotspot) — foto "experiencia" en páginas de zona (si vacío, sección no se muestra)
   sellos: array de {
     nombre: string (requerido)
     imagen: image (hotspot, requerido)
     url: url (opcional)
   }
-  imagenPagina: image (hotspot)
+  curriculumPDF: file (accept .pdf)
 }
 ```
 - Se gestiona desde Studio como item fijo "Perfil del Doctor"
 - `getDoctorProfile()` en sanity.ts devuelve los datos (o null si no existe)
 - Las secciones CV y sellos en la página Sobre Mí se ocultan si no hay datos
+- Las imágenes Hero y SobreMi (home) tienen fallback a archivos locales si están vacías en Sanity
+- SobreMi.tsx detecta si la imagen es de Sanity (URL http) → usa `object-cover`; local → usa `object-contain` con scale
 
 ## Comandos
 - `npm run dev` - desarrollo local
 - `npm run build` - build de producción
 - `git push origin main` - deploy automático a Vercel
+- `npx vercel --prod` - deploy directo a Vercel (sin pasar por Git)
+
+## SEO
+
+### Configuración actual
+- **Dominio**: `https://landing-raffaele.vercel.app` (configurable via `NEXT_PUBLIC_SITE_URL`)
+- **robots.txt**: `src/app/robots.ts` — bloquea `/studio/`, `/version-*/`, `/prototipos/`
+- **sitemap.xml**: `src/app/sitemap.ts` — dinámico, incluye todas las URLs ES/IT con hreflang
+- **Git remote**: SSH (`git@github.com:ccallelobo/landing-raffaele.git`) — HTTPS da bus error en este entorno
+
+### Metadata (en todas las páginas)
+- Open Graph (og:title, og:description, og:url, og:locale, og:siteName)
+- Twitter Cards (summary)
+- Canonical URLs
+- hreflang alternates ES↔IT con rutas localizadas
+- robots: index, follow
+- `metadataBase` configurado en `[locale]/layout.tsx`
+
+### JSON-LD Structured Data
+- **Home** (`[locale]/page.tsx`): `@graph` con:
+  - 2x `MedicalBusiness` (Dos Hermanas, Sevilla + Frattamaggiore, Napoli) con geo coordinates
+  - `Person` (Dr. Raffaele con alumniOf universidades)
+  - `WebSite` (bilingüe ES/IT)
+- **Tratamiento individual** (`[zona]/[tratamiento]/page.tsx`): `BreadcrumbList` (Inicio > Zona > Tratamiento)
+- Tratamientos con imagen en Sanity generan OG image (1200x630)
+
+### BASE_URL
+Todas las URLs SEO usan `process.env.NEXT_PUBLIC_SITE_URL` con fallback a `https://landing-raffaele.vercel.app`. Cuando se configure un dominio propio, solo hay que añadir la env var en Vercel.
+
+### Tareas SEO pendientes
+- [ ] **Google Search Console**: Dar de alta la propiedad y enviar el sitemap (`/sitemap.xml`)
+- [ ] **Dominio propio**: Configurar dominio personalizado en Vercel y actualizar `NEXT_PUBLIC_SITE_URL`
+- [ ] **OG Image dedicada**: Crear imagen de 1200x630px para compartir en redes sociales (actualmente solo tratamientos individuales tienen OG image)
+- [ ] **Google Business Profile**: Crear fichas de Google My Business para ambas ubicaciones (Dos Hermanas y Frattamaggiore) y vincularlas al sitio web
+- [ ] **Review schema**: Añadir JSON-LD `AggregateRating` y `Review` en la home usando los datos de reseñas de Sanity
+- [ ] **FAQ schema**: Añadir JSON-LD `FAQPage` si se crea una sección de preguntas frecuentes
+- [ ] **Número de colegiación**: Rellenar el placeholder `[Número de colegiación]` en Aviso Legal
+- [ ] **Google Analytics / Tag Manager**: Integrar tracking para medir tráfico orgánico
+- [ ] **Performance**: Auditar Core Web Vitals con Lighthouse y optimizar LCP/CLS si es necesario
 
 ## Notas de Diseño
 

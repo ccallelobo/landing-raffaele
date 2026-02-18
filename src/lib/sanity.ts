@@ -78,6 +78,9 @@ export interface SanityDoctorProfile {
   curriculumPDF?: { asset: { url: string } };
   sellos?: SanityDoctorProfileSello[];
   imagenPagina?: SanityImageSource;
+  imagenHero?: SanityImageSource;
+  imagenSobreMi?: SanityImageSource;
+  imagenTratamientos?: SanityImageSource;
 }
 
 export interface SanityZonaConfig {
@@ -88,6 +91,7 @@ export interface SanityZonaConfig {
   descripcionES: string;
   descripcionIT: string;
   imagen?: SanityImageSource;
+  imagenDoctor?: SanityImageSource;
 }
 
 /* ── GROQ Queries ──────────────────────────────────────── */
@@ -117,7 +121,7 @@ const resenasQuery = `*[_type == "resena"] | order(_createdAt desc) {
 }`;
 
 const zonaConfigQuery = `*[_type == "zonaConfig" && zona == $zona][0] {
-  _id, zona, tituloES, tituloIT, descripcionES, descripcionIT, imagen
+  _id, zona, tituloES, tituloIT, descripcionES, descripcionIT, imagen, imagenDoctor
 }`;
 
 const tratamientoBySlugQuery = `*[_type == "tratamiento" && slug.current == $slug && zona == $zona][0] {
@@ -127,7 +131,10 @@ const tratamientoBySlugQuery = `*[_type == "tratamiento" && slug.current == $slu
 const doctorProfileQuery = `*[_type == "doctorProfile"][0] {
   "curriculumPDF": curriculumPDF { asset-> { url } },
   sellos[] { _key, nombre, imagen, url },
-  imagenPagina
+  imagenPagina,
+  imagenHero,
+  imagenSobreMi,
+  imagenTratamientos
 }`;
 
 const resultadosPorTratamientoQuery = `*[_type == "resultado" && references($tratamientoId)] {

@@ -6,12 +6,31 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "curriculumPDF",
-      title: "Curriculum Vitae (PDF)",
-      type: "file",
-      options: {
-        accept: ".pdf",
-      },
+      name: "imagenHero",
+      title: "Imagen del Hero (Home)",
+      description: "Foto del doctor para la sección hero de la landing. Si está vacío se usa la imagen por defecto.",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "imagenSobreMi",
+      title: "Imagen sección Sobre Mí (Home)",
+      description: "Foto del doctor para la sección Sobre Mí en la landing. Si está vacío se usa la imagen por defecto.",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "imagenPagina",
+      title: "Imagen de la página Sobre Mí",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "imagenTratamientos",
+      title: "Imagen sección Doctor (Zonas)",
+      description: "Foto del doctor que aparece en las páginas de zona de tratamientos. Si está vacío la sección no se muestra.",
+      type: "image",
+      options: { hotspot: true },
     }),
     defineField({
       name: "sellos",
@@ -47,10 +66,12 @@ export default defineType({
       ],
     }),
     defineField({
-      name: "imagenPagina",
-      title: "Imagen de la página Sobre Mí",
-      type: "image",
-      options: { hotspot: true },
+      name: "curriculumPDF",
+      title: "Curriculum Vitae (PDF)",
+      type: "file",
+      options: {
+        accept: ".pdf",
+      },
     }),
   ],
   preview: {

@@ -45,6 +45,13 @@ export default defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    defineField({
+      name: "imagenDoctor",
+      title: "Foto del Doctor (Hero)",
+      description: "Foto del doctor que aparece en el lateral derecho del hero de esta zona. Si está vacía no se muestra.",
+      type: "image",
+      options: { hotspot: true },
+    }),
   ],
   preview: {
     select: { title: "zona", media: "imagen" },

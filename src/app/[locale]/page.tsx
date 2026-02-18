@@ -9,7 +9,7 @@ import Resultados from "@/components/Resultados";
 import Resenas from "@/components/Resenas";
 import FormularioMedicos from "@/components/FormularioMedicos";
 import Footer from "@/components/Footer";
-import { getResultados, getResenas } from "@/lib/sanity";
+import { getResultados, getResenas, getDoctorProfile, urlFor } from "@/lib/sanity";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://landing-raffaele.vercel.app";
@@ -45,10 +45,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
-  const [resultados, resenas] = await Promise.all([
+  const [resultados, resenas, doctorProfile] = await Promise.all([
     getResultados(),
     getResenas(),
+    getDoctorProfile(),
   ]);
+
+  const heroImageUrl = doctorProfile?.imagenHero
+    ? urlFor(doctorProfile.imagenHero).width(1100).auto("format").url()
+    : undefined;
+  const sobreMiImageUrl = doctorProfile?.imagenSobreMi
+    ? urlFor(doctorProfile.imagenSobreMi).width(800).auto("format").url()
+    : undefined;
 
   const jsonLd = buildHomeJsonLd(locale);
 
@@ -63,10 +71,10 @@ export default async function Home({ params }: Props) {
         className="relative"
         style={{ clipPath: "inset(0)", contain: "paint" }}
       >
-        <Hero />
+        <Hero heroImage={heroImageUrl} />
         <Tratamientos />
         <MarcasTecnologias />
-        <SobreMi />
+        <SobreMi sobreMiImage={sobreMiImageUrl} />
         <Resultados data={resultados} />
         <Resenas data={resenas} />
         <FormularioMedicos />
