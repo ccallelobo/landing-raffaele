@@ -80,7 +80,6 @@ export interface SanityDoctorProfile {
   imagenPagina?: SanityImageSource;
   imagenHero?: SanityImageSource;
   imagenSobreMi?: SanityImageSource;
-  imagenTratamientos?: SanityImageSource;
 }
 
 export interface SanityZonaConfig {
@@ -133,8 +132,7 @@ const doctorProfileQuery = `*[_type == "doctorProfile"][0] {
   sellos[] { _key, nombre, imagen, url },
   imagenPagina,
   imagenHero,
-  imagenSobreMi,
-  imagenTratamientos
+  imagenSobreMi
 }`;
 
 const resultadosPorTratamientoQuery = `*[_type == "resultado" && references($tratamientoId)] {

@@ -239,7 +239,6 @@ doctorProfile {
   imagenHero: image (hotspot) — foto del hero principal (home), fallback a /public/hero-doctor.webp
   imagenSobreMi: image (hotspot) — foto sección Sobre Mí (home), fallback a /public/hero-doctor-v3.webp
   imagenPagina: image (hotspot) — foto página dedicada Sobre Mí
-  imagenTratamientos: image (hotspot) — foto "experiencia" en páginas de zona (si vacío, sección no se muestra)
   sellos: array de {
     nombre: string (requerido)
     imagen: image (hotspot, requerido)

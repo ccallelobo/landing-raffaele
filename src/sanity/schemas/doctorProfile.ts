@@ -26,13 +26,6 @@ export default defineType({
       options: { hotspot: true },
     }),
     defineField({
-      name: "imagenTratamientos",
-      title: "Imagen sección Doctor (Zonas)",
-      description: "Foto del doctor que aparece en las páginas de zona de tratamientos. Si está vacío la sección no se muestra.",
-      type: "image",
-      options: { hotspot: true },
-    }),
-    defineField({
       name: "sellos",
       title: "Sellos / Sociedades Médicas",
       type: "array",
