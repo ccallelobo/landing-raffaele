@@ -122,6 +122,8 @@ src/
 │   ├── ZonaTratamientos.tsx   # Grid de tratamientos con links a detalle (client)
 │   ├── TratamientoDetalle.tsx # Contenido de página individual de tratamiento (client)
 │   ├── MarcasTecnologias.tsx  # Carrusel de marcas/tecnología (placeholder)
+│   ├── ZonaHero.tsx           # Hero animado de páginas de zona (client, staggered reveal + ken-burns)
+│   ├── ExpandableText.tsx     # Texto truncado con "Leer más" expandible (client)
 │   ├── SobreMi.tsx            # Sección resumen sobre el doctor (home)
 │   ├── SobreMiPageContent.tsx # Contenido página dedicada Sobre Mí (client)
 │   ├── Resultados.tsx         # Galería antes/después (datos de tabla resultado en Sanity)
@@ -173,8 +175,8 @@ src/
 - `tratamiento`: servicios médicos (nombre/nombreES, slug, zona, imagen, resumenCorto/resumenCortoES, descripcion/descripcionES rich text, resultados embebidos, orden)
 - `resultado`: fotos antes/después legacy (soporta múltiples ángulos + tratamientosAsociados) — usado por Resultados en la home
 - `resena`: testimonios de pacientes
-- `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada)
-- `doctorProfile`: singleton — CV en PDF, sellos/sociedades médicas, imagen de la página Sobre Mí
+- `zonaConfig`: configuración de zona (título/descripción ES/IT, imagen de portada, foto del doctor)
+- `doctorProfile`: singleton — imágenes hero/sobreMi (home), imagen página Sobre Mí, sellos/sociedades, CV en PDF
 
 ### Schema `tratamiento` (actualizado)
 ```
@@ -228,7 +230,8 @@ zonaConfig {
   tituloIT: string
   descripcionES: string
   descripcionIT: string
-  imagen: image (hotspot)
+  imagen: image (hotspot) — portada de la zona
+  imagenDoctor: image (hotspot) — foto del doctor en el hero de esta zona (si vacía no se muestra)
 }
 ```
 
@@ -357,7 +360,9 @@ Todas las URLs SEO usan `process.env.NEXT_PUBLIC_SITE_URL` con fallback a `https
 
 ### Páginas de Zona (`/tratamientos/[zona]`)
 - Server component con ISR (60s)
-- Hero con imagen, título y descripción (desde zonaConfig o traducciones fallback)
+- Hero animado (ZonaHero.tsx): staggered text reveal, ken-burns en fondo, foto del doctor slide-in desde derecha
+- Foto del doctor configurable por zona (zonaConfig.imagenDoctor), solo desktop, oculta en móvil
+- Descripción larga truncada a 3 líneas con "Leer más" expandible (ExpandableText.tsx)
 - Grid de tratamientos como Links a páginas individuales (1 col móvil, 2 tablet, 3 desktop)
 - 4 zonas: facial, corporal, skin-quality, capilar
 - Mapeo de slugs localizados: facial/viso, corporal/corpo, skin-quality/skin-quality, capilar/capelli
